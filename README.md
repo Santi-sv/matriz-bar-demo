@@ -73,3 +73,10 @@ Todos los datos operativos son ficticios y viven **solamente en memoria**. Se re
 El cardápio y sus precios reales se mantienen. Proveedores, empleados, costos, cantidades, recetas y registros financieros son ejemplos para la presentación. Se conserva HTML/CSS/JS vanilla, sin build ni dependencias nuevas.
 
 
+
+
+## Aviso manual de retirada pelo WhatsApp — demo
+
+Em **Painel → Pedidos**, um pedido de **Retirada** ganha o botão **Avisar pelo WhatsApp** quando estiver pronto. O operador confere o número do cliente, escolhe balcão ou restaurante, vê a mensagem com o código do pedido e usa **Simular envio do aviso**. O registro aparece no cartão, no histórico de Canais e no comprovante do cliente. Não envia mensagens, não abre o WhatsApp e não registra cobrança nem nova baixa de estoque.
+
+Para testar com os exemplos: aceitar o pedido #0428, marcar como pronto e usar o botão de aviso. Depois usar **Marcar retirado** para concluir. O mesmo aviso funciona para pedidos de retirada feitos antecipadamente. Um reenvio exige reabrir a prévia e confirmar novamente; submissões repetidas da mesma prévia não duplicam o aviso. Recarregar ou reiniciar a demo restaura os dados iniciais.
