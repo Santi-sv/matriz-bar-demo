@@ -80,3 +80,22 @@ El cardápio y sus precios reales se mantienen. Proveedores, empleados, costos, 
 Em **Painel → Pedidos**, um pedido de **Retirada** ganha o botão **Avisar pelo WhatsApp** quando estiver pronto. O operador confere o número do cliente, escolhe balcão ou restaurante, vê a mensagem com o código do pedido e usa **Simular envio do aviso**. O registro aparece no cartão, no histórico de Canais e no comprovante do cliente. Não envia mensagens, não abre o WhatsApp e não registra cobrança nem nova baixa de estoque.
 
 Para testar com os exemplos: aceitar o pedido #0428, marcar como pronto e usar o botão de aviso. Depois usar **Marcar retirado** para concluir. O mesmo aviso funciona para pedidos de retirada feitos antecipadamente. Um reenvio exige reabrir a prévia e confirmar novamente; submissões repetidas da mesma prévia não duplicam o aviso. Recarregar ou reiniciar a demo restaura os dados iniciais.
+
+
+## Botones y tiempos de preparación editables — demo
+
+- Botones con jerarquía óxido/marino, relieve, respuesta al pulsar, foco visible y movimiento reducido. Las acciones de WhatsApp usan un SVG local compartido de Bootstrap Icons; su licencia está en `assets/THIRD-PARTY-NOTICES.txt`. No se añadió ninguna biblioteca ni proceso de build.
+- Cada artículo de la carta muestra un tiempo de preparación **ficticio**. En **Painel → Pedidos → Tempos da carta** se editan todos los artículos y el desplazamiento adicional de entrega.
+- Los productos se preparan en paralelo: la previsión del carrito usa el **mayor tiempo de preparación** entre sus artículos. Para entrega suma el desplazamiento configurado; para retirada no. Las cantidades no se suman como tiempos secuenciales. Si el volumen requiere más espera, la persona operadora ajusta el pedido.
+- Cada pedido recibido guarda una copia de sus tiempos y su hora prevista. Editar los tiempos de la carta afecta al carrito y a los nuevos pedidos; conserva las previsiones de los pedidos ya recibidos.
+- En la tarjeta de cada pedido pendiente, **Ajustar previsão** permite indicar los minutos restantes **a partir de ahora**, con atajos de +10/+20/+30 minutos y motivo visible al cliente, por ejemplo **Alta demanda**. Para entrega ese nuevo plazo ya incluye el desplazamiento; no se vuelve a sumar.
+- La previsión y sus ajustes aparecen en **Minha visita** dentro de la misma sesión. Un plazo vencido pide actualización: nunca marca el pedido listo automáticamente. Al estar listo para retirar se conserva el aviso manual de WhatsApp.
+- Ajustar tiempos no cobra, no cambia el estado del pedido y no descuenta ingredientes. En la demo no hay sincronización entre dispositivos ni mensajes reales; recargar o reiniciar restaura los ejemplos.
+
+### Recorrido para revisar
+
+1. En **Pedidos → Tempos da carta**, cambiar el tartar de 18 a 30 minutos y guardar.
+2. En el sitio del cliente, agregar tartar y una cerveza: retirada calcula 30 minutos; entrega suma el desplazamiento ficticio configurado. Confirmar el pedido y abrir su comprobante.
+3. Volver a **Pedidos**, usar **Ajustar previsão**, indicar 60 minutos con motivo **Alta demanda** y guardar.
+4. En **Minha visita → Pedidos**, comprobar el nuevo plazo y el aviso de actualización de la equipe.
+5. Cambiar otra vez el tiempo del tartar y comprobar que la previsión del pedido anterior se mantiene.
