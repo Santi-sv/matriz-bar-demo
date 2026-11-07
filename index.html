@@ -481,7 +481,6 @@ a.btn{text-decoration:none}
   .mbar svg{width:19px;height:19px;flex:none}
   .mbar-res{background:var(--brand-navy);color:#fff}
   .mbar-order{background:var(--brand-oxide);color:#fff;box-shadow:0 3px 0 #6E3421}
-  .fab{display:none!important}
   body[data-view="site"]{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
   .toasts{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
   .visit-grid{grid-template-columns:1fr;gap:32px}
@@ -612,6 +611,113 @@ body.booking-active #resForm>.flow-actions{bottom:16px}
 @media(max-width:760px){.btn.sm,.ops-card-head .btn,.ops-list .btn,.ops-table .btn,.client-card .btn,.stock-card .btn,.staff-card .btn,.purchase-card .btn,#op-dialog .modal-actions .btn{min-height:44px}.ops-head-actions .btn{min-height:40px}.hero-cta .btn{gap:7px}.hero-cta .btn .arrow{width:23px;height:23px}.btn.sm .ui-icon{width:16px;height:16px}.app-bar button{border-radius:11px}.mi-side .add{min-width:40px;min-height:42px}.stepper button{min-height:38px}.pickup-notice .pickup-notify{min-height:54px}.pickup-notice .pickup-notify .btn-label{font-size:.73rem}}
 @media(prefers-reduced-motion:reduce){.btn,.btn::before,.btn .arrow,.add,.stepper button,.x,.chip,.slot,.date-shortcuts button,.eta-presets button,.app-bar .app-tab-icon{transition:none!important}.btn:hover:not(:disabled),.add:hover,.x:hover,.app-bar button:hover .app-tab-icon{transform:none!important}.btn::before{display:none}}
 
+
+/* Cardápio e sacola */
+.catalog-wrap{max-width:1136px}
+.catalog-header{background:var(--paper)}
+.catalog-cover{height:142px;background:linear-gradient(90deg,#12304470,#12304416),url("assets/img-0c81e9f4.jpg") center 44% / cover no-repeat,var(--brand-navy)}
+.catalog-venue{position:relative;display:flex;align-items:center;gap:17px;margin-top:-34px;padding:20px 22px;background:var(--surface);border:1px solid var(--paper-line);border-radius:16px;box-shadow:0 8px 22px -18px #12304470}
+.catalog-logo{width:76px;height:76px;padding:8px;border-radius:13px;border:1px solid var(--paper-line);object-fit:contain;background:#fff}
+.catalog-venue-info{flex:1;min-width:0}
+.catalog-venue-info .eyebrow{font-size:.62rem}
+.catalog-venue-info h1{font-size:clamp(1.5rem,3vw,2rem);line-height:1.2}
+.catalog-venue-info>p:not(.eyebrow){color:var(--muted);font-size:.82rem}
+.catalog-open{display:inline-flex;align-items:center;gap:6px;margin-top:6px;color:var(--ok);font-size:.73rem;font-weight:700}
+.catalog-open::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.catalog-open[data-open="false"]{color:var(--muted)}
+.catalog-links{display:flex;align-items:center;flex-wrap:wrap;justify-content:end;gap:9px}
+.catalog-links .client-account{font-size:.76rem;background:var(--surface);color:var(--ink);min-height:40px}
+#cardapio{padding:27px 0 36px}
+.catalog-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,290px);gap:24px;align-items:start}
+.catalog-main{min-width:0}
+.catalog-heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:10px}
+.catalog-heading h2{font-size:clamp(1.45rem,2.4vw,1.95rem)}
+.catalog-heading>p{font-size:.76rem;color:var(--muted)}
+.catalog-controls{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:minmax(0,1fr) minmax(165px,.68fr);gap:9px;padding:9px 0 12px;background:var(--paper)}
+.catalog-search{position:relative;min-width:0}
+.catalog-search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none}
+.catalog-search input,.catalog-category select{width:100%;min-height:46px;border-radius:10px;border:1px solid var(--paper-line);background:var(--surface);color:var(--ink);font-size:.9rem}
+.catalog-search input{padding:8px 10px 8px 39px}
+.catalog-category select{padding:8px 29px 8px 12px}
+.catalog-results:empty{display:none}
+.catalog-results{color:var(--muted);font-size:.77rem;margin:2px 0 12px}
+.catalog-group{margin-bottom:20px}
+.catalog-group:last-child{margin-bottom:0}
+.catalog-group h3{font-size:1.04rem;margin:8px 0 9px}
+.catalog-list{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--paper-line);border-radius:13px}
+.menu-product{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:0 14px 0 0;border-bottom:1px solid var(--paper-line)}
+.menu-product:last-child{border-bottom:0}
+.product-main{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-width:0;min-height:88px;padding:12px 0 12px 15px;border:0;background:transparent;color:var(--ink);text-align:left}
+.product-main:focus-visible{outline-offset:-3px;border-radius:10px}
+.product-copy{display:grid;gap:4px;min-width:0}
+.product-name{font-size:.97rem;font-weight:800;line-height:1.25}
+.product-description{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;color:var(--muted);font-size:.82rem;line-height:1.45}
+.product-meta{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px}
+.product-meta .price{font-size:.9rem}
+.product-meta .prep-time{margin:0;white-space:nowrap}
+.product-thumb{width:72px;height:72px;object-fit:cover;border-radius:9px;flex:none}
+.product-controls .add{color:#fff;width:44px;height:44px}
+.product-controls .stepper{flex-shrink:0}
+.product-controls .stepper button{width:30px;height:38px}
+.product-controls .stepper output{min-width:20px}
+.catalog-bag{position:sticky;top:14px;margin-top:7px;padding:18px;background:var(--surface);border:1px solid var(--paper-line);border-radius:14px}
+.catalog-bag-heading,.catalog-bag-total{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.catalog-bag-heading h2{font-size:1.34rem}
+.catalog-bag-heading .eyebrow{font-size:.62rem}
+.bag-icon{color:var(--accent-ink);font-size:1.3rem}
+#catalog-bag-empty,.catalog-bag-note{color:var(--muted);font-size:.8rem;line-height:1.55}
+#catalog-bag-empty{margin:16px 0}
+.catalog-bag-lines{list-style:none;margin:12px 0;padding:0;max-height:28vh;overflow:auto}
+.catalog-bag-lines li{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--paper-line);font-size:.81rem}
+.catalog-bag-lines li strong{flex:none}
+.catalog-bag-total{padding:13px 0;border-top:1px solid var(--paper-line);font-size:.88rem}
+.catalog-bag>.btn{width:100%;justify-content:space-between}
+.catalog-bag-note{margin-top:10px}
+.catalog-demo{margin-top:24px;color:var(--muted);font-size:.8rem}
+.catalog-demo summary{cursor:pointer;width:fit-content}
+.catalog-demo .client-ribbon-controls{margin-top:10px;flex-wrap:wrap}
+.catalog-demo select{width:auto;max-width:100%;background:var(--surface);color:var(--ink);border-color:var(--paper-line)}
+.catalog-demo button{color:var(--ink);font-size:.75rem;text-decoration:none}
+.checkout-step>.fulfillment-preview{margin:0}
+body[data-view="site"] .drawer .checkout-steps .journey-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(hover:hover){.product-main:hover .product-name{color:var(--accent-ink)}}
+@media(max-width:999px){
+  .catalog-grid{grid-template-columns:minmax(0,1fr)}
+  .catalog-bag{display:none}
+  body[data-view="site"] .fab:not([hidden]){display:flex;justify-content:space-between;right:20px;left:auto;bottom:20px;max-width:calc(100% - 40px)}
+}
+@media(min-width:1000px){body[data-view="site"] #fab{display:none}}
+@media(max-width:760px){
+  .catalog-cover{height:90px}
+  .catalog-wrap{padding-inline:max(14px,env(safe-area-inset-left,0px)) max(14px,env(safe-area-inset-right,0px))}
+  .catalog-venue{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 12px;padding:12px 14px;margin-top:-27px}
+  .catalog-logo{width:58px;height:58px;padding:6px}
+  .catalog-links{grid-column:1/-1;justify-content:start;gap:7px}
+  .catalog-links .btn.sm{min-height:40px;padding:7px 10px;font-size:.72rem}
+  .catalog-links .client-account{display:none!important}
+  .catalog-heading>p{font-size:.69rem;text-align:right}
+  #cardapio{padding-top:17px}
+  .catalog-controls{grid-template-columns:minmax(0,1fr) minmax(108px,.62fr);gap:7px}
+  .catalog-search input,.catalog-category select{font-size:16px}
+  .catalog-search input{padding-left:33px}
+  .catalog-search svg{left:10px;width:16px;height:16px}
+  .catalog-category select{padding-left:7px;font-size:.83rem}
+  .menu-product{gap:7px;padding-right:9px}
+  .product-main{gap:8px;padding:10px 0 10px 10px;min-height:80px}
+  .product-thumb{width:54px;height:54px}
+  .product-name{font-size:.91rem}
+  .product-description{font-size:.75rem}
+  .product-meta{gap:3px 7px}
+  .product-controls .stepper{padding:2px}
+  .product-controls .stepper button{width:28px}
+  body[data-view="site"] .fab:not([hidden]){right:14px;left:14px;bottom:calc(var(--app-bar-space) + 9px);max-width:none;min-height:46px;padding:9px 13px;font-size:.84rem}
+  body[data-view="site"].booking-active .fab{display:none}
+  body[data-view="site"]:not(.booking-active) #resForm>.flow-actions{position:static}
+  body[data-view="site"].has-cart{padding-bottom:calc(var(--app-bar-space) + 60px)}
+}
+@media(max-width:480px){.catalog-controls{grid-template-columns:1fr}}
+@media(max-width:360px){.product-thumb{width:42px;height:42px}.product-meta .prep-time{font-size:.6rem}}
+
 </style>
 </head>
 <body>
@@ -634,64 +740,61 @@ body.booking-active #resForm>.flow-actions{bottom:16px}
 <!-- ============ SITE ============ -->
 <div id="view-site">
   <a class="skip-link" href="#cardapio">Ir para o cardápio</a>
-  <header class="hero">
-    <div class="head-wrap">
-      <div class="wrap site-head">
-        <button type="button" class="mark mark-home" data-app-section="home" aria-label="Matriz Bar · início"><span class="logo-plate"><img src="assets/img-91d681e9.png" alt="Matriz bar"></span></button><p class="mobile-context">São Sebastião, SP<span>Petiscos & coquetéis</span></p>
-        <div class="head-links">
-          <nav class="site-nav" aria-label="Seções">
-            <button data-scroll="cardapio">Cardápio</button>
-            <button data-scroll="reservas">Reservas</button>
-            <button data-scroll="contato">Contato</button>
-            <button type="button" class="client-account" data-client="portal" aria-haspopup="dialog"><span class="mini-avatar" id="clientAvatar" aria-hidden="true">FL</span>Minha visita <span class="visit-count" id="visitCount" hidden></span></button>
-          </nav>
-          <p class="head-location"><b>São Sebastião, SP</b>Petiscos & coquetelaria brasileira</p>
-        </div>
-      </div>
-    </div>
-    <div class="wrap">
-      <div class="client-ribbon"><p>Experimente como <strong>cliente de exemplo</strong></p><div class="client-ribbon-controls"><label class="sr-only" for="demo-scenario">Cenário de demonstração</label><select id="demo-scenario"><option value="regular">Fernanda · cliente frequente</option><option value="new">Marina · primeira visita</option></select><button type="button" data-client="guide">Roteiro ↗</button></div></div>
-      <div class="hero-grid">
-        <div class="hero-copy">
+  <header class="catalog-header">
+    <div class="catalog-cover" aria-hidden="true"></div>
+    <div class="wrap catalog-wrap">
+      <div class="catalog-venue">
+        <img class="catalog-logo" src="assets/img-91d681e9.png" alt="" width="76" height="76">
+        <div class="catalog-venue-info">
           <p class="eyebrow">Centro · São Sebastião, SP</p>
-          <h1>Petiscos<br>e coquetéis<br><em>no Centro.</em></h1>
-          <p class="hero-lede"><span class="desktop-copy">Tartar de peixe, tacos, ceviche, chope Marítima e coquetelaria brasileira. Reserve sua mesa ou faça seu pedido em poucos toques.</span><span class="mobile-copy">Petiscos, chope Marítima e coquetelaria brasileira. Sua próxima mesa é aqui.</span></p>
-          <div class="hero-cta">
-            <button class="btn sun" data-scroll="reservas">Reservar mesa <span class="arrow" aria-hidden="true">↗</span></button>
-            <button class="btn ghost" data-scroll="cardapio">Ver cardápio <span class="arrow" aria-hidden="true">↓</span></button>
-          </div>
-          <div class="facts"><span class="open-pill" id="openPill">Aberto hoje</span><span><b>Restaurant Week</b> até 15/11</span><span><b>Retirada e entrega</b></span></div>
+          <h1>Matriz Bar</h1>
+          <p>Petiscos &amp; coquetéis</p>
+          <span class="catalog-open" id="openPill">Aberto hoje</span>
         </div>
-        <div class="hero-visual">
-          <figure class="hero-photo">
-            <img src="assets/img-0c81e9f4.jpg" width="900" height="1200" fetchpriority="high" alt="Mesa com petiscos do Matriz: taco, trio de antepastos, sanduíches, tartar e drinks">
-            <figcaption><span>Mesa do Matriz</span></figcaption>
-          </figure>
-          <img class="hero-drink" src="assets/img-132578da.jpg" width="600" height="800" alt="Benza: gin, maracujá e pepino">
-          <div class="hero-seal" aria-hidden="true">Restaurant<br>Week<span>até 15 de novembro</span></div>
-        </div>
+        <nav class="catalog-links" aria-label="Matriz Bar">
+          <button type="button" class="btn sm ghost" data-scroll="reservas">Reservar mesa</button>
+          <button type="button" class="btn sm ghost" data-scroll="visite">Horários e localização</button>
+          <button type="button" class="client-account" data-client="portal" aria-haspopup="dialog"><span class="mini-avatar" id="clientAvatar" aria-hidden="true">FL</span>Minha visita <span class="visit-count" id="visitCount" hidden></span></button>
+        </nav>
       </div>
-      <div class="hero-bottom"><span>Petiscos para compartilhar. Coquetéis para brindar.</span><span>Matriz Bar · @matrizbar</span></div>
     </div>
-    <div class="hull" aria-hidden="true"></div>
   </header>
 
-  <section class="block" id="cardapio">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="eyebrow">01 / Cardápio do bar</p>
-          <h2>Cardápio</h2>
-          <p>Escolha, finalize e acompanhe o pedido pelo WhatsApp. Retirada no balcão ou entrega.</p>
+  <section id="cardapio" aria-labelledby="catalog-title">
+    <div class="wrap catalog-wrap catalog-grid">
+      <div class="catalog-main">
+        <div class="catalog-heading">
+          <div><p class="eyebrow">À mesa ou em casa</p><h2 id="catalog-title">Cardápio</h2></div>
+          <p>Retirada no balcão · Entrega</p>
         </div>
-        <p class="section-note">Petiscos, um bom drink<br>e a mesa está completa.</p>
+        <div class="catalog-controls">
+          <div class="catalog-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg>
+            <label class="sr-only" for="catalog-search">Buscar no cardápio</label>
+            <input id="catalog-search" type="search" placeholder="Buscar pratos e bebidas" maxlength="80" autocomplete="off">
+          </div>
+          <div class="catalog-category">
+            <label class="sr-only" for="cats">Categoria</label>
+            <select id="cats"></select>
+          </div>
+        </div>
+        <p class="catalog-results" id="catalog-results" role="status"></p>
+        <div class="catalog-groups" id="menu"></div>
       </div>
-      <div class="chips" id="cats" role="group" aria-label="Categorias"></div>
-      <span id="destaques" class="anchor" aria-hidden="true"></span>
-      <p class="gallery-hint" id="galleryHint"><b>Um pouco do Matriz</b><span>Deslize para explorar <span aria-hidden="true">→</span></span></p>
-      <div class="feat-strip" id="featured"></div>
-      <p class="menu-label">A carta completa</p>
-      <div class="mgroups" id="menu"></div>
+      <aside class="catalog-bag" aria-labelledby="catalog-bag-title">
+        <div class="catalog-bag-heading"><div><p class="eyebrow">Seu pedido</p><h2 id="catalog-bag-title">Sacola</h2></div><svg class="bag-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></div>
+        <p id="catalog-bag-empty">Sua sacola está vazia. Use o botão + para adicionar um item.</p>
+        <ul id="catalog-bag-lines" class="catalog-bag-lines" hidden></ul>
+        <div class="catalog-bag-total"><span>Subtotal</span><strong class="num" id="catalog-bag-total">R$ 0,00</strong></div>
+        <button type="button" class="btn sun" id="catalog-bag-open" disabled>Ver sacola <span aria-hidden="true">→</span></button>
+        <p class="catalog-bag-note">Taxa e prazo calculados ao escolher como receber.</p>
+      </aside>
+    </div>
+    <div class="wrap catalog-wrap">
+      <details class="catalog-demo">
+        <summary>Opções da demonstração</summary>
+        <div class="client-ribbon-controls"><label class="sr-only" for="demo-scenario">Cenário de demonstração</label><select id="demo-scenario"><option value="regular">Fernanda · cliente frequente</option><option value="new">Marina · primeira visita</option></select><button type="button" class="btn sm ghost" data-client="guide">Ver roteiro</button></div>
+      </details>
     </div>
   </section>
 
@@ -887,7 +990,7 @@ body.booking-active #resForm>.flow-actions{bottom:16px}
 <!-- Cart -->
 <button class="btn sun fab" id="fab" hidden></button>
 <nav class="mbar app-bar" id="mbar" aria-label="Navegação do cliente">
-<button type="button" data-app-section="cardapio"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-3H4zM20 4h-4a3 3 0 0 0-3 3M20 4v14h-3a4 4 0 0 0-4 3"/></svg></span><span>Cardápio</span></button><button type="button" data-app-section="reservas"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15h2M14 15h2"/></svg></span><span>Reservar</span></button><button type="button" data-app="visit" aria-haspopup="dialog"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><span>Minha visita</span></button><button type="button" id="mbarOrder"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7ZM8 8V6a4 4 0 0 1 8 0v2"/></svg><span class="mbar-count num" id="mbarCount" hidden></span></span><span id="mbarLabel">Pedido</span></button><button type="button" data-app="more" aria-haspopup="dialog" aria-controls="app-sheet"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></span><span>Mais</span></button>
+<button type="button" data-app-section="cardapio"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-3H4zM20 4h-4a3 3 0 0 0-3 3M20 4v14h-3a4 4 0 0 0-4 3"/></svg></span><span>Cardápio</span></button><button type="button" data-app="search"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg></span><span>Busca</span></button><button type="button" data-app="visit" aria-haspopup="dialog"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><span>Minha visita</span></button><button type="button" id="mbarOrder"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7ZM8 8V6a4 4 0 0 1 8 0v2"/></svg><span class="mbar-count num" id="mbarCount" hidden></span></span><span id="mbarLabel">Pedido</span></button><button type="button" data-app="more" aria-haspopup="dialog" aria-controls="app-sheet"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></span><span>Mais</span></button>
 </nav>
 <nav class="app-bar panel-app-bar" id="panel-mbar" aria-label="Navegação do restaurante" hidden>
 <button type="button" data-app-panel="hoje"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></span><span>Início</span></button><button type="button" data-app-panel="pedidos"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7ZM8 8V6a4 4 0 0 1 8 0v2"/></svg></span><span>Pedidos</span></button><button type="button" data-app-panel="reservas"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15h2M14 15h2"/></svg></span><span>Reservas</span></button><button type="button" data-app-panel="financas"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3M16 3H5v3"/></svg></span><span>Caixa</span></button><button type="button" data-app="more" aria-haspopup="dialog" aria-controls="app-sheet"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></span><span>Mais</span></button>
@@ -898,20 +1001,18 @@ body.booking-active #resForm>.flow-actions{bottom:16px}
 <div class="overlay" id="overlay" hidden></div>
 <aside class="drawer" id="drawer" hidden aria-labelledby="d-title" role="dialog" aria-modal="true">
  <div class="drawer-head"><h2 id="d-title">Seu pedido</h2><button class="x" id="d-close" aria-label="Fechar">×</button></div>
- <div class="checkout-steps"><ol class="journey-steps" id="checkoutSteps" aria-label="Etapas do pedido"><li><button type="button" data-checkout-step="1" aria-current="step"><b>1</b>Pedido</button></li><li><button type="button" data-checkout-step="2" disabled><b>2</b>Receber</button></li><li><button type="button" data-checkout-step="3" disabled><b>3</b>Confirmar</button></li></ol></div>
+ <div class="checkout-steps"><ol class="journey-steps" id="checkoutSteps" aria-label="Etapas do pedido"><li><button type="button" data-checkout-step="1" aria-current="step"><b>1</b>Sacola</button></li><li><button type="button" data-checkout-step="2" disabled><b>2</b>Receber e confirmar</button></li></ol></div>
  <form class="drawer-body" id="orderForm" novalidate>
   <div class="checkout-step" data-checkout-pane="1">
+   <h3>Itens da sacola</h3><ul class="cart-lines" id="cartLines"></ul><button type="button" class="ops-link" data-client="continue-menu">Adicionar mais itens ↗</button>
    <div class="field"><span class="legend">Como vai aproveitar o Matriz?</span><div class="seg" role="radiogroup" aria-label="Tipo de pedido"><label><input type="radio" name="otype" id="c-type-ent" value="Entrega" checked>Entrega</label><label><input type="radio" name="otype" id="c-type-ret" value="Retirada">Retirada</label></div></div>
    <div class="fulfillment-preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><div id="cEta"></div></div>
-   <h3>O que vai para a sua mesa</h3><ul class="cart-lines" id="cartLines"></ul><button type="button" class="ops-link" data-client="continue-menu">Adicionar mais itens ↗</button>
   </div>
   <div class="checkout-step" data-checkout-pane="2" hidden>
    <h3 id="deliveryHeading">Onde vamos entregar?</h3>
    <div id="deliveryFields" class="form" style="gap:18px"><div class="field"><label for="c-bairro">Bairro</label><select id="c-bairro"></select></div><div class="field"><label for="c-addr">Endereço</label><input type="text" id="c-addr" autocomplete="street-address" value="Rua Expedicionário Brasileiro, 240" maxlength="180"></div><p class="ops-small">Bairros, taxas e prazos são exemplos desta demonstração.</p></div>
    <div id="pickupNote" class="pickup-details" hidden><h4>Retirada no Matriz</h4><p>Centro · São Sebastião, SP<br><span id="pickup-time-preview">Escolha os itens para calcular o preparo.</span></p><p>Acompanhe o preparo em “Minha visita”. Quando estiver pronto, a equipe pode simular um aviso de retirada no seu WhatsApp. Nenhum pedido ou aviso é enviado de verdade.</p></div>
    <button type="button" class="ops-link" data-checkout-step="1">Alterar entrega ou retirada</button>
-  </div>
-  <div class="checkout-step" data-checkout-pane="3" hidden>
    <h3>Seus dados e a confirmação</h3><div class="form-example"><span id="orderPersona">Dados fictícios de Fernanda</span><button type="button" data-client="fill-contact">Usar exemplo</button></div>
    <div class="row2"><div class="field"><label for="c-name">Nome</label><input type="text" id="c-name" autocomplete="name" value="Fernanda Lima" maxlength="80"></div><div class="field"><label for="c-phone">WhatsApp</label><input type="tel" id="c-phone" autocomplete="tel" value="(12) 98812-4407"></div></div>
    <p class="pickup-contact-hint" id="pickup-contact-hint" hidden>O WhatsApp informado será usado para o aviso de retirada quando o pedido estiver pronto. Nesta demo, o envio é simulado.</p>
@@ -950,7 +1051,7 @@ body.booking-active #resForm>.flow-actions{bottom:16px}
 
 <script>
 (function(){
-const LOGO=document.querySelector('.logo-plate img').src;
+const LOGO=document.querySelector('.catalog-logo').src;
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const BRL=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
@@ -1015,17 +1116,14 @@ const MENU=[
  {id:'suco',cat:'Sem álcool',name:'Suco natural',desc:'Sabores do dia.',price:12}
 ];
 const IMG={"tartar": "assets/img-898aee54.jpg", "taco": "assets/img-749cf5de.jpg", "trio": "assets/img-c164bc03.jpg", "sandpeixe": "assets/img-918ee5bf.jpg", "jorge": "assets/img-bb2ccb41.jpg", "benza": "assets/img-132578da.jpg"};
-const LETTER={Petiscos:"assets/img-1dffbdde.png",Coquetéis:"assets/img-3ce2c990.png"};
-const SUB={'Petiscos':'para compartilhar','Coquetéis':'coquetelaria brasileira','Chopes e cervejas':'para brindar','Vinhos':'branco, rosé e tinto','Sem álcool':'para acompanhar'};
-const AST="<svg class=\"ast\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg>";
 const M=Object.fromEntries(MENU.map(m=>[m.id,m]));
-const CATS=['Destaques','Petiscos','Coquetéis','Chopes e cervejas','Vinhos','Sem álcool'];
+const CATS=['Todas','Petiscos','Coquetéis','Chopes e cervejas','Vinhos','Sem álcool'];
 const BAIRROS={'Centro':6,'Topolândia':8,'Pontal da Cruz':8,'Porto Grande':9,'Arrastão':10,'São Francisco':12,'Varadouro':12};
 const LUNCH=['12:00','12:30','13:00','13:30','14:00','14:30'];
 const DINNER=['18:00','18:30','19:00','19:30','20:00','20:30','21:00','21:30','22:00','22:30'];
 
 const S={
-  view:'site', ptab:'hoje', cat:'Destaques', cart:{}, cartNotes:{}, people:2, slot:null,
+  view:'site', ptab:'hoje', cat:'Todas', menuQuery:'', cart:{}, cartNotes:{}, people:2, slot:null,
   nextOrder:429, nextRes:2815,
   auto:{waOrder:true,waStatus:true,waRes:true,waRemind:true,igButtons:true,igReply:true,mailRes:true,mailRemind:true,mailOrder:true},
   orders:[
@@ -1178,38 +1276,90 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-scroll]');
 
 /* ---------- menu ---------- */
 function renderCats(){
-  $('#cats').innerHTML=CATS.map(c=>`<button type="button" class="chip" aria-pressed="${c===S.cat}" data-cat="${c}">${c}</button>`).join('');
+  $('#cats').innerHTML=CATS.map(category=>
+    `<option value="${esc(category)}">${category==='Todas'?'Todas as categorias':esc(category)}</option>`
+  ).join('');
+  $('#cats').value=S.cat;
+  $('#catalog-search').value=S.menuQuery;
 }
-const catId=c=>c==='Destaques'?'destaques':'cat-'+c.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z]+/g,'-');
-let spyLock=0;
-function markCat(c){if(S.cat===c)return;S.cat=c;const box=$('#cats');$$('[data-cat]',box).forEach(x=>x.setAttribute('aria-pressed',x.dataset.cat===c));const b=box.querySelector(`[data-cat="${c}"]`);if(b)box.scrollTo({left:b.offsetLeft-box.clientWidth/2+b.offsetWidth/2,behavior:'smooth'})}
-$('#cats').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(!b)return;markCat(b.dataset.cat);spyLock=Date.now()+900;scrollToId(catId(b.dataset.cat))});
-window.addEventListener('scroll',()=>{if(S.view!=='site'||Date.now()<spyLock)return;const y=($('#cats').getBoundingClientRect().bottom||0)+90;let cur='Destaques';for(const c of CATS.slice(1)){const el=document.getElementById(catId(c));if(el&&el.getBoundingClientRect().top<=y)cur=c}markCat(cur)},{passive:true});
-function ctl(m,big){const q=S.cart[m.id]||0;return q?`<span class="stepper"><button type="button" data-dec="${m.id}" aria-label="Remover um ${esc(m.name)}">−</button><output class="num">${q}</output><button type="button" data-inc="${m.id}" aria-label="Adicionar mais um ${esc(m.name)}">+</button></span>`:big?`<button type="button" class="btn sm" data-inc="${m.id}" aria-label="Adicionar ${esc(m.name)}">Adicionar <span class="arrow" aria-hidden="true">+</span></button>`:`<button type="button" class="add" data-inc="${m.id}" aria-label="Adicionar ${esc(m.name)}">+</button>`}
-function renderMenu(preserveScroll=false){
-  const previousScroll=$('#featured').scrollLeft;
-  const cats=CATS.slice(1);
-  const feat=MENU.filter(m=>m.img&&cats.includes(m.cat));
-  const fe=$('#featured');fe.hidden=!feat.length;$('#galleryHint').hidden=!feat.length;
-  fe.innerHTML=feat.map(m=>`<article class="feat" data-dish="${m.id}"><div class="feat-image"><button type="button" data-client="dish" data-id="${m.id}" aria-label="Ver detalhes de ${esc(m.name)}"><img src="${IMG[m.img]}" alt="${esc(m.name)}" loading="lazy" decoding="async">${m.tag?`<span class="tag">${m.tag}</span>`:''}</button></div><div class="feat-body"><span class="cat">${m.cat}</span><h3><button type="button" class="dish-name" data-client="dish" data-id="${m.id}">${esc(m.name)}</button></h3><p>${esc(m.desc)}</p><div class="dish-foot"><span class="dish-price-time"><span class="price num">${money(m.price)}</span><span class="prep-time" aria-label="Preparo aproximado: ${prepMinutes(m.id)} minutos">${uiIcon('clock')} ${prepMinutes(m.id)} min</span></span>${ctl(m,true)}</div></div></article>`).join('');
-  $('#menu').innerHTML=cats.map(c=>`<section class="mgroup" id="${catId(c)}" data-category="${c}"><header class="mhead">${LETTER[c]?`<img src="${LETTER[c]}" alt="">`:''}<h3>${AST}${c}${AST}</h3><p>${SUB[c]}</p></header><ul class="mlist">${MENU.filter(m=>m.cat===c).map(m=>`<li class="mitem" data-dish="${m.id}"><div class="mi-txt"><div class="mi-row"><button type="button" class="dish-name" data-client="dish" data-id="${m.id}">${esc(m.name)}</button>${m.tag?`<span class="tag">${m.tag}</span>`:''}</div>${m.desc?`<p>${esc(m.desc)}</p>`:''}<span class="prep-time" aria-label="Preparo aproximado: ${prepMinutes(m.id)} minutos">${uiIcon('clock')} ${prepMinutes(m.id)} min de preparo</span></div><div class="mi-side"><span class="price num">${money(m.price)}</span>${ctl(m)}</div></li>`).join('')}</ul></section>`).join('');
-  if(preserveScroll)fe.scrollLeft=previousScroll;
+
+function productQuantity(m){
+  const quantity=S.cart[m.id]||0;
+  const name=esc(m.name);
+  if(!quantity){
+    return `<button type="button" class="add" data-inc="${m.id}" aria-label="Adicionar ${name}">${uiIcon('plus')}</button>`;
+  }
+  return `<span class="stepper">
+    <button type="button" data-dec="${m.id}" aria-label="Remover um ${name}">−</button>
+    <output class="num">${quantity}</output>
+    <button type="button" data-inc="${m.id}" aria-label="Adicionar mais um ${name}">+</button>
+  </span>`;
 }
-function changeQty(id,d){
-  const focused=document.activeElement;
-  const source=focused?.closest('.feat')?'#featured':focused?.closest('#cartLines')?'#cartLines':'#menu';
+
+function menuProduct(m){
+  const photo=IMG[m.img];
+  return `<li class="menu-product" data-dish="${m.id}">
+    <button type="button" class="product-main" data-client="dish" data-id="${m.id}" aria-label="Ver detalhes de ${esc(m.name)}">
+      <span class="product-copy">
+        <strong class="product-name">${esc(m.name)}</strong>
+        ${m.desc?`<span class="product-description">${esc(m.desc)}</span>`:''}
+        <span class="product-meta"><span class="price num">${money(m.price)}</span><span class="prep-time">${uiIcon('clock')} ${prepMinutes(m.id)} min</span></span>
+      </span>
+      ${photo?`<img class="product-thumb" src="${photo}" alt="" width="72" height="72" loading="lazy" decoding="async">`:''}
+    </button>
+    <div class="product-controls">${productQuantity(m)}</div>
+  </li>`;
+}
+
+function renderMenu(){
+  const query=normText(S.menuQuery.trim());
+  const matches=MENU.filter(m=>
+    (S.cat==='Todas'||m.cat===S.cat) &&
+    normText(`${m.name} ${m.cat} ${m.desc||''}`).includes(query)
+  );
+  $('#catalog-results').textContent=query||S.cat!=='Todas'
+    ? `${matches.length} ${matches.length===1?'item encontrado':'itens encontrados'}`
+    : '';
+  $('#menu').innerHTML=CATS.slice(1).map(category=>{
+    const items=matches.filter(m=>m.cat===category);
+    if(!items.length)return '';
+    return `<section class="catalog-group"><h3>${esc(category)}</h3><ul class="catalog-list">${items.map(menuProduct).join('')}</ul></section>`;
+  }).join('')||'<p class="notice">Nenhum item encontrado. Tente outro termo ou escolha todas as categorias.</p>';
+}
+
+$('#cats').addEventListener('change',event=>{
+  S.cat=event.target.value;
+  renderMenu();
+  if($('#cardapio').getBoundingClientRect().top<0)clientJump('cardapio');
+});
+
+$('#catalog-search').addEventListener('focus',renderMobileNav);
+$('#catalog-search').addEventListener('blur',renderMobileNav);
+$('#catalog-search').addEventListener('input',event=>{
+  S.menuQuery=event.target.value;
+  if($('#cardapio').getBoundingClientRect().top<0)clientJump('cardapio');
+  renderMenu();
+});
+
+function openCatalogSearch(){
+  clientJump('cardapio');
+  $('#catalog-search').focus({preventScroll:true});
+}
+
+function changeQty(id,d,focused){
+  const source=focused?.closest('#cartLines')?'#cartLines':'#menu';
   const action=focused?.hasAttribute('data-dec')?'data-dec':'data-inc';
   const q=Math.max(0,(S.cart[id]||0)+d);
   if(q)S.cart[id]=q;else{delete S.cart[id];delete S.cartNotes[id]}
-  renderMenu(true);renderCart();renderFab(true);
+  renderMenu();renderCart();renderFab(true);
   const nextFocus=document.querySelector(`${source} [${action}="${id}"]`)||document.querySelector(`${source} [data-inc="${id}"]`);
   if(nextFocus)nextFocus.focus({preventScroll:true});else if(source==='#cartLines')$('#d-close').focus();
   $('#cartStatus').textContent=`${M[id].name}: ${q} no pedido. ${cartCount()} itens no total.`;
 }
 document.addEventListener('click',e=>{
   const inc=e.target.closest('[data-inc]'),dec=e.target.closest('[data-dec]');
-  if(inc)changeQty(inc.dataset.inc,1);
-  if(dec)changeQty(dec.dataset.dec,-1);
+  if(inc)changeQty(inc.dataset.inc,1,inc);
+  if(dec)changeQty(dec.dataset.dec,-1,dec);
 });
 
 /* ---------- cart ---------- */
@@ -1220,16 +1370,17 @@ function draftOrder(){return{items:cartItems(),type:otype(),bairro:$('#c-bairro'
 function renderFab(bump){
   const n=cartCount(),fab=$('#fab');
   document.body.dataset.view=S.view;
+  document.body.classList.toggle('has-cart',n>0);
   const blocked=!$('#drawer').hidden||!$('#visit-dialog').hidden||!$('#item-dialog').hidden||!$('#modal').hidden||!$('#op-dialog').hidden||!$('#app-sheet').hidden;
-  const booking=$('#resForm').getBoundingClientRect(),bookingActive=S.view==='site'&&innerWidth<=760&&booking.top<innerHeight*.55&&booking.bottom>130;document.body.classList.toggle('booking-active',bookingActive);
+  const booking=$('#resForm').getBoundingClientRect(),bookingActive=S.view==='site'&&innerWidth<=760&&booking.top<Math.min(180,innerHeight*.26)&&booking.bottom>130;document.body.classList.toggle('booking-active',bookingActive);
   const mb=$('#mbar');mb.hidden=S.view!=='site'||blocked;
   $('#panel-mbar').hidden=S.view!=='painel'||blocked;renderMobileNav();
-  $('#mbarLabel').textContent='Pedido';
-  $('#mbarOrder').setAttribute('aria-label',n?`Ver pedido · ${n} itens · ${money(totals(draftOrder()).sub)}`:'Ver cardápio para fazer um pedido');
+  $('#mbarLabel').textContent='Sacola';
+  $('#mbarOrder').setAttribute('aria-label',n?`Ver sacola · ${n} itens · ${money(totals(draftOrder()).sub)}`:'Ver sacola');
   $('#mbarCount').hidden=!n;$('#mbarCount').textContent=n;
   if(bump&&n){const o=$('#mbarOrder');o.classList.remove('bump');void o.offsetWidth;o.classList.add('bump')}
   fab.hidden=!n||S.view!=='site'||blocked;
-  if(n){fab.innerHTML=`<svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>Ver pedido · ${n} ${n>1?'itens':'item'} · <span class="num">${money(totals(draftOrder()).sub)}</span>`}
+  if(n){fab.innerHTML=`<svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg><span>Ver sacola · ${n} ${n>1?'itens':'item'}</span><strong class="num">${money(totals(draftOrder()).sub)}</strong>`}
   if(bump&&n){fab.classList.remove('bump');void fab.offsetWidth;fab.classList.add('bump')}
 }
 $('#c-bairro').innerHTML=Object.entries(BAIRROS).map(([b,f])=>`<option value="${b}">${b} · entrega ${money(f)}</option>`).join('');
@@ -1238,12 +1389,27 @@ function renderCart(){
  const items=cartItems();
  $('#cartLines').innerHTML=items.length?items.map(([id,q])=>`<li><div><button type="button" class="cart-item-title" data-client="edit-item" data-id="${id}">${esc(M[id].name)}</button><div class="pr num">${money(M[id].price)} cada</div>${S.cartNotes[id]?`<p class="cart-item-note">${esc(S.cartNotes[id])}</p>`:''}<button type="button" class="cart-edit" data-client="edit-item" data-id="${id}">Editar item</button></div><span class="stepper"><button type="button" data-dec="${id}" aria-label="Remover um ${esc(M[id].name)}">−</button><output class="num">${q}</output><button type="button" data-inc="${id}" aria-label="Adicionar mais um ${esc(M[id].name)}">+</button></span></li>`).join(''):'<li class="notice">Seu pedido está vazio. Escolha algo gostoso na carta.</li>';
  const ent=otype()==='Entrega';$('#deliveryFields').hidden=!ent;$('#pickupNote').hidden=ent;
- const t=totals(draftOrder());$('#totals').innerHTML=`<div><span>Itens</span><span>${money(t.sub)}</span></div><div><span>${ent?'Entrega · '+esc($('#c-bairro').value):'Retirada'}</span><span>${ent?money(t.fee):'Grátis'}</span></div><div class="grand"><span>Total</span><span>${money(t.total)}</span></div>`;
+ const t=totals(draftOrder());
+ $('#catalog-bag-lines').hidden=!items.length;
+ $('#catalog-bag-lines').innerHTML=items.map(([id,quantity])=>
+   `<li><span>${quantity} × ${esc(M[id].name)}</span><strong class="num">${money(M[id].price*quantity)}</strong></li>`
+ ).join('');
+ $('#catalog-bag-empty').hidden=!!items.length;
+ $('#catalog-bag-total').textContent=money(t.sub);
+ $('#catalog-bag-open').disabled=!items.length;
+ $('#totals').innerHTML=`<div><span>Itens</span><span>${money(t.sub)}</span></div><div><span>${ent?'Entrega · '+esc($('#c-bairro').value):'Retirada'}</span><span>${ent?money(t.fee):'Grátis'}</span></div><div class="grand"><span>Total</span><span>${money(t.total)}</span></div>`;
  $('#c-submit').disabled=!items.length;renderCheckoutSteps();updateVisitCount();
 }
-$('#mbarOrder').addEventListener('click',()=>{if(cartCount())openDrawer();else scrollToId('cardapio')});
+$('#mbarOrder').addEventListener('click',openDrawer);
+$('#catalog-bag-open').addEventListener('click',openDrawer);
 function openDrawer(){C.checkout=1;C.cmax=1;$('#c-err').textContent='';$('#drawer').hidden=false;$('#overlay').hidden=false;renderCart();renderFab();$('#d-close').focus()}
-function closeDrawer(){$('#drawer').hidden=true;$('#overlay').hidden=true;renderFab();if($('#fab').getClientRects().length)$('#fab').focus({preventScroll:true});else if(!$('#mbar').hidden)$('#mbarOrder').focus({preventScroll:true});else $('#cats [aria-pressed="true"]').focus({preventScroll:true})}
+function closeDrawer(){
+  $('#drawer').hidden=true;
+  $('#overlay').hidden=true;
+  renderFab();
+  const candidates=[$('#catalog-bag-open'),$('#fab'),$('#mbarOrder'),$('#catalog-search')];
+  candidates.find(el=>!el.disabled&&el.getClientRects().length)?.focus({preventScroll:true});
+}
 $('#fab').addEventListener('click',openDrawer);
 $('#d-close').addEventListener('click',closeDrawer);
 $('#overlay').addEventListener('click',closeDrawer);
@@ -1252,15 +1418,10 @@ $('#c-bairro').addEventListener('change',renderCart);
 
 $('#orderForm').addEventListener('submit',e=>{
   e.preventDefault();
-  if(C.checkout<3){goCheckoutStep(C.checkout+1);return}
-  if(!validateCheckoutStep(2)){C.checkout=2;renderCheckoutSteps();return}
-  if(!validateContact('c'))return;
+  if(C.checkout===1){goCheckoutStep(2);return}
+  if(!validateCheckoutStep(2))return;
   const err=$('#c-err');err.textContent='';
   const name=$('#c-name').value.trim(),phone=$('#c-phone').value.trim(),type=otype();
-  if(!cartCount()){err.textContent='Adicione pelo menos um prato.';return}
-  if(!name){err.textContent='Informe seu nome.';$('#c-name').focus();return}
-  if(digits(phone).length<10){err.textContent='Informe um WhatsApp com DDD, por exemplo (12) 99999-9999.';$('#c-phone').focus();return}
-  if(type==='Entrega'&&!$('#c-addr').value.trim()){err.textContent='Informe o endereço de entrega.';$('#c-addr').focus();return}
   const o={id:S.nextOrder++,date:TODAY,itemNotes:{...S.cartNotes},origin:'Site',customer:name,phone,items:cartItems(),type,bairro:type==='Entrega'?$('#c-bairro').value:null,addr:$('#c-addr').value.trim(),pay:$('input[name=pay]:checked').value,notes:$('#c-notes').value.trim(),email:$('#c-email').value.trim(),status:'novo',time:nowHM(),fresh:true};
   o.eta=createOrderEta(o);S.orders.unshift(o);linkOrder(o);
   const msg=orderMsg(o);
@@ -1383,7 +1544,7 @@ const etaClock=ms=>new Intl.DateTimeFormat('pt-BR',{hour:'2-digit',minute:'2-dig
 function orderEtaLabel(o){if(o.status==='concluido')return o.type==='Entrega'?'Entrega concluída':'Retirada concluída';if(readyForPickup(o))return 'Pronto para retirar';const remaining=etaRemaining(o),kind=o.type==='Entrega'?'Entrega':'Retirada';return remaining?`${kind} em cerca de ${remaining} min · ${etaClock(o.eta.dueAt)}`:`${kind}: aguardando atualização do prazo`}
 function orderEtaMarkup(o,staff=false){if(o.status==='concluido')return'';const eta=ensureOrderEta(o),ready=readyForPickup(o);return `<div class="order-eta ${eta.source==='manual'?'adjusted':''}"><div class="order-eta-copy"><span class="eta-clock-icon">${uiIcon('clock')}</span><div><strong data-order-eta="${o.id}">${esc(orderEtaLabel(o))}</strong>${ready?'':`<small>${eta.source==='manual'?`Atualizado pela equipe às ${etaClock(eta.updatedAt)} · ${esc(ETA_REASONS[eta.reason])}`:`Preparo ${eta.prepMinutes} min${eta.travelMinutes?' + deslocamento '+eta.travelMinutes+' min':''} · previsão de exemplo`}</small>`}</div></div>${staff&&!ready?`<button type="button" class="eta-adjust" data-action="order-eta" data-key="${o.id}">Ajustar previsão <span aria-hidden="true">↗</span></button>`:''}</div>`}
 function savePrepTimes(fd){const next={};for(const m of MENU){const raw=fd.get('prep-'+m.id),minutes=Number(raw);if(raw===null||!String(raw).trim()||!Number.isInteger(minutes)||minutes<1||minutes>180)return{error:`Informe de 1 a 180 minutos para ${m.name}.`};next[m.id]=minutes}const rawTravel=fd.get('prep-delivery'),travel=Number(rawTravel);if(rawTravel===null||!String(rawTravel).trim()||!Number.isInteger(travel)||travel<0||travel>120)return{error:'Informe de 0 a 120 minutos de deslocamento para entrega.'};D.prepTimes=next;D.deliveryMinutes=travel;activity('Tempos fictícios da carta atualizados. Pedidos já recebidos mantêm sua previsão.','pedidos');return{message:'Tempos da carta salvos na demo. Valem para os próximos pedidos.'}}
-function prepTimesForm(){openOp('Tempos da carta',`<p class="client-notice"><strong>Minutos de exemplo, editáveis pela equipe.</strong> Os itens são preparados em paralelo: usamos o maior tempo de preparo do pedido. Entrega soma o deslocamento abaixo. Pedidos já recebidos mantêm sua previsão; ajuste-os individualmente em “Ajustar previsão”.</p><div class="prep-time-fields">${CATS.slice(1).map(cat=>`<fieldset><legend>${esc(cat)}</legend>${MENU.filter(m=>m.cat===cat).map(m=>`<label class="prep-time-row" for="prep-${m.id}"><span>${esc(m.name)}</span><span class="prep-minute-input"><input id="prep-${m.id}" name="prep-${m.id}" type="number" value="${prepMinutes(m.id)}" min="1" max="180" step="1" required><span>min</span></span></label>`).join('')}</fieldset>`).join('')}</div><div class="prep-delivery-field">${field('prep-delivery','Deslocamento adicional para entrega (min)','number',D.deliveryMinutes,'required min="0" max="120" step="1"')}<p class="ops-small">Deslocamento fictício único para esta demo. Retirada não recebe esse acréscimo.</p></div>`,fd=>{const result=savePrepTimes(fd);if(!result.error){renderMenu(true);renderCart();renderFab()}return result},'Salvar tempos na demo')}
+function prepTimesForm(){openOp('Tempos da carta',`<p class="client-notice"><strong>Minutos de exemplo, editáveis pela equipe.</strong> Os itens são preparados em paralelo: usamos o maior tempo de preparo do pedido. Entrega soma o deslocamento abaixo. Pedidos já recebidos mantêm sua previsão; ajuste-os individualmente em “Ajustar previsão”.</p><div class="prep-time-fields">${CATS.slice(1).map(cat=>`<fieldset><legend>${esc(cat)}</legend>${MENU.filter(m=>m.cat===cat).map(m=>`<label class="prep-time-row" for="prep-${m.id}"><span>${esc(m.name)}</span><span class="prep-minute-input"><input id="prep-${m.id}" name="prep-${m.id}" type="number" value="${prepMinutes(m.id)}" min="1" max="180" step="1" required><span>min</span></span></label>`).join('')}</fieldset>`).join('')}</div><div class="prep-delivery-field">${field('prep-delivery','Deslocamento adicional para entrega (min)','number',D.deliveryMinutes,'required min="0" max="120" step="1"')}<p class="ops-small">Deslocamento fictício único para esta demo. Retirada não recebe esse acréscimo.</p></div>`,fd=>{const result=savePrepTimes(fd);if(!result.error){renderMenu();renderCart();renderFab()}return result},'Salvar tempos na demo')}
 function adjustOrderEta(id,{minutes,reason,expectedRevision}){const o=S.orders.find(o=>String(o.id)===String(id));if(!o||o.status==='concluido'||readyForPickup(o))return{error:'Ajuste a previsão enquanto o pedido ainda estiver aguardando preparo ou entrega.'};if(!Number.isInteger(minutes)||minutes<1||minutes>240)return{error:'Informe de 1 a 240 minutos a partir de agora.'};if(!Object.prototype.hasOwnProperty.call(ETA_REASONS,reason))return{error:'Escolha o motivo do ajuste.'};const previous=ensureOrderEta(o);if(previous.revision!==expectedRevision)return{error:'Esta previsão já foi atualizada. Feche e revise o prazo antes de ajustar novamente.'};const now=Date.now();o.eta={...previous,totalMinutes:minutes,updatedAt:now,dueAt:now+minutes*60000,revision:previous.revision+1,source:'manual',reason};activity(`Previsão do pedido ${orderNo(o.id)} ajustada para ${minutes} min a partir de agora · ${ETA_REASONS[reason]}.`,'pedidos');return{message:`Previsão ${orderNo(o.id)} atualizada para ${minutes} min a partir de agora.`}}
 function orderEtaForm(id){const o=S.orders.find(o=>String(o.id)===String(id));if(!o||o.status==='concluido'||readyForPickup(o)){toast('O pedido já está pronto ou concluído.');return}const eta=ensureOrderEta(o),expectedRevision=eta.revision;openOp('Ajustar previsão do pedido',`<div class="pickup-notice-intro"><strong>${orderNo(o.id)} · ${esc(o.customer)}</strong><p>${esc(orderEtaLabel(o))}</p></div><div class="form">${field('eta-minutes','Novo prazo a partir de agora (min)','number',Math.max(1,etaRemaining(o)),'required min="1" max="240" step="1"')}<div class="eta-presets" role="group" aria-label="Acrescentar tempo ao novo prazo"><button type="button" data-eta-add="10">+10 min</button><button type="button" data-eta-add="20">+20 min</button><button type="button" data-eta-add="30">+30 min</button></div>${selectField('eta-reason','Motivo visível ao cliente',Object.entries(ETA_REASONS),eta.reason||'alta_demanda')}<div class="demo-result">${o.type==='Entrega'?'Entrega':'Retirada'} prevista às <b id="eta-preview">${etaClock(Date.now()+Math.max(1,etaRemaining(o))*60000)}</b></div><p class="ops-small">Este é o tempo restante total, contado a partir de agora${o.type==='Entrega'?', já incluindo o deslocamento':''}. O novo prazo aparece em “Minha visita” nesta mesma sessão. Não altera cobrança, estoque ou status e não envia mensagens.</p></div>`,fd=>adjustOrderEta(id,{minutes:Number(fd.get('eta-minutes')),reason:fd.get('eta-reason'),expectedRevision}),'Atualizar previsão na demo');const input=$('#eta-minutes');input.addEventListener('input',()=>{const minutes=Number(input.value);$('#eta-preview').textContent=Number.isInteger(minutes)&&minutes>=1&&minutes<=240?etaClock(Date.now()+minutes*60000):'Revise os minutos'});$$('[data-eta-add]',$('#op-body')).forEach(b=>b.addEventListener('click',()=>{input.value=Math.min(240,Math.max(0,Number(input.value)||0)+Number(b.dataset.etaAdd));input.dispatchEvent(new Event('input',{bubbles:true}))}))}
 function refreshOrderEtaLabels(){if(document.hidden)return;$$('[data-order-eta]').forEach(el=>{const o=S.orders.find(o=>String(o.id)===el.dataset.orderEta);if(o)el.textContent=orderEtaLabel(o)})}
@@ -1597,7 +1758,7 @@ function updateVisitCount(){if(!C.clientId)return;const n=S.res.filter(r=>r.clie
 function chooseClientScenario(mode,announce=true){
  let c=mode==='new'?(D.clients.find(c=>phoneKey(c.phone)===phoneKey(NEW_PERSON.phone))||NEW_PERSON):D.clients.find(c=>c.name==='Fernanda Lima');
  C.clientId=c.id;C.scenario=mode;C.rstep=1;C.rmax=1;C.checkout=1;C.cmax=1;C.editRes=null;C.portalTab='reservas';S.cart={};S.cartNotes={};S.slot=null;
- $('#resForm').reset();$('#orderForm').reset();$('#r-date').value=firstOpenDate();$('#c-bairro').value='Topolândia';$('#demo-scenario').value=mode;setPeople(2);fillClientContact();renderSlots();renderBookingSteps();renderCart();renderMenu(true);renderFab();updateVisitCount();
+ $('#resForm').reset();$('#orderForm').reset();$('#r-date').value=firstOpenDate();$('#c-bairro').value='Topolândia';$('#demo-scenario').value=mode;setPeople(2);fillClientContact();renderSlots();renderBookingSteps();renderCart();renderMenu();renderFab();updateVisitCount();
  if(announce)toast(`Cenário de ${esc(first(c.name))} selecionado. Tudo continua sendo uma simulação.`);
 }
 function initializeClientDemo(){const c=D.clients.find(c=>c.name==='Fernanda Lima');C.clientId=c.id;const date=nextBookableDate(),times=validTimeOptions(date),time=times.includes('19:30')?'19:30':times[0];if(!S.res.some(r=>r.code==='RES-2808'))S.res.push({code:'RES-2808',date,time,people:2,area:'Varanda',name:c.name,phone:c.phone,email:c.email,clientId:c.id,origin:'Site',status:'confirmada',tables:[],notes:'Próxima visita de exemplo'});S.cartNotes={};fillClientContact();renderBookingSteps();updateVisitCount();BASE_DEMO=JSON.stringify({S,D})}
@@ -1616,15 +1777,15 @@ function quickDate(which){return which==='today'?TODAY:which==='tomorrow'?TOMORR
 $('#r-next').addEventListener('click',()=>goBookingStep(C.rstep+1));$('#r-back').addEventListener('click',()=>goBookingStep(C.rstep-1));
 $('#resForm').addEventListener('click',e=>{const step=e.target.closest('[data-res-step]');if(step){goBookingStep(Number(step.dataset.resStep));return}const quick=e.target.closest('[data-rquick]');if(quick){$('#r-date').value=quickDate(quick.dataset.rquick);S.slot=null;renderSlots();updateBookingSummary();clearClientError($('#r-date'))}});
 $('#resForm').addEventListener('change',()=>{updateBookingSummary();$('#r-err').textContent=''});$('#resForm').addEventListener('input',e=>{if(e.target.matches('input,textarea'))clearClientError(e.target)});
-function renderCheckoutSteps(){if(!$('#checkoutSteps'))return;$$('[data-checkout-pane]').forEach(p=>p.hidden=Number(p.dataset.checkoutPane)!==C.checkout);$$('#checkoutSteps [data-checkout-step]').forEach(b=>{const step=Number(b.dataset.checkoutStep);b.disabled=step>C.cmax;b.setAttribute('aria-current',step===C.checkout?'step':'false');b.classList.toggle('done',step<C.checkout)});$('#c-back').hidden=C.checkout===1;$('#c-next').hidden=C.checkout===3;$('#c-submit').hidden=C.checkout!==3;$('#c-next').textContent=C.checkout===1?'Continuar · '+money(totals(draftOrder()).total):'Revisar pedido';$('#c-next').disabled=!cartCount();$('#c-submit').innerHTML=`Confirmar pedido · <span class="num">${money(totals(draftOrder()).total)}</span>`;const ent=otype()==='Entrega';$('#pickup-contact-hint').hidden=ent;$('#deliveryHeading').textContent=ent?'Onde vamos entregar?':'Sua retirada no Matriz';const estimate=estimateOrder(draftOrder());$('#cEta').innerHTML=cartCount()?`<b>${ent?'Entrega':'Retirada'} · cerca de ${estimate.totalMinutes} min</b><small>Preparo ${estimate.prepMinutes} min${ent?' + deslocamento '+estimate.travelMinutes+' min · taxa '+money(totals(draftOrder()).fee):' · sem taxa de entrega'} · exemplo</small>`:'<b>Escolha seus itens</b><small>A previsão aparece conforme o preparo dos produtos.</small>';$('#pickup-time-preview').textContent=estimate.prepMinutes?`Preparo aproximado: ${estimate.prepMinutes} min, conforme os itens escolhidos.`:'Escolha os itens para calcular o preparo.'}
-function validateCheckoutStep(step){$('#c-err').textContent='';if(!cartCount()){$('#c-err').textContent='Adicione um item do cardápio para continuar.';return false}if(step===2&&otype()==='Entrega'&&!$('#c-addr').value.trim())return clientError('c-addr','Informe o endereço de entrega.','c-err');return step===3?validateContact('c'):true}
-function goCheckoutStep(step){if(step>C.checkout){for(let i=C.checkout;i<step;i++)if(!validateCheckoutStep(i)){C.checkout=i;renderCheckoutSteps();return}C.cmax=Math.max(C.cmax,step)}C.checkout=Math.max(1,Math.min(3,step));$('#c-err').textContent='';renderCheckoutSteps();$('#orderForm').scrollTop=0;const heading=$(`[data-checkout-pane="${C.checkout}"] h3`);if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true})}}
+function renderCheckoutSteps(){if(!$('#checkoutSteps'))return;$$('[data-checkout-pane]').forEach(p=>p.hidden=Number(p.dataset.checkoutPane)!==C.checkout);$$('#checkoutSteps [data-checkout-step]').forEach(b=>{const step=Number(b.dataset.checkoutStep);b.disabled=step>C.cmax;b.setAttribute('aria-current',step===C.checkout?'step':'false');b.classList.toggle('done',step<C.checkout)});$('#c-back').hidden=C.checkout===1;$('#c-next').hidden=C.checkout===2;$('#c-submit').hidden=C.checkout!==2;$('#c-next').textContent=C.checkout===1?'Continuar · '+money(totals(draftOrder()).total):'Revisar pedido';$('#c-next').disabled=!cartCount();$('#c-submit').innerHTML=`Confirmar pedido · <span class="num">${money(totals(draftOrder()).total)}</span>`;const ent=otype()==='Entrega';$('#pickup-contact-hint').hidden=ent;$('#deliveryHeading').textContent=ent?'Onde vamos entregar?':'Sua retirada no Matriz';const estimate=estimateOrder(draftOrder());$('#cEta').innerHTML=cartCount()?`<b>${ent?'Entrega':'Retirada'} · cerca de ${estimate.totalMinutes} min</b><small>Preparo ${estimate.prepMinutes} min${ent?' + deslocamento '+estimate.travelMinutes+' min · taxa '+money(totals(draftOrder()).fee):' · sem taxa de entrega'} · exemplo</small>`:'<b>Escolha seus itens</b><small>A previsão aparece conforme o preparo dos produtos.</small>';$('#pickup-time-preview').textContent=estimate.prepMinutes?`Preparo aproximado: ${estimate.prepMinutes} min, conforme os itens escolhidos.`:'Escolha os itens para calcular o preparo.'}
+function validateCheckoutStep(step){$('#c-err').textContent='';if(!cartCount()){$('#c-err').textContent='Adicione um item do cardápio para continuar.';return false}if(step===2&&otype()==='Entrega'&&!$('#c-addr').value.trim())return clientError('c-addr','Informe o endereço de entrega.','c-err');return step===2?validateContact('c'):true}
+function goCheckoutStep(step){if(step>C.checkout){for(let i=C.checkout;i<step;i++)if(!validateCheckoutStep(i)){C.checkout=i;renderCheckoutSteps();return}C.cmax=Math.max(C.cmax,step)}C.checkout=Math.max(1,Math.min(2,step));$('#c-err').textContent='';renderCheckoutSteps();$('#orderForm').scrollTop=0;const heading=$(`[data-checkout-pane="${C.checkout}"] h3`);if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true})}}
 $('#c-next').addEventListener('click',()=>goCheckoutStep(C.checkout+1));$('#c-back').addEventListener('click',()=>goCheckoutStep(C.checkout-1));$('#orderForm').addEventListener('input',e=>{if(e.target.matches('input,textarea'))clearClientError(e.target)});document.addEventListener('click',e=>{const b=e.target.closest('[data-checkout-step]');if(b)goCheckoutStep(Number(b.dataset.checkoutStep))});
 function openItem(id,editing=false){const m=M[id];if(!m)return;C.item={id,editing,qty:editing?(S.cart[id]||1):1};C.itemFocus=document.activeElement;const pairs=editing?[]:(PAIRINGS[id]||[]).map(k=>M[k]);$('#item-content').innerHTML=`<div class="item-layout ${m.img?'':'no-photo'}">${m.img?`<img class="item-main-photo" src="${IMG[m.img]}" alt="${esc(m.name)}">`:''}<div class="item-detail"><p class="eyebrow">${m.cat} · Matriz Bar</p><h2 id="item-title">${esc(m.name)}</h2>${m.desc?`<p class="item-desc">${esc(m.desc)}</p>`:''}<p class="item-price num">${money(m.price)}</p><p class="prep-time">${uiIcon('clock')} Preparo aproximado: ${prepMinutes(m.id)} min</p><div class="field"><label for="item-note">Uma observação para este item? <span class="muted">(opcional)</span></label><textarea id="item-note" maxlength="180" placeholder="Escreva sua observação…">${esc(S.cartNotes[id]||'')}</textarea><p class="item-note-hint">A observação vale para a quantidade deste item no pedido.</p></div>${pairs.length?`<div class="pairing-list"><p>Combina com a sua mesa</p>${pairs.map(p=>`<label class="pairing-option"><input type="checkbox" name="pairing" value="${p.id}">${p.img?`<img src="${IMG[p.img]}" alt="">`:''}<span>${esc(p.name)}<small>${money(p.price)} · preço individual</small></span><span class="pair-plus">Adicionar</span></label>`).join('')}</div>`:''}</div></div>`;$('#item-qty').textContent=C.item.qty;updateItemTotal();$('#item-dialog').hidden=false;renderFab();$('#item-close').focus()}
 function updateItemTotal(){if(!C.item)return;const extra=$$('input[name=pairing]:checked',$('#item-form')).reduce((a,x)=>a+M[x.value].price,0);$('#item-add').innerHTML=(C.item.editing?'Atualizar item':'Adicionar ao pedido')+' · <span class="num">'+money(M[C.item.id].price*C.item.qty+extra)+'</span>';$('#item-qty').textContent=C.item.qty}
 function closeItem(){const previous=C.itemFocus;$('#item-dialog').hidden=true;C.item=null;renderFab();if(previous?.isConnected)previous.focus({preventScroll:true});else if(!$('#drawer').hidden)$('#d-close').focus()}
 $('#item-close').addEventListener('click',closeItem);$('#item-dialog').addEventListener('click',e=>{if(e.target.id==='item-dialog')closeItem();const b=e.target.closest('[data-item-qty]');if(b&&C.item){C.item.qty=Math.max(1,Math.min(20,C.item.qty+Number(b.dataset.itemQty)));updateItemTotal()}});$('#item-form').addEventListener('change',updateItemTotal);
-$('#item-form').addEventListener('submit',e=>{e.preventDefault();if(!C.item)return;const item={...C.item};S.cart[item.id]=item.editing?item.qty:(S.cart[item.id]||0)+item.qty;const note=$('#item-note').value.trim();if(note)S.cartNotes[item.id]=note;else delete S.cartNotes[item.id];$$('input[name=pairing]:checked',e.currentTarget).forEach(el=>S.cart[el.value]=(S.cart[el.value]||0)+1);closeItem();renderMenu(true);renderCart();renderFab(true);$('#cartStatus').textContent=`${M[item.id].name} atualizado no pedido. ${cartCount()} itens no total.`;toast(`${esc(M[item.id].name)} ${item.editing?'atualizado':'adicionado'} ao pedido.`)});
+$('#item-form').addEventListener('submit',e=>{e.preventDefault();if(!C.item)return;const item={...C.item};S.cart[item.id]=item.editing?item.qty:(S.cart[item.id]||0)+item.qty;const note=$('#item-note').value.trim();if(note)S.cartNotes[item.id]=note;else delete S.cartNotes[item.id];$$('input[name=pairing]:checked',e.currentTarget).forEach(el=>S.cart[el.value]=(S.cart[el.value]||0)+1);closeItem();renderMenu();renderCart();renderFab(true);$('#cartStatus').textContent=`${M[item.id].name} atualizado no pedido. ${cartCount()} itens no total.`;toast(`${esc(M[item.id].name)} ${item.editing?'atualizado':'adicionado'} ao pedido.`)});
 
 function customerOrders(){const orders=S.orders.filter(o=>o.clientId===C.clientId);const regular=D.clients.find(c=>c.name==='Fernanda Lima');return C.clientId===regular.id?[...orders,SAMPLE_ORDER]:orders}
 function customerOrder(key){return String(key)===SAMPLE_ORDER.id&&clientPerson().name==='Fernanda Lima'?SAMPLE_ORDER:S.orders.find(o=>String(o.id)===String(key)&&o.clientId===C.clientId)}
@@ -1646,10 +1807,10 @@ function renderClientVisit(){if(!C.visit)return;const {view,key}=C.visit,c=clien
 function showReservationReceipt(r,data){C.receipts['res:'+r.code]=data;takeClientIdentity(r.clientId);C.editRes=null;C.rstep=1;C.rmax=1;C.portalTab='reservas';renderBookingSteps();openVisit('reservation',r.code)}
 function showOrderReceipt(o,data){C.receipts['order:'+o.id]=data;takeClientIdentity(o.clientId);C.checkout=1;C.cmax=1;C.portalTab='pedidos';renderCart();openVisit('order',o.id)}
 function startClientBooking(code=''){const r=code?S.res.find(r=>r.code===code&&r.clientId===C.clientId):null;if(r&&!activeBooking(r)){toast('Esta reserva já foi encerrada. Crie uma nova reserva.');return}closeVisit(false);C.editRes=r?.code||null;C.rstep=1;C.rmax=1;$('#resForm').reset();fillClientContact();$('#r-date').value=r?.date||firstOpenDate();setPeople(r?.people||2);$('#r-area-'+((r?.area||'Varanda')==='Salão'?'salao':'varanda')).checked=true;S.slot=r?.time||null;$('#r-notes').value=r?.notes||'';renderSlots();renderBookingSteps();go('site');clientJump('reservas')}
-function repeatClientOrder(key){const o=customerOrder(key);if(!o)return;for(const[id,q]of o.items){S.cart[id]=(S.cart[id]||0)+q;if(o.itemNotes?.[id])S.cartNotes[id]=o.itemNotes[id]}$('#c-type-'+(o.type==='Entrega'?'ent':'ret')).checked=true;if(o.bairro&&BAIRROS[o.bairro]!==undefined)$('#c-bairro').value=o.bairro;fillClientContact();closeVisit(false);renderMenu(true);renderCart();renderFab(true);openDrawer();toast('Itens adicionados ao carrinho. Revise as quantidades e confirme na demo.')}
+function repeatClientOrder(key){const o=customerOrder(key);if(!o)return;for(const[id,q]of o.items){S.cart[id]=(S.cart[id]||0)+q;if(o.itemNotes?.[id])S.cartNotes[id]=o.itemNotes[id]}$('#c-type-'+(o.type==='Entrega'?'ent':'ret')).checked=true;if(o.bairro&&BAIRROS[o.bairro]!==undefined)$('#c-bairro').value=o.bairro;fillClientContact();closeVisit(false);renderMenu();renderCart();renderFab(true);openDrawer();toast('Itens adicionados ao carrinho. Revise as quantidades e confirme na demo.')}
 function advanceRestaurantOrder(id){const o=S.orders.find(x=>String(x.id)===String(id));if(!o||o.status==='concluido')return{error:'Este pedido já foi concluído.'};if(o.status==='novo'){const missing=canConsume(o);if(missing)return{error:`Estoque de exemplo insuficiente de ${missing}. Ajuste-o no painel para continuar a simulação.`};consumeOrder(o)}if(o.status==='entrega'){if(o.pay==='Dinheiro'&&!D.cash.open)return{error:'Abra o caixa de exemplo no painel para registrar o recebimento em dinheiro.'};collectOrder(o)}o.status={novo:'preparo',preparo:'entrega',entrega:'concluido'}[o.status];if(S.auto.waStatus&&!readyForPickup(o))log('WhatsApp',o.customer,statusMsg(o));activity(`Pedido ${orderNo(o.id)}: ${orderLabels(o)[orderIndex(o)]}.`,'pedidos');updateVisitCount();return{status:o.status}}
 $('#demo-scenario').addEventListener('change',e=>{if(e.target.value!=='custom')chooseClientScenario(e.target.value)});
-window.addEventListener('scroll',()=>{if(S.view!=='site'||innerWidth>760)return;const rect=$('#resForm').getBoundingClientRect(),active=rect.top<innerHeight*.55&&rect.bottom>130;if(active!==document.body.classList.contains('booking-active'))renderFab();else renderMobileNav()},{passive:true});
+window.addEventListener('scroll',()=>{if(S.view!=='site'||innerWidth>760)return;const rect=$('#resForm').getBoundingClientRect(),active=rect.top<Math.min(180,innerHeight*.26)&&rect.bottom>130;if(active!==document.body.classList.contains('booking-active'))renderFab();else renderMobileNav()},{passive:true});
 window.addEventListener('resize',()=>{if(innerWidth>760&&!$('#app-sheet').hidden)closeAppSheet(false);renderFab();if(S.view==='painel'&&innerWidth>760&&innerWidth<=900)$(`[data-ptab="${S.ptab}"]`)?.scrollIntoView({behavior:'auto',block:'nearest',inline:'nearest'})});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-client]');if(!b)return;const a=b.dataset.client,key=b.dataset.key||'',kind=b.dataset.kind||'';
  if(a==='portal'){C.portalTab=C.portalTab||'reservas';openVisit('portal')}
@@ -1679,8 +1840,9 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-client]');
 let appSheetFocus=null;
 function renderMobileNav(){
  const res=$('#reservas').getBoundingClientRect(),contact=$('#visite').getBoundingClientRect();
- const section=contact.top<innerHeight*.5?'more':res.top<innerHeight*.5&&res.bottom>120?'reservas':'cardapio';
- $$('#mbar button').forEach(b=>{const current=b.dataset.appSection===section||(b.dataset.app==='more'&&section==='more');if(current)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+ const section=contact.top<innerHeight*.5?'more':res.top<innerHeight*.25&&res.bottom>120?'reservas':'cardapio';
+ const searching=section==='cardapio'&&document.activeElement===$('#catalog-search');
+ $$('#mbar button').forEach(b=>{const current=searching?b.dataset.app==='search':(b.dataset.appSection===section||b.dataset.app===section);if(current)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
  const primary=['hoje','pedidos','reservas','financas'];
  $$('#panel-mbar button').forEach(b=>{const current=b.dataset.appPanel===S.ptab||(b.dataset.app==='more'&&!primary.includes(S.ptab));if(current)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
  const more=$('#panel-mbar [data-app="more"]');more.setAttribute('aria-label',primary.includes(S.ptab)?'Mais funções do restaurante':`Mais funções · ${PANEL_TITLES[S.ptab]}`);
@@ -1688,7 +1850,7 @@ function renderMobileNav(){
 function appIcon(name){if(name==='home')return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg>';const source=$(`[data-ptab="${name}"] svg`);return source?source.outerHTML:$('#mbar [data-app-section="cardapio"] svg').outerHTML}
 function openAppSheet(){
  appSheetFocus=document.activeElement;const panel=S.view==='painel';$('#app-sheet-title').textContent=panel?'Mais do restaurante':'Mais do Matriz';
- const routes=panel?[['clientes','Clientes'],['compras','Compras'],['estoque','Estoque'],['equipe','Equipe'],['canais','Canais']]:[['home','Início'],['contato','Contato e horários'],['guide','Como testar a demo']];
+ const routes=panel?[['clientes','Clientes'],['compras','Compras'],['estoque','Estoque'],['equipe','Equipe'],['canais','Canais']]:[['home','Início'],['reservas','Reservar mesa'],['contato','Contato e horários'],['guide','Como testar a demo']];
  $('#app-sheet-body').innerHTML=`<div class="app-sheet-grid">${routes.map(([key,label])=>`<button type="button" ${panel?`data-app-panel="${key}" ${S.ptab===key?'aria-current="page"':''}`:`data-app="${key}"`}>${appIcon(panel?key:key==='home'?'home':'canais')}<span>${label}</span></button>`).join('')}</div><div class="app-sheet-switch"><p>Explore os dois lados desta demonstração. Todos os dados são fictícios e recomeçam ao recarregar.</p><button type="button" class="btn ${panel?'ghost':'sun'}" data-app-view="${panel?'site':'painel'}">${panel?'Ver site do cliente':'Conhecer o painel do restaurante'} ↗</button></div>`;
  $('#app-sheet').hidden=false;renderFab();$('#app-sheet-close').focus();
 }
@@ -1702,6 +1864,7 @@ document.addEventListener('click',e=>{
  if(b.dataset.appView){go(b.dataset.appView);return}
  if(b.dataset.appPanel){goPanel(b.dataset.appPanel);return}
  const action=b.dataset.app||b.dataset.appSection;
+ if(action==='search'){openCatalogSearch();return}
  if(action==='visit'){openVisit('portal');return}
  if(action==='guide'){openVisit('guide');return}
  if(action==='home'){go('site');window.scrollTo({top:0,behavior:'auto'});return}
@@ -1709,7 +1872,7 @@ document.addEventListener('click',e=>{
 });
 
 /* ---------- open status in hero ---------- */
-(function(){const d=new Date(),t=nowHM();let txt;if(d.getDay()===1)txt='Fechado hoje · abre terça';else if((t>='12:00'&&t<'15:30')||t>='18:00')txt='Aberto agora · até 00h';else txt=t<'12:00'?'Abre hoje às 12h':'Abre hoje às 18h';$('#openPill').textContent=txt})();
+(function(){const d=new Date(),t=nowHM();let txt;if(d.getDay()===1)txt='Fechado hoje · abre terça';else if((t>='12:00'&&t<'15:30')||t>='18:00')txt='Aberto agora · até 00h';else txt=t<'12:00'?'Abre hoje às 12h':'Abre hoje às 18h';$('#openPill').textContent=txt;$('#openPill').dataset.open=String(txt.startsWith('Aberto'))})();
 
 /* ---------- hours ---------- */
 (function(){const days=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],order=[2,3,4,5,6,0,1],td=new Date().getDay();
