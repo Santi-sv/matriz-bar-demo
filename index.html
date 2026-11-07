@@ -718,6 +718,46 @@ body[data-view="site"] .drawer .checkout-steps .journey-steps{grid-template-colu
 @media(max-width:480px){.catalog-controls{grid-template-columns:1fr}}
 @media(max-width:360px){.product-thumb{width:42px;height:42px}.product-meta .prep-time{font-size:.6rem}}
 
+
+/* Escolha de onde comer, antes do cardápio */
+body.choosing-order-mode .demobar{display:none}
+body.choosing-order-mode[data-view="site"]{padding-bottom:0}
+.order-start{min-height:100dvh;background:var(--paper);padding-bottom:32px}
+.order-start-cover{height:clamp(102px,23vh,210px);background:linear-gradient(0deg,#12304448,#12304419),url("assets/img-0c81e9f4.jpg") center 44% / cover no-repeat,var(--brand-navy)}
+.order-start-content{position:relative;width:min(560px,calc(100% - 28px));margin:-35px auto 0;padding:24px clamp(18px,5vw,34px);background:var(--surface);border:1px solid var(--paper-line);border-radius:20px;box-shadow:0 12px 30px -25px #12304480}
+.order-start-logo{display:block;width:70px;height:49px;object-fit:contain;border:1px solid var(--paper-line);border-radius:9px;background:#fff;padding:5px;margin-bottom:16px}
+.order-start-content .eyebrow{font-size:.67rem}
+.order-start h1{font-size:clamp(1.75rem,6vw,2.4rem);line-height:1.15;margin:7px 0}
+.order-start-lede{color:var(--muted);font-size:.93rem}
+.order-mode-options{display:grid;gap:10px;margin:21px 0}
+.order-mode-option{width:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:13px;text-align:left;border:1px solid var(--paper-line);border-radius:12px;background:var(--paper);color:var(--ink);padding:14px;min-height:76px;transition:border-color .2s,background .2s}
+.order-mode-option:hover{border-color:var(--accent-ink);background:color-mix(in srgb,var(--brand-oxide) 9%,var(--paper))}
+.order-mode-option strong,.order-mode-option small{display:block}
+.order-mode-option strong{font-size:1rem}
+.order-mode-option small{font-size:.8rem;color:var(--muted);margin-top:3px}
+.order-mode-icon{display:grid;place-items:center;width:39px;height:39px;background:var(--brand-navy);color:white;border-radius:9px}
+.order-mode-icon svg{width:21px;height:21px}
+.order-mode-arrow{color:var(--accent-ink);font-size:1.2rem}
+.order-start-foot{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;padding-top:13px;border-top:1px solid var(--paper-line);color:var(--muted);font-size:.73rem}
+.order-start-foot a{color:var(--accent-ink)}
+#order-mode-back{margin-bottom:16px}
+.catalog-order-mode{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.76rem}
+.catalog-order-mode strong{color:var(--ink)}
+.catalog-order-mode button{min-height:40px;padding:4px 2px}
+#checkout-mode-summary{font-size:.86rem;color:var(--muted)}
+#home-fulfillment legend{margin-bottom:8px}
+#home-fulfillment{padding:0;border:0;min-width:0;margin:0}
+#home-fulfillment .seg{grid-template-columns:repeat(2,minmax(0,1fr))}
+#home-fulfillment .seg label{white-space:normal}
+#order-contact{display:grid;gap:15px}
+#order-start-title:focus,#catalog-title:focus{outline:none}
+#home-fulfillment label:has(input:focus-visible){outline:2px solid var(--accent-ink);outline-offset:2px}
+@media(max-width:450px){
+  .order-start-content{padding-top:19px}
+  .order-mode-option{padding:12px;gap:10px}
+  .catalog-order-mode{justify-content:end}
+}
+
 </style>
 </head>
 <body>
@@ -737,8 +777,32 @@ body[data-view="site"] .drawer .checkout-steps .journey-steps{grid-template-colu
   </div>
 </div>
 
+<main class="order-start" id="order-start" hidden aria-labelledby="order-start-title">
+  <div class="order-start-cover" aria-hidden="true"></div>
+  <div class="order-start-content">
+    <img src="assets/img-91d681e9.png" alt="" class="order-start-logo" width="80" height="64">
+    <p class="eyebrow">Matriz Bar · São Sebastião</p>
+    <h1 id="order-start-title" tabindex="-1">Onde você vai comer?</h1>
+    <p class="order-start-lede">Escolha uma opção para abrir o cardápio.</p>
+    <div class="order-mode-options">
+      <button type="button" class="order-mode-option" data-order-mode="local">
+        <span class="order-mode-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round"><path d="M4 3v5a3 3 0 0 0 6 0V3M7 3v18M20 3c-3 2-5 5-5 9h5m0-9v18"/></svg></span>
+        <span><strong>No local</strong><small>Peça para comer na sua mesa.</small></span>
+        <span class="order-mode-arrow" aria-hidden="true">→</span>
+      </button>
+      <button type="button" class="order-mode-option" data-order-mode="home">
+        <span class="order-mode-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8M5 10v11h14V10M9 21v-7h6v7"/></svg></span>
+        <span><strong>Para casa</strong><small>Escolha retirada ou entrega ao finalizar.</small></span>
+        <span class="order-mode-arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+    <button type="button" id="order-mode-back" class="btn sm ghost" hidden>Voltar ao cardápio</button>
+    <div class="order-start-foot"><span>Demonstração</span><a href="#painel">Painel do restaurante ↗</a></div>
+  </div>
+</main>
+
 <!-- ============ SITE ============ -->
-<div id="view-site">
+<div id="view-site" hidden>
   <a class="skip-link" href="#cardapio">Ir para o cardápio</a>
   <header class="catalog-header">
     <div class="catalog-cover" aria-hidden="true"></div>
@@ -764,8 +828,8 @@ body[data-view="site"] .drawer .checkout-steps .journey-steps{grid-template-colu
     <div class="wrap catalog-wrap catalog-grid">
       <div class="catalog-main">
         <div class="catalog-heading">
-          <div><p class="eyebrow">À mesa ou em casa</p><h2 id="catalog-title">Cardápio</h2></div>
-          <p>Retirada no balcão · Entrega</p>
+          <div><p class="eyebrow">À mesa ou em casa</p><h2 id="catalog-title" tabindex="-1">Cardápio</h2></div>
+          <div class="catalog-order-mode"><strong id="catalog-order-mode"></strong><button type="button" class="ops-link" id="change-order-mode" aria-label="Alterar modalidade do pedido">Alterar</button></div>
         </div>
         <div class="catalog-controls">
           <div class="catalog-search">
@@ -1005,20 +1069,33 @@ body[data-view="site"] .drawer .checkout-steps .journey-steps{grid-template-colu
  <form class="drawer-body" id="orderForm" novalidate>
   <div class="checkout-step" data-checkout-pane="1">
    <h3>Itens da sacola</h3><ul class="cart-lines" id="cartLines"></ul><button type="button" class="ops-link" data-client="continue-menu">Adicionar mais itens ↗</button>
-   <div class="field"><span class="legend">Como vai aproveitar o Matriz?</span><div class="seg" role="radiogroup" aria-label="Tipo de pedido"><label><input type="radio" name="otype" id="c-type-ent" value="Entrega" checked>Entrega</label><label><input type="radio" name="otype" id="c-type-ret" value="Retirada">Retirada</label></div></div>
+   <p id="checkout-mode-summary"></p>
    <div class="fulfillment-preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><div id="cEta"></div></div>
   </div>
   <div class="checkout-step" data-checkout-pane="2" hidden>
-   <h3 id="deliveryHeading">Onde vamos entregar?</h3>
+   <h3 id="deliveryHeading">Como quer receber seu pedido?</h3>
+   <fieldset class="field" id="home-fulfillment" hidden>
+    <legend class="legend">Escolha a modalidade</legend>
+    <div class="seg">
+     <label><input type="radio" name="otype" id="c-type-ret" value="Retirada">Retirada no local</label>
+     <label><input type="radio" name="otype" id="c-type-ent" value="Entrega">Entrega em domicílio</label>
+    </div>
+   </fieldset>
+   <div class="field" id="table-fields" hidden>
+    <label for="c-table">Sua mesa</label><select id="c-table"></select>
+    <p class="ops-small">Use o número indicado na sua mesa.</p>
+   </div>
    <div id="deliveryFields" class="form" style="gap:18px"><div class="field"><label for="c-bairro">Bairro</label><select id="c-bairro"></select></div><div class="field"><label for="c-addr">Endereço</label><input type="text" id="c-addr" autocomplete="street-address" value="Rua Expedicionário Brasileiro, 240" maxlength="180"></div><p class="ops-small">Bairros, taxas e prazos são exemplos desta demonstração.</p></div>
    <div id="pickupNote" class="pickup-details" hidden><h4>Retirada no Matriz</h4><p>Centro · São Sebastião, SP<br><span id="pickup-time-preview">Escolha os itens para calcular o preparo.</span></p><p>Acompanhe o preparo em “Minha visita”. Quando estiver pronto, a equipe pode simular um aviso de retirada no seu WhatsApp. Nenhum pedido ou aviso é enviado de verdade.</p></div>
-   <button type="button" class="ops-link" data-checkout-step="1">Alterar entrega ou retirada</button>
+   <p id="finalEta" class="ops-small" aria-live="polite" hidden></p>
+   <div id="order-contact">
    <h3>Seus dados e a confirmação</h3><div class="form-example"><span id="orderPersona">Dados fictícios de Fernanda</span><button type="button" data-client="fill-contact">Usar exemplo</button></div>
-   <div class="row2"><div class="field"><label for="c-name">Nome</label><input type="text" id="c-name" autocomplete="name" value="Fernanda Lima" maxlength="80"></div><div class="field"><label for="c-phone">WhatsApp</label><input type="tel" id="c-phone" autocomplete="tel" value="(12) 98812-4407"></div></div>
+   <div class="row2"><div class="field"><label for="c-name">Nome</label><input type="text" id="c-name" autocomplete="name" value="Fernanda Lima" maxlength="80"></div><div class="field" id="order-phone-field"><label for="c-phone">WhatsApp</label><input type="tel" id="c-phone" autocomplete="tel" value="(12) 98812-4407"></div></div>
    <p class="pickup-contact-hint" id="pickup-contact-hint" hidden>O WhatsApp informado será usado para o aviso de retirada quando o pedido estiver pronto. Nesta demo, o envio é simulado.</p>
-   <div class="field"><label for="c-email">E-mail para recibo <span class="muted">(opcional)</span></label><input type="email" id="c-email" autocomplete="email" value="fernanda.lima@email.com" placeholder="voce@email.com"></div>
-   <div class="field"><span class="legend">Como prefere pagar?</span><div class="pays"><label><input type="radio" name="pay" id="c-pay-pix" value="Pix" checked>Pix</label><label><input type="radio" name="pay" id="c-pay-card" value="Cartão na entrega">Cartão</label><label><input type="radio" name="pay" id="c-pay-cash" value="Dinheiro">Dinheiro</label></div></div>
+   <div class="field" id="order-email-field"><label for="c-email">E-mail para recibo <span class="muted">(opcional)</span></label><input type="email" id="c-email" autocomplete="email" value="fernanda.lima@email.com" placeholder="voce@email.com"></div>
+   <div class="field"><span class="legend">Como prefere pagar?</span><div class="pays"><label><input type="radio" name="pay" id="c-pay-pix" value="Pix" checked>Pix</label><label><input type="radio" name="pay" id="c-pay-card" value="Cartão">Cartão</label><label><input type="radio" name="pay" id="c-pay-cash" value="Dinheiro">Dinheiro</label></div></div>
    <details class="form-optional"><summary>Observações do pedido <span class="muted">(opcional)</span></summary><div class="field"><label for="c-notes">O que precisamos saber?</label><textarea id="c-notes" placeholder="Uma observação para o pedido…" maxlength="300"></textarea></div></details>
+   </div>
   </div>
  </form>
  <div class="drawer-foot"><div class="totals num" id="totals"></div><p class="err" id="c-err" role="alert"></p><div class="flow-actions"><button type="button" class="btn ghost" id="c-back" hidden>Voltar</button><button type="button" class="btn sun" id="c-next">Continuar</button><button class="btn sun" id="c-submit" type="submit" form="orderForm" hidden>Confirmar pedido</button></div><p class="checkout-caption">Pedido e pagamento de demonstração. Nada será cobrado.</p></div>
@@ -1123,7 +1200,7 @@ const LUNCH=['12:00','12:30','13:00','13:30','14:00','14:30'];
 const DINNER=['18:00','18:30','19:00','19:30','20:00','20:30','21:00','21:30','22:00','22:30'];
 
 const S={
-  view:'site', ptab:'hoje', cat:'Todas', menuQuery:'', cart:{}, cartNotes:{}, people:2, slot:null,
+  view:'site', ptab:'hoje', orderMode:'', cat:'Todas', menuQuery:'', cart:{}, cartNotes:{}, people:2, slot:null,
   nextOrder:429, nextRes:2815,
   auto:{waOrder:true,waStatus:true,waRes:true,waRemind:true,igButtons:true,igReply:true,mailRes:true,mailRemind:true,mailOrder:true},
   orders:[
@@ -1229,11 +1306,16 @@ function initializeOperations(){
 function resetOperations(opts={}){const initial=JSON.parse(BASE_DEMO);Object.keys(S).forEach(k=>delete S[k]);Object.assign(S,initial.S);Object.keys(D).forEach(k=>delete D[k]);Object.assign(D,initial.D);S.view='painel';S.ptab='hoje';$('#resForm').reset();$('#orderForm').reset();$('#c-bairro').value='Topolândia';$('#r-date').value=firstOpenDate();$('#map-date').value=D.mapDate;$('#map-time').value=D.mapTime;$('#map-area').value='Todas';$('#client-search').value='';$('#client-filter').value='all';$('#stock-search').value='';setPeople(2);renderCats();renderMenu();renderCart();renderSlots();resetClientDemo();go(opts.view==='site'?'site':'painel');toast('Demonstração reiniciada. Todos os dados de exemplo foram restaurados.')}
 
 /* ---------- helpers for messages ---------- */
+function fulfillmentLabel(o){
+  if(o.type==='No local')return 'No local · Mesa '+o.table;
+  if(o.type==='Entrega')return 'Entrega em '+o.bairro;
+  return 'Retirada no local';
+}
 function totals(o){const sub=o.items.reduce((s,[id,q])=>s+M[id].price*q,0);const fee=o.type==='Entrega'&&o.items.length?(BAIRROS[o.bairro]||0):0;return{sub,fee,total:sub+fee}}
 function orderMsg(o){
   const t=totals(o);
   const lines=o.items.map(([id,q])=>`${q}× ${M[id].name} — ${money(M[id].price*q)}${o.itemNotes?.[id]?' · Obs.: '+o.itemNotes[id]:''}`).join('\n');
-  const where=o.type==='Entrega'?`Entrega em ${o.bairro} (${money(t.fee)})`:'Retirada no balcão · Matriz Bar, Centro';
+  const where=fulfillmentLabel(o)+(o.type==='Entrega'?` (${money(t.fee)})`:'');
   const eta='Previsão aproximada: '+orderEtaLabel(o)+'. Acompanhe em Minha visita.';
   return `Olá, ${first(o.customer)}! Recebemos seu pedido ${orderNo(o.id)} no Matriz Bar.\n\n${lines}\n${where}\nTotal: ${money(t.total)} · ${o.pay}\n\n${eta}`;
 }
@@ -1257,16 +1339,56 @@ function log(ch,to,text){S.log.push({time:nowHM(),ch,to,text});if(ch==='WhatsApp
 /* ---------- toasts ---------- */
 function toast(html){const t=document.createElement('div');t.className='toast';t.innerHTML=html;$('#toasts').appendChild(t);setTimeout(()=>t.remove(),3800)}
 
+/* ---------- modalidade do pedido ---------- */
+let changingOrderMode=false;
+
+function chooseOrderMode(mode){
+  if(S.orderMode!==mode){
+    S.orderMode=mode;
+    $$('input[name=otype]').forEach(input=>{input.checked=false});
+    $('#c-table').value='';
+  }
+  changingOrderMode=false;
+  renderCart();
+  setView('site');
+  $('#catalog-title').focus({preventScroll:true});
+}
+
+$$('[data-order-mode]').forEach(button=>{
+  button.addEventListener('click',()=>chooseOrderMode(button.dataset.orderMode));
+});
+$('#change-order-mode').addEventListener('click',()=>{
+  changingOrderMode=true;
+  setView('site');
+});
+$('#order-mode-back').addEventListener('click',()=>{
+  changingOrderMode=false;
+  setView('site');
+  $('#change-order-mode').focus({preventScroll:true});
+});
+$('#order-start a').addEventListener('click',event=>{
+  event.preventDefault();
+  changingOrderMode=false;
+  go('painel');
+});
+
+
 /* ---------- views ---------- */
 function setView(v,opts={}){
   S.view=v==='painel'?'painel':'site';
-  $('#view-site').hidden=S.view!=='site';
+  const choosing=S.view==='site'&&(!S.orderMode||changingOrderMode);
+  $('#order-start').hidden=!choosing;
+  $('#order-mode-back').hidden=!S.orderMode;
+  document.body.classList.toggle('choosing-order-mode',choosing);
+  $('#view-site').hidden=S.view!=='site'||choosing;
+  $('#catalog-order-mode').textContent=S.orderMode==='local'?'No local':'Para casa';
   $('#view-painel').hidden=S.view!=='painel';
   $('#v-site').setAttribute('aria-selected',S.view==='site');
   $('#v-painel').setAttribute('aria-selected',S.view==='painel');
   renderFab();
   if(S.view==='painel')renderPanel();
-  if(!opts.keepScroll)window.scrollTo(0,0);
+  if(!opts.keepScroll||choosing)window.scrollTo(0,0);
+  if(choosing)$('#order-start-title').focus({preventScroll:true});
 }
 function go(v){try{if(location.hash!=='#'+v)location.hash=v}catch(e){}setView(v)}
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if((h==='site'||h==='painel')&&h!==S.view)setView(h)});
@@ -1365,13 +1487,15 @@ document.addEventListener('click',e=>{
 /* ---------- cart ---------- */
 const cartItems=()=>Object.entries(S.cart);
 const cartCount=()=>cartItems().reduce((s,[,q])=>s+q,0);
-const otype=()=>$('input[name=otype]:checked').value;
+function otype(){
+  return S.orderMode==='local'?'No local':($('input[name=otype]:checked')?.value||'');
+}
 function draftOrder(){return{items:cartItems(),type:otype(),bairro:$('#c-bairro').value}}
 function renderFab(bump){
   const n=cartCount(),fab=$('#fab');
   document.body.dataset.view=S.view;
   document.body.classList.toggle('has-cart',n>0);
-  const blocked=!$('#drawer').hidden||!$('#visit-dialog').hidden||!$('#item-dialog').hidden||!$('#modal').hidden||!$('#op-dialog').hidden||!$('#app-sheet').hidden;
+  const blocked=!$('#order-start').hidden||!$('#drawer').hidden||!$('#visit-dialog').hidden||!$('#item-dialog').hidden||!$('#modal').hidden||!$('#op-dialog').hidden||!$('#app-sheet').hidden;
   const booking=$('#resForm').getBoundingClientRect(),bookingActive=S.view==='site'&&innerWidth<=760&&booking.top<Math.min(180,innerHeight*.26)&&booking.bottom>130;document.body.classList.toggle('booking-active',bookingActive);
   const mb=$('#mbar');mb.hidden=S.view!=='site'||blocked;
   $('#panel-mbar').hidden=S.view!=='painel'||blocked;renderMobileNav();
@@ -1385,10 +1509,13 @@ function renderFab(bump){
 }
 $('#c-bairro').innerHTML=Object.entries(BAIRROS).map(([b,f])=>`<option value="${b}">${b} · entrega ${money(f)}</option>`).join('');
 $('#c-bairro').value='Topolândia';
+$('#c-table').innerHTML='<option value="">Selecione sua mesa</option>'+D.tables.map(table=>
+  `<option value="${esc(table.id)}">Mesa ${esc(table.id)} · ${table.area==='Varanda'?'Área externa':'Salão'}</option>`
+).join('');
 function renderCart(){
  const items=cartItems();
  $('#cartLines').innerHTML=items.length?items.map(([id,q])=>`<li><div><button type="button" class="cart-item-title" data-client="edit-item" data-id="${id}">${esc(M[id].name)}</button><div class="pr num">${money(M[id].price)} cada</div>${S.cartNotes[id]?`<p class="cart-item-note">${esc(S.cartNotes[id])}</p>`:''}<button type="button" class="cart-edit" data-client="edit-item" data-id="${id}">Editar item</button></div><span class="stepper"><button type="button" data-dec="${id}" aria-label="Remover um ${esc(M[id].name)}">−</button><output class="num">${q}</output><button type="button" data-inc="${id}" aria-label="Adicionar mais um ${esc(M[id].name)}">+</button></span></li>`).join(''):'<li class="notice">Seu pedido está vazio. Escolha algo gostoso na carta.</li>';
- const ent=otype()==='Entrega';$('#deliveryFields').hidden=!ent;$('#pickupNote').hidden=ent;
+ const type=otype();
  const t=totals(draftOrder());
  $('#catalog-bag-lines').hidden=!items.length;
  $('#catalog-bag-lines').innerHTML=items.map(([id,quantity])=>
@@ -1397,12 +1524,22 @@ function renderCart(){
  $('#catalog-bag-empty').hidden=!!items.length;
  $('#catalog-bag-total').textContent=money(t.sub);
  $('#catalog-bag-open').disabled=!items.length;
- $('#totals').innerHTML=`<div><span>Itens</span><span>${money(t.sub)}</span></div><div><span>${ent?'Entrega · '+esc($('#c-bairro').value):'Retirada'}</span><span>${ent?money(t.fee):'Grátis'}</span></div><div class="grand"><span>Total</span><span>${money(t.total)}</span></div>`;
- $('#c-submit').disabled=!items.length;renderCheckoutSteps();updateVisitCount();
+ const review=C.checkout===1||!type;
+ let fee='';
+ if(!review&&type==='Entrega'){
+   fee=`<div><span>Entrega · ${esc($('#c-bairro').value)}</span><span>${money(t.fee)}</span></div>`;
+ }else if(!review&&type==='Retirada'){
+   fee='<div><span>Retirada</span><span>Grátis</span></div>';
+ }
+ const label=review?'Subtotal':'Total';
+ const amount=review?t.sub:t.total;
+ $('#totals').innerHTML=(fee?`<div><span>Itens</span><span>${money(t.sub)}</span></div>`:'')
+   +fee+`<div class="grand"><span>${label}</span><span>${money(amount)}</span></div>`;
+ renderCheckoutSteps();updateVisitCount();
 }
 $('#mbarOrder').addEventListener('click',openDrawer);
 $('#catalog-bag-open').addEventListener('click',openDrawer);
-function openDrawer(){C.checkout=1;C.cmax=1;$('#c-err').textContent='';$('#drawer').hidden=false;$('#overlay').hidden=false;renderCart();renderFab();$('#d-close').focus()}
+function openDrawer(){if(!S.orderMode||changingOrderMode)return;C.checkout=1;C.cmax=1;$('#c-err').textContent='';$('#drawer').hidden=false;$('#overlay').hidden=false;renderCart();renderFab();$('#d-close').focus()}
 function closeDrawer(){
   $('#drawer').hidden=true;
   $('#overlay').hidden=true;
@@ -1413,7 +1550,11 @@ function closeDrawer(){
 $('#fab').addEventListener('click',openDrawer);
 $('#d-close').addEventListener('click',closeDrawer);
 $('#overlay').addEventListener('click',closeDrawer);
-$$('input[name=otype]').forEach(i=>i.addEventListener('change',renderCart));
+$$('input[name=otype]').forEach(input=>input.addEventListener('change',()=>{
+  $('#c-err').textContent='';
+  renderCart();
+}));
+$('#c-table').addEventListener('change',()=>{clearClientError($('#c-table'));$('#c-err').textContent=''});
 $('#c-bairro').addEventListener('change',renderCart);
 
 $('#orderForm').addEventListener('submit',e=>{
@@ -1421,11 +1562,21 @@ $('#orderForm').addEventListener('submit',e=>{
   if(C.checkout===1){goCheckoutStep(2);return}
   if(!validateCheckoutStep(2))return;
   const err=$('#c-err');err.textContent='';
-  const name=$('#c-name').value.trim(),phone=$('#c-phone').value.trim(),type=otype();
-  const o={id:S.nextOrder++,date:TODAY,itemNotes:{...S.cartNotes},origin:'Site',customer:name,phone,items:cartItems(),type,bairro:type==='Entrega'?$('#c-bairro').value:null,addr:$('#c-addr').value.trim(),pay:$('input[name=pay]:checked').value,notes:$('#c-notes').value.trim(),email:$('#c-email').value.trim(),status:'novo',time:nowHM(),fresh:true};
+  const name=$('#c-name').value.trim();
+  const type=otype();
+  const local=type==='No local';
+  const delivery=type==='Entrega';
+  const payment=$('input[name=pay]:checked').value;
+  const o={
+    id:S.nextOrder++,date:TODAY,itemNotes:{...S.cartNotes},origin:'Site',customer:name,
+    phone:local?'':$('#c-phone').value.trim(),email:local?'':$('#c-email').value.trim(),
+    items:cartItems(),type,table:local?$('#c-table').value:null,
+    bairro:delivery?$('#c-bairro').value:null,addr:delivery?$('#c-addr').value.trim():'',
+    pay:delivery&&payment==='Cartão'?'Cartão na entrega':payment,notes:$('#c-notes').value.trim(),status:'novo',time:nowHM(),fresh:true
+  };
   o.eta=createOrderEta(o);S.orders.unshift(o);linkOrder(o);
   const msg=orderMsg(o);
-  if(S.auto.waOrder)log('WhatsApp',name,msg);
+  if(!local&&S.auto.waOrder)log('WhatsApp',name,msg);
   const t=totals(o);
   let mail=null;
   if(o.email&&S.auto.mailOrder){
@@ -1434,8 +1585,9 @@ $('#orderForm').addEventListener('submit',e=>{
     log('Email',name,mail.subject);
   }
   S.cart={};S.cartNotes={};$('#c-notes').value='';
+  $$('input[name=otype]').forEach(input=>{input.checked=false});
   closeDrawer();renderMenu();renderFab();
-  showOrderReceipt(o,{title:`Pedido ${orderNo(o.id)} recebido na demo`,sub:`${money(t.total)} · ${type==='Entrega'?'entrega em '+o.bairro:'retirada no balcão'}`,wa:msg,mail,mailNote:'Sem e-mail informado. O recibo vai só pelo WhatsApp.',ptab:'pedidos',flash:o.id});
+  showOrderReceipt(o,local?null:{title:`Pedido ${orderNo(o.id)} recebido na demo`,sub:`${money(t.total)} · ${fulfillmentLabel(o)}`,wa:msg,mail,mailNote:'Sem e-mail informado. O recibo vai só pelo WhatsApp.',ptab:'pedidos',flash:o.id});
 });
 
 /* ---------- reservations ---------- */
@@ -1541,7 +1693,17 @@ function createOrderEta(o){const estimate=estimateOrder(o),now=Date.now();return
 function ensureOrderEta(o){return o.eta||(o.eta=createOrderEta(o))}
 function etaRemaining(o){return Math.max(0,Math.ceil((ensureOrderEta(o).dueAt-Date.now())/60000))}
 const etaClock=ms=>new Intl.DateTimeFormat('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}).format(new Date(ms));
-function orderEtaLabel(o){if(o.status==='concluido')return o.type==='Entrega'?'Entrega concluída':'Retirada concluída';if(readyForPickup(o))return 'Pronto para retirar';const remaining=etaRemaining(o),kind=o.type==='Entrega'?'Entrega':'Retirada';return remaining?`${kind} em cerca de ${remaining} min · ${etaClock(o.eta.dueAt)}`:`${kind}: aguardando atualização do prazo`}
+function orderEtaLabel(o){
+  if(o.type==='No local'){
+    if(o.status==='concluido')return 'Servido na mesa';
+    if(o.status==='entrega')return 'Pronto para servir';
+  }
+  if(o.status==='concluido')return o.type==='Entrega'?'Entrega concluída':'Retirada concluída';
+  if(readyForPickup(o))return 'Pronto para retirar';
+  const remaining=etaRemaining(o);
+  const kind={'Entrega':'Entrega','Retirada':'Retirada','No local':'Serviço na mesa'}[o.type];
+  return remaining?`${kind} em cerca de ${remaining} min · ${etaClock(o.eta.dueAt)}`:`${kind}: aguardando atualização do prazo`;
+}
 function orderEtaMarkup(o,staff=false){if(o.status==='concluido')return'';const eta=ensureOrderEta(o),ready=readyForPickup(o);return `<div class="order-eta ${eta.source==='manual'?'adjusted':''}"><div class="order-eta-copy"><span class="eta-clock-icon">${uiIcon('clock')}</span><div><strong data-order-eta="${o.id}">${esc(orderEtaLabel(o))}</strong>${ready?'':`<small>${eta.source==='manual'?`Atualizado pela equipe às ${etaClock(eta.updatedAt)} · ${esc(ETA_REASONS[eta.reason])}`:`Preparo ${eta.prepMinutes} min${eta.travelMinutes?' + deslocamento '+eta.travelMinutes+' min':''} · previsão de exemplo`}</small>`}</div></div>${staff&&!ready?`<button type="button" class="eta-adjust" data-action="order-eta" data-key="${o.id}">Ajustar previsão <span aria-hidden="true">↗</span></button>`:''}</div>`}
 function savePrepTimes(fd){const next={};for(const m of MENU){const raw=fd.get('prep-'+m.id),minutes=Number(raw);if(raw===null||!String(raw).trim()||!Number.isInteger(minutes)||minutes<1||minutes>180)return{error:`Informe de 1 a 180 minutos para ${m.name}.`};next[m.id]=minutes}const rawTravel=fd.get('prep-delivery'),travel=Number(rawTravel);if(rawTravel===null||!String(rawTravel).trim()||!Number.isInteger(travel)||travel<0||travel>120)return{error:'Informe de 0 a 120 minutos de deslocamento para entrega.'};D.prepTimes=next;D.deliveryMinutes=travel;activity('Tempos fictícios da carta atualizados. Pedidos já recebidos mantêm sua previsão.','pedidos');return{message:'Tempos da carta salvos na demo. Valem para os próximos pedidos.'}}
 function prepTimesForm(){openOp('Tempos da carta',`<p class="client-notice"><strong>Minutos de exemplo, editáveis pela equipe.</strong> Os itens são preparados em paralelo: usamos o maior tempo de preparo do pedido. Entrega soma o deslocamento abaixo. Pedidos já recebidos mantêm sua previsão; ajuste-os individualmente em “Ajustar previsão”.</p><div class="prep-time-fields">${CATS.slice(1).map(cat=>`<fieldset><legend>${esc(cat)}</legend>${MENU.filter(m=>m.cat===cat).map(m=>`<label class="prep-time-row" for="prep-${m.id}"><span>${esc(m.name)}</span><span class="prep-minute-input"><input id="prep-${m.id}" name="prep-${m.id}" type="number" value="${prepMinutes(m.id)}" min="1" max="180" step="1" required><span>min</span></span></label>`).join('')}</fieldset>`).join('')}</div><div class="prep-delivery-field">${field('prep-delivery','Deslocamento adicional para entrega (min)','number',D.deliveryMinutes,'required min="0" max="120" step="1"')}<p class="ops-small">Deslocamento fictício único para esta demo. Retirada não recebe esse acréscimo.</p></div>`,fd=>{const result=savePrepTimes(fd);if(!result.error){renderMenu();renderCart();renderFab()}return result},'Salvar tempos na demo')}
@@ -1620,8 +1782,9 @@ function renderKanban(){
 }
 function orderCard(o){
   const t=totals(o);
-  const next={novo:'Aceitar',preparo:o.type==='Entrega'?'Despachar':'Marcar pronto',entrega:o.type==='Entrega'?'Concluir entrega':'Marcar retirado'}[o.status];
-  return `<article class="ocard ${o.status==='novo'?'new':''}" data-id="${o.id}"><header><strong class="num">${orderNo(o.id)}</strong>${badge(o.origin)}<time class="num">${o.time}</time></header><div class="ocard-who"><button type="button" class="ops-link" data-action="client-profile" data-key="${o.clientId}">${esc(o.customer)}</button></div><ul>${o.items.map(([id,q])=>`<li><span>${q}×</span> ${esc(M[id].name)}${o.itemNotes?.[id]?`<small style="display:block;font-size:.72rem">Obs.: ${esc(o.itemNotes[id])}</small>`:''}</li>`).join('')}</ul><div class="ocard-meta">${o.type==='Entrega'?'Entrega · '+esc(o.bairro):'Retirada'} · ${esc(o.pay)}${o.notes?`<br>Obs.: ${esc(o.notes)}`:''}</div>${orderEtaMarkup(o,true)}<footer><strong class="num">${money(t.total)}</strong>${next?`<button type="button" class="btn sm" data-adv="${o.id}">${uiIcon(o.status==='entrega'?'check':'arrow')}<span class="btn-label">${next}</span></button>`:'<span class="done">Finalizado</span>'}</footer>${pickupNoticeCard(o)}</article>`;
+  const finish={'Entrega':'Concluir entrega','Retirada':'Marcar retirado','No local':'Marcar servido'};
+  const next={novo:'Aceitar',preparo:o.type==='Entrega'?'Despachar':'Marcar pronto',entrega:finish[o.type]}[o.status];
+  return `<article class="ocard ${o.status==='novo'?'new':''}" data-id="${o.id}"><header><strong class="num">${orderNo(o.id)}</strong>${badge(o.origin)}<time class="num">${o.time}</time></header><div class="ocard-who"><button type="button" class="ops-link" data-action="client-profile" data-key="${o.clientId}">${esc(o.customer)}</button></div><ul>${o.items.map(([id,q])=>`<li><span>${q}×</span> ${esc(M[id].name)}${o.itemNotes?.[id]?`<small style="display:block;font-size:.72rem">Obs.: ${esc(o.itemNotes[id])}</small>`:''}</li>`).join('')}</ul><div class="ocard-meta">${esc(fulfillmentLabel(o))} · ${esc(o.pay)}${o.notes?`<br>Obs.: ${esc(o.notes)}`:''}</div>${orderEtaMarkup(o,true)}<footer><strong class="num">${money(t.total)}</strong>${next?`<button type="button" class="btn sm" data-adv="${o.id}">${uiIcon(o.status==='entrega'?'check':'arrow')}<span class="btn-label">${next}</span></button>`:'<span class="done">Finalizado</span>'}</footer>${pickupNoticeCard(o)}</article>`;
 }
 $('#kanban').addEventListener('click',e=>{const b=e.target.closest('[data-adv]');if(!b)return;const result=advanceRestaurantOrder(b.dataset.adv);if(result.error){toast(esc(result.error));return}toast('Pedido atualizado na demonstração.');renderPanel()});
 function renderChannels(){
@@ -1777,9 +1940,79 @@ function quickDate(which){return which==='today'?TODAY:which==='tomorrow'?TOMORR
 $('#r-next').addEventListener('click',()=>goBookingStep(C.rstep+1));$('#r-back').addEventListener('click',()=>goBookingStep(C.rstep-1));
 $('#resForm').addEventListener('click',e=>{const step=e.target.closest('[data-res-step]');if(step){goBookingStep(Number(step.dataset.resStep));return}const quick=e.target.closest('[data-rquick]');if(quick){$('#r-date').value=quickDate(quick.dataset.rquick);S.slot=null;renderSlots();updateBookingSummary();clearClientError($('#r-date'))}});
 $('#resForm').addEventListener('change',()=>{updateBookingSummary();$('#r-err').textContent=''});$('#resForm').addEventListener('input',e=>{if(e.target.matches('input,textarea'))clearClientError(e.target)});
-function renderCheckoutSteps(){if(!$('#checkoutSteps'))return;$$('[data-checkout-pane]').forEach(p=>p.hidden=Number(p.dataset.checkoutPane)!==C.checkout);$$('#checkoutSteps [data-checkout-step]').forEach(b=>{const step=Number(b.dataset.checkoutStep);b.disabled=step>C.cmax;b.setAttribute('aria-current',step===C.checkout?'step':'false');b.classList.toggle('done',step<C.checkout)});$('#c-back').hidden=C.checkout===1;$('#c-next').hidden=C.checkout===2;$('#c-submit').hidden=C.checkout!==2;$('#c-next').textContent=C.checkout===1?'Continuar · '+money(totals(draftOrder()).total):'Revisar pedido';$('#c-next').disabled=!cartCount();$('#c-submit').innerHTML=`Confirmar pedido · <span class="num">${money(totals(draftOrder()).total)}</span>`;const ent=otype()==='Entrega';$('#pickup-contact-hint').hidden=ent;$('#deliveryHeading').textContent=ent?'Onde vamos entregar?':'Sua retirada no Matriz';const estimate=estimateOrder(draftOrder());$('#cEta').innerHTML=cartCount()?`<b>${ent?'Entrega':'Retirada'} · cerca de ${estimate.totalMinutes} min</b><small>Preparo ${estimate.prepMinutes} min${ent?' + deslocamento '+estimate.travelMinutes+' min · taxa '+money(totals(draftOrder()).fee):' · sem taxa de entrega'} · exemplo</small>`:'<b>Escolha seus itens</b><small>A previsão aparece conforme o preparo dos produtos.</small>';$('#pickup-time-preview').textContent=estimate.prepMinutes?`Preparo aproximado: ${estimate.prepMinutes} min, conforme os itens escolhidos.`:'Escolha os itens para calcular o preparo.'}
-function validateCheckoutStep(step){$('#c-err').textContent='';if(!cartCount()){$('#c-err').textContent='Adicione um item do cardápio para continuar.';return false}if(step===2&&otype()==='Entrega'&&!$('#c-addr').value.trim())return clientError('c-addr','Informe o endereço de entrega.','c-err');return step===2?validateContact('c'):true}
-function goCheckoutStep(step){if(step>C.checkout){for(let i=C.checkout;i<step;i++)if(!validateCheckoutStep(i)){C.checkout=i;renderCheckoutSteps();return}C.cmax=Math.max(C.cmax,step)}C.checkout=Math.max(1,Math.min(2,step));$('#c-err').textContent='';renderCheckoutSteps();$('#orderForm').scrollTop=0;const heading=$(`[data-checkout-pane="${C.checkout}"] h3`);if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true})}}
+function renderCheckoutSteps(){
+  const type=otype();
+  const local=type==='No local';
+  const pending=!type;
+  const delivery=type==='Entrega';
+  const pickup=type==='Retirada';
+  const order=draftOrder();
+  const estimate=estimateOrder(order);
+  const amount=money(totals(order).total);
+
+  $$('[data-checkout-pane]').forEach(p=>{p.hidden=Number(p.dataset.checkoutPane)!==C.checkout});
+  $$('#checkoutSteps [data-checkout-step]').forEach(button=>{
+    const step=Number(button.dataset.checkoutStep);
+    button.disabled=step>C.cmax;
+    button.setAttribute('aria-current',step===C.checkout?'step':'false');
+    button.classList.toggle('done',step<C.checkout);
+  });
+  $('#c-back').hidden=C.checkout===1;
+  $('#c-next').hidden=C.checkout===2;
+  $('#c-submit').hidden=C.checkout!==2;
+  $('#c-next').textContent='Continuar · '+money(totals(order).sub);
+  $('#c-next').disabled=!cartCount();
+  $('#c-submit').textContent=pending?'Escolha retirada ou entrega':'Confirmar pedido · '+amount;
+  $('#c-submit').disabled=!cartCount()||pending;
+
+  $('#checkout-mode-summary').textContent=local
+    ?'No local · indique sua mesa ao finalizar.'
+    :'Para casa · escolha retirada ou entrega no próximo passo.';
+  $('#deliveryHeading').textContent=local?'Sua mesa no Matriz':'Como quer receber seu pedido?';
+  $('#home-fulfillment').hidden=local;
+  $('#table-fields').hidden=!local;
+  $('#deliveryFields').hidden=!delivery;
+  $('#pickupNote').hidden=!pickup;
+  $('#order-contact').hidden=pending;
+  $('#order-phone-field').hidden=local;
+  $('#order-email-field').hidden=local;
+  $('#pickup-contact-hint').hidden=!pickup;
+  $('#pickup-time-preview').textContent=`Preparo aproximado: ${estimate.prepMinutes} min, conforme os itens escolhidos.`;
+  $('#cEta').textContent=cartCount()
+    ?`Preparo aproximado: ${estimate.prepMinutes} min`
+    :'A previsão aparece conforme os itens escolhidos.';
+  $('#finalEta').hidden=pending||!cartCount();
+  $('#finalEta').textContent=delivery
+    ?`Entrega em cerca de ${estimate.totalMinutes} min · preparo ${estimate.prepMinutes} min + deslocamento ${estimate.travelMinutes} min`
+    :`Preparo aproximado: ${estimate.prepMinutes} min`;
+}
+
+function validateCheckoutStep(step){
+  $('#c-err').textContent='';
+  if(!cartCount()){
+    $('#c-err').textContent='Adicione um item do cardápio para continuar.';
+    return false;
+  }
+  if(step!==2)return true;
+  const type=otype();
+  if(!type){
+    $('#c-err').textContent='Escolha retirada ou entrega.';
+    $('#c-type-ret').focus();
+    return false;
+  }
+  if(type==='No local'){
+    if(!D.tables.some(table=>table.id===$('#c-table').value)){
+      return clientError('c-table','Escolha sua mesa.','c-err');
+    }
+    if(!$('#c-name').value.trim())return clientError('c-name','Informe seu nome.','c-err');
+    return true;
+  }
+  if(type==='Entrega'&&!$('#c-addr').value.trim()){
+    return clientError('c-addr','Informe o endereço de entrega.','c-err');
+  }
+  return validateContact('c');
+}
+function goCheckoutStep(step){if(step>C.checkout){for(let i=C.checkout;i<step;i++)if(!validateCheckoutStep(i)){C.checkout=i;renderCheckoutSteps();return}C.cmax=Math.max(C.cmax,step)}C.checkout=Math.max(1,Math.min(2,step));$('#c-err').textContent='';renderCart();$('#orderForm').scrollTop=0;const heading=$(`[data-checkout-pane="${C.checkout}"] h3`);if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true})}}
 $('#c-next').addEventListener('click',()=>goCheckoutStep(C.checkout+1));$('#c-back').addEventListener('click',()=>goCheckoutStep(C.checkout-1));$('#orderForm').addEventListener('input',e=>{if(e.target.matches('input,textarea'))clearClientError(e.target)});document.addEventListener('click',e=>{const b=e.target.closest('[data-checkout-step]');if(b)goCheckoutStep(Number(b.dataset.checkoutStep))});
 function openItem(id,editing=false){const m=M[id];if(!m)return;C.item={id,editing,qty:editing?(S.cart[id]||1):1};C.itemFocus=document.activeElement;const pairs=editing?[]:(PAIRINGS[id]||[]).map(k=>M[k]);$('#item-content').innerHTML=`<div class="item-layout ${m.img?'':'no-photo'}">${m.img?`<img class="item-main-photo" src="${IMG[m.img]}" alt="${esc(m.name)}">`:''}<div class="item-detail"><p class="eyebrow">${m.cat} · Matriz Bar</p><h2 id="item-title">${esc(m.name)}</h2>${m.desc?`<p class="item-desc">${esc(m.desc)}</p>`:''}<p class="item-price num">${money(m.price)}</p><p class="prep-time">${uiIcon('clock')} Preparo aproximado: ${prepMinutes(m.id)} min</p><div class="field"><label for="item-note">Uma observação para este item? <span class="muted">(opcional)</span></label><textarea id="item-note" maxlength="180" placeholder="Escreva sua observação…">${esc(S.cartNotes[id]||'')}</textarea><p class="item-note-hint">A observação vale para a quantidade deste item no pedido.</p></div>${pairs.length?`<div class="pairing-list"><p>Combina com a sua mesa</p>${pairs.map(p=>`<label class="pairing-option"><input type="checkbox" name="pairing" value="${p.id}">${p.img?`<img src="${IMG[p.img]}" alt="">`:''}<span>${esc(p.name)}<small>${money(p.price)} · preço individual</small></span><span class="pair-plus">Adicionar</span></label>`).join('')}</div>`:''}</div></div>`;$('#item-qty').textContent=C.item.qty;updateItemTotal();$('#item-dialog').hidden=false;renderFab();$('#item-close').focus()}
 function updateItemTotal(){if(!C.item)return;const extra=$$('input[name=pairing]:checked',$('#item-form')).reduce((a,x)=>a+M[x.value].price,0);$('#item-add').innerHTML=(C.item.editing?'Atualizar item':'Adicionar ao pedido')+' · <span class="num">'+money(M[C.item.id].price*C.item.qty+extra)+'</span>';$('#item-qty').textContent=C.item.qty}
@@ -1791,24 +2024,24 @@ function customerOrders(){const orders=S.orders.filter(o=>o.clientId===C.clientI
 function customerOrder(key){return String(key)===SAMPLE_ORDER.id&&clientPerson().name==='Fernanda Lima'?SAMPLE_ORDER:S.orders.find(o=>String(o.id)===String(key)&&o.clientId===C.clientId)}
 function receiptTools(kind,key){return `<details class="presentation-tools"><summary>Ferramentas da demonstração</summary><div>${C.receipts[kind+':'+key]?clientAct('Ver mensagens simuladas','messages',key,'ghost',kind):''}${clientAct('Ver no painel ↗','panel',key,'ghost',kind)}${kind==='order'&&customerOrder(key)?.status!=='concluido'?clientAct('Simular próximo status →','advance-order',key,'sun'):''}<p class="ops-small">As ações alteram somente os exemplos desta sessão. Nenhuma mensagem é enviada.</p></div></details>`}
 function reservationCard(r){const current=activeBooking(r),editable=current&&r.status!=='chegou'&&r.date>=TODAY;return `<article class="visit-card"><div class="visit-card-main"><header><div><h3>${esc(fmtDay(r.date))} · ${r.time}</h3><p>${r.code} · ${esc(r.name)}</p></div>${pill(STAT_LABEL[r.status]||r.status,r.status==='cancelada'?'crit':r.status==='chegou'?'ok':'rust')}</header><div class="visit-meta"><span><b>${r.people}</b> ${r.people===1?'pessoa':'pessoas'}</span><span>${r.area==='Varanda'?'Área externa':'Salão'}</span><span>Centro · São Sebastião</span></div>${r.notes?`<p class="ops-small">${esc(r.notes)}</p>`:''}</div><div class="visit-card-footer">${clientAct('Ver reserva','reservation',r.code)}${editable?clientAct('Alterar','edit-res',r.code):''}${editable?`<button type="button" class="text-button" data-client="cancel-res" data-key="${r.code}">Cancelar</button>`:clientAct('Reservar novamente','book')}</div></article>`}
-function orderLabels(o){return o.type==='Entrega'?['Recebido','Em preparo','Saiu para entrega','Entregue']:['Recebido','Em preparo','Pronto para retirar','Retirado']}
+function orderLabels(o){if(o.type==='No local')return ['Recebido','Em preparo','Pronto para servir','Servido'];return o.type==='Entrega'?['Recebido','Em preparo','Saiu para entrega','Entregue']:['Recebido','Em preparo','Pronto para retirar','Retirado']}
 const orderIndex=o=>({novo:0,preparo:1,entrega:2,concluido:3}[o.status]??0);
-function orderCardForClient(o){const labels=orderLabels(o),index=orderIndex(o);return `<article class="visit-card"><div class="visit-card-main"><header><div><h3>Pedido ${o.display||orderNo(o.id)}</h3><p>${o.example?'Histórico ilustrativo':shortDate(o.date||TODAY)+' · '+o.time} · ${o.type}</p></div>${pill(labels[index],index===3?'ok':'rust')}</header><p class="ops-small">${o.items.map(([id,q])=>`${q}× ${esc(M[id].name)}`).join(' · ')}</p><div class="visit-meta"><span><b class="num">${money(totals(o).total)}</b></span><span>${esc(o.pay)} · demonstração</span></div>${o.example?'':orderEtaMarkup(o)}</div><div class="visit-card-footer">${clientAct('Ver pedido','order',o.id)}${clientAct('Repetir pedido','repeat-order',o.id)}</div></article>`}
+function orderCardForClient(o){const labels=orderLabels(o),index=orderIndex(o);return `<article class="visit-card"><div class="visit-card-main"><header><div><h3>Pedido ${o.display||orderNo(o.id)}</h3><p>${o.example?'Histórico ilustrativo':shortDate(o.date||TODAY)+' · '+o.time} · ${esc(fulfillmentLabel(o))}</p></div>${pill(labels[index],index===3?'ok':'rust')}</header><p class="ops-small">${o.items.map(([id,q])=>`${q}× ${esc(M[id].name)}`).join(' · ')}</p><div class="visit-meta"><span><b class="num">${money(totals(o).total)}</b></span><span>${esc(o.pay)} · demonstração</span></div>${o.example?'':orderEtaMarkup(o)}</div><div class="visit-card-footer">${clientAct('Ver pedido','order',o.id)}${clientAct('Repetir pedido','repeat-order',o.id)}</div></article>`}
 function openVisit(view='portal',key=''){const wasHidden=$('#visit-dialog').hidden;if(wasHidden)C.visitFocus=document.activeElement;C.visit={view,key:String(key)};$('#visit-dialog').hidden=false;renderClientVisit();renderFab();$('#visit-close').focus()}
 function closeVisit(restore=true){const previous=C.visitFocus;$('#visit-dialog').hidden=true;C.visit=null;renderFab();if(restore&&previous?.isConnected&&previous.getClientRects().length)previous.focus({preventScroll:true});else if(restore&&S.view==='site')(innerWidth<=760?$('#mbar [data-app="visit"]'):$('.client-account')).focus({preventScroll:true})}
 $('#visit-close').addEventListener('click',()=>closeVisit());$('#visit-dialog').addEventListener('click',e=>{if(e.target.id==='visit-dialog')closeVisit()});
 function renderClientVisit(){if(!C.visit)return;const {view,key}=C.visit,c=clientPerson(),body=$('#visit-body'),actions=$('#visit-actions');actions.innerHTML='';$('#visit-sub').textContent='Demonstração · nenhuma reserva, pedido ou pagamento é enviado.';
  if(view==='portal'){$('#visit-title').textContent='Minha visita';const reservations=S.res.filter(r=>r.clientId===c.id).sort((a,b)=>Number(activeBooking(b))-Number(activeBooking(a))||(a.date+a.time).localeCompare(b.date+b.time));const orders=customerOrders();body.innerHTML=`<div class="visit-greeting"><div><h3>Olá, ${esc(first(c.name))}.</h3><p>Seus próximos encontros com o Matriz.</p></div><span class="ops-avatar" aria-hidden="true">${initials(c.name)}</span></div><div class="client-notice"><strong>Perfil fictício para explorar.</strong> Os exemplos são exclusivos desta sessão e recomeçam ao recarregar a página.</div><div class="client-tabs" role="tablist" aria-label="Minha visita"><button type="button" role="tab" data-client="portal-tab" data-key="reservas" aria-selected="${C.portalTab==='reservas'}">Reservas (${reservations.length})</button><button type="button" role="tab" data-client="portal-tab" data-key="pedidos" aria-selected="${C.portalTab==='pedidos'}">Pedidos (${orders.length})</button></div>${C.portalTab==='reservas'?(reservations.length?`<div class="visit-cards">${reservations.map(reservationCard).join('')}</div>`:`<div class="client-empty"><h3>Sua primeira mesa espera por você.</h3><p>Escolha um dia e experimente a reserva. Ela aparecerá aqui e no painel do restaurante.</p>${clientAct('Reservar mesa','book','','sun')}</div>`):(orders.length?`<div class="visit-cards">${orders.map(orderCardForClient).join('')}</div>`:`<div class="client-empty"><h3>O primeiro pedido começa na carta.</h3><p>Escolha seus petiscos e coquetéis. Depois, acompanhe o preparo por aqui.</p>${clientAct('Explorar o cardápio','menu','','sun')}</div>`)}`;actions.innerHTML=clientAct('Reservar mesa','book','','sun')+clientAct('Ver cardápio','menu');return}
  if(view==='reservation'){const r=S.res.find(r=>r.code===key&&r.clientId===c.id);if(!r){C.visit={view:'portal',key:''};renderClientVisit();return}const active=activeBooking(r),editable=active&&r.status!=='chegou'&&r.date>=TODAY;$('#visit-title').textContent=active?'Sua mesa no Matriz':'Sua reserva';body.innerHTML=`<div class="client-notice"><strong>${active?'Reserva simulada com sucesso.':'Registro de demonstração.'}</strong> Nenhuma reserva foi enviada ao restaurante.</div><article class="receipt-ticket"><div class="receipt-brand"><img src="${LOGO}" alt="Matriz Bar"><div class="receipt-code">Sua reserva<b>${r.code}</b></div></div><h3>${active?'Sua próxima mesa.':r.status==='cancelada'?'Até uma próxima mesa.':'Seu encontro com o Matriz.'}</h3><p>${esc(r.name)}, ${active?'estes são os detalhes da sua visita de exemplo.':'o histórico da sua reserva fica aqui.'}</p><dl class="receipt-grid"><div><dt>Dia</dt><dd>${esc(fmtDay(r.date))}</dd></div><div><dt>Horário</dt><dd class="num">${r.time}</dd></div><div><dt>À mesa</dt><dd>${r.people} ${r.people===1?'pessoa':'pessoas'}</dd></div><div><dt>Área</dt><dd>${r.area==='Varanda'?'Externa':'Salão'}</dd></div></dl><p class="receipt-note">${active?'Seguramos a mesa por 15 minutos após o horário reservado.':'Status: '+esc(STAT_LABEL[r.status]||r.status)+'.'}${r.notes?'<br>Observações: '+esc(r.notes):''}</p></article>${receiptTools('res',key)}`;actions.innerHTML=(editable?clientAct('Alterar reserva','edit-res',key):clientAct('Reservar novamente','book'))+clientAct('Minhas reservas','portal','','sun');return}
- if(view==='order'){const o=customerOrder(key);if(!o){C.visit={view:'portal',key:''};renderClientVisit();return}const labels=orderLabels(o),index=orderIndex(o),t=totals(o);$('#visit-title').textContent='Seu pedido no Matriz';body.innerHTML=`<div class="client-notice"><strong>Pedido de demonstração.</strong> Nada foi enviado ao restaurante e nenhum valor será cobrado.</div><article class="receipt-ticket"><div class="receipt-brand"><img src="${LOGO}" alt="Matriz Bar"><div class="receipt-code">Seu pedido<b>${o.display||orderNo(o.id)}</b></div></div><h3>${index===3?'Bom apetite.':index===2?(o.type==='Retirada'?'Seu pedido está pronto.':'Seu pedido está a caminho.'):'Um brinde à sua escolha.'}</h3><div class="tracking-status" role="status"><i aria-hidden="true"></i>${labels[index]} · simulação</div><ol class="tracking-steps" aria-label="Status do pedido">${labels.map((label,i)=>`<li class="${i<index?'done':i===index?'active':''}" ${i===index?'aria-current="step"':''}>${label}</li>`).join('')}</ol><p class="receipt-note">${o.type==='Entrega'?`Entrega${o.bairro?' em '+esc(o.bairro):''}.`:(readyForPickup(o)?`Retire no ${esc(pickupPlace(o))} · Centro, São Sebastião, SP.`:'Retirada no Matriz Bar · Centro, São Sebastião, SP.')}${o.addr&&o.type==='Entrega'?'<br>'+esc(o.addr):''}</p>${o.example?'':orderEtaMarkup(o)}<ul class="receipt-lines">${o.items.map(([id,q])=>`<li><div><strong>${q}× ${esc(M[id].name)}</strong>${o.itemNotes?.[id]?`<small>${esc(o.itemNotes[id])}</small>`:''}</div><span class="num">${money(M[id].price*q)}</span></li>`).join('')}<li><span>${o.type==='Entrega'?'Entrega':'Retirada'}</span><span class="num">${t.fee?money(t.fee):'Grátis'}</span></li><li class="receipt-total"><span>Total</span><span class="num">${money(t.total)}</span></li></ul><p class="receipt-note" style="margin-top:16px">${esc(o.pay)} · pagamento simulado.${o.notes?'<br>Observações: '+esc(o.notes):''}</p></article>${o.pickupNotice?`<div class="client-notice pickup-client-notice"><strong>Aviso de retirada simulado.</strong> ${shortDate(o.pickupNotice.date)} às ${esc(o.pickupNotice.time)} · ${esc(PICKUP_POINTS[o.pickupNotice.point])}. Nenhum WhatsApp real foi enviado.</div>`:''}${o.example?'<p class="ops-small">Pedido anterior fictício para experimentar “Repetir pedido”.</p>':receiptTools('order',key)}`;actions.innerHTML=clientAct('Minhas reservas e pedidos','portal','','sun')+clientAct('Continuar no cardápio','menu');return}
+ if(view==='order'){const o=customerOrder(key);if(!o){C.visit={view:'portal',key:''};renderClientVisit();return}const labels=orderLabels(o),index=orderIndex(o),t=totals(o);$('#visit-title').textContent='Seu pedido no Matriz';body.innerHTML=`<div class="client-notice"><strong>Pedido de demonstração.</strong> Nada foi enviado ao restaurante e nenhum valor será cobrado.</div><article class="receipt-ticket"><div class="receipt-brand"><img src="${LOGO}" alt="Matriz Bar"><div class="receipt-code">Seu pedido<b>${o.display||orderNo(o.id)}</b></div></div><h3>${index===3?'Bom apetite.':index===2?(o.type==='Entrega'?'Seu pedido está a caminho.':'Seu pedido está pronto.'):'Um brinde à sua escolha.'}</h3><div class="tracking-status" role="status"><i aria-hidden="true"></i>${labels[index]} · simulação</div><ol class="tracking-steps" aria-label="Status do pedido">${labels.map((label,i)=>`<li class="${i<index?'done':i===index?'active':''}" ${i===index?'aria-current="step"':''}>${label}</li>`).join('')}</ol><p class="receipt-note">${readyForPickup(o)?`Retire no ${esc(pickupPlace(o))} · Centro, São Sebastião, SP.`:esc(fulfillmentLabel(o))}${o.addr&&o.type==='Entrega'?'<br>'+esc(o.addr):''}</p>${o.example?'':orderEtaMarkup(o)}<ul class="receipt-lines">${o.items.map(([id,q])=>`<li><div><strong>${q}× ${esc(M[id].name)}</strong>${o.itemNotes?.[id]?`<small>${esc(o.itemNotes[id])}</small>`:''}</div><span class="num">${money(M[id].price*q)}</span></li>`).join('')}${o.type==='No local'?'':`<li><span>${o.type==='Entrega'?'Entrega':'Retirada'}</span><span class="num">${t.fee?money(t.fee):'Grátis'}</span></li>`}<li class="receipt-total"><span>Total</span><span class="num">${money(t.total)}</span></li></ul><p class="receipt-note" style="margin-top:16px">${esc(o.pay)} · pagamento simulado.${o.notes?'<br>Observações: '+esc(o.notes):''}</p></article>${o.pickupNotice?`<div class="client-notice pickup-client-notice"><strong>Aviso de retirada simulado.</strong> ${shortDate(o.pickupNotice.date)} às ${esc(o.pickupNotice.time)} · ${esc(PICKUP_POINTS[o.pickupNotice.point])}. Nenhum WhatsApp real foi enviado.</div>`:''}${o.example?'<p class="ops-small">Pedido anterior fictício para experimentar “Repetir pedido”.</p>':receiptTools('order',key)}`;actions.innerHTML=clientAct('Minhas reservas e pedidos','portal','','sun')+clientAct('Continuar no cardápio','menu');return}
  if(view==='cancel'){const r=S.res.find(r=>r.code===key&&r.clientId===c.id);if(!r)return;$('#visit-title').textContent='Cancelar esta reserva?';body.innerHTML=`<p class="client-notice">Esta ação cancela somente a reserva fictícia nesta sessão.</p><article class="receipt-ticket"><h3>${esc(fmtDay(r.date))} · ${r.time}</h3><p>${r.code} · ${r.people} pessoas · ${r.area==='Varanda'?'Área externa':'Salão'}</p></article><p class="ops-small">Você pode criar outra reserva quando quiser. O cancelamento também aparecerá no painel de demonstração.</p>`;actions.innerHTML=clientAct('Manter reserva','reservation',key)+clientAct('Cancelar na demo','confirm-cancel',key,'sun');return}
  if(view==='guide'){$('#visit-title').textContent='Experimente o Matriz';$('#visit-sub').textContent='Um roteiro curto para apresentar o site e o painel.';body.innerHTML=`<div class="client-notice"><strong>Tudo é fictício.</strong> Sem cadastro real, mensagens, cobranças ou dados compartilhados entre visitantes.</div><div class="guide-scenarios"><article class="guide-scenario"><h3>1. Receber uma cliente nova</h3><p>Use o exemplo de Marina, reserve uma mesa e veja a ficha surgir no painel.</p>${clientAct('Experimentar primeira reserva','guide-new','','sun')}</article><article class="guide-scenario"><h3>2. Reconhecer quem já voltou</h3><p>Como Fernanda, consulte a próxima reserva, altere o horário ou repita um pedido anterior.</p>${clientAct('Explorar como Fernanda','guide-regular','','sun')}</article><article class="guide-scenario"><h3>3. Do pedido à sua mesa</h3><p>Escolha um prato, acrescente uma bebida e avance o status pelas ferramentas de demonstração do pedido.</p>${clientAct('Montar um pedido','menu','','sun')}</article></div><details class="presentation-tools" open><summary>Para recomeçar</summary><div>${clientAct('Reiniciar todos os exemplos','reset-demo')}<p class="ops-small">Clientes, reservas, pedidos, estoque e caixa voltam ao início. Cada navegador tem sua própria sessão.</p></div></details>`;actions.innerHTML=clientAct('Voltar ao Matriz','close-visit');return}
 }
 function showReservationReceipt(r,data){C.receipts['res:'+r.code]=data;takeClientIdentity(r.clientId);C.editRes=null;C.rstep=1;C.rmax=1;C.portalTab='reservas';renderBookingSteps();openVisit('reservation',r.code)}
 function showOrderReceipt(o,data){C.receipts['order:'+o.id]=data;takeClientIdentity(o.clientId);C.checkout=1;C.cmax=1;C.portalTab='pedidos';renderCart();openVisit('order',o.id)}
 function startClientBooking(code=''){const r=code?S.res.find(r=>r.code===code&&r.clientId===C.clientId):null;if(r&&!activeBooking(r)){toast('Esta reserva já foi encerrada. Crie uma nova reserva.');return}closeVisit(false);C.editRes=r?.code||null;C.rstep=1;C.rmax=1;$('#resForm').reset();fillClientContact();$('#r-date').value=r?.date||firstOpenDate();setPeople(r?.people||2);$('#r-area-'+((r?.area||'Varanda')==='Salão'?'salao':'varanda')).checked=true;S.slot=r?.time||null;$('#r-notes').value=r?.notes||'';renderSlots();renderBookingSteps();go('site');clientJump('reservas')}
-function repeatClientOrder(key){const o=customerOrder(key);if(!o)return;for(const[id,q]of o.items){S.cart[id]=(S.cart[id]||0)+q;if(o.itemNotes?.[id])S.cartNotes[id]=o.itemNotes[id]}$('#c-type-'+(o.type==='Entrega'?'ent':'ret')).checked=true;if(o.bairro&&BAIRROS[o.bairro]!==undefined)$('#c-bairro').value=o.bairro;fillClientContact();closeVisit(false);renderMenu();renderCart();renderFab(true);openDrawer();toast('Itens adicionados ao carrinho. Revise as quantidades e confirme na demo.')}
-function advanceRestaurantOrder(id){const o=S.orders.find(x=>String(x.id)===String(id));if(!o||o.status==='concluido')return{error:'Este pedido já foi concluído.'};if(o.status==='novo'){const missing=canConsume(o);if(missing)return{error:`Estoque de exemplo insuficiente de ${missing}. Ajuste-o no painel para continuar a simulação.`};consumeOrder(o)}if(o.status==='entrega'){if(o.pay==='Dinheiro'&&!D.cash.open)return{error:'Abra o caixa de exemplo no painel para registrar o recebimento em dinheiro.'};collectOrder(o)}o.status={novo:'preparo',preparo:'entrega',entrega:'concluido'}[o.status];if(S.auto.waStatus&&!readyForPickup(o))log('WhatsApp',o.customer,statusMsg(o));activity(`Pedido ${orderNo(o.id)}: ${orderLabels(o)[orderIndex(o)]}.`,'pedidos');updateVisitCount();return{status:o.status}}
+function repeatClientOrder(key){const o=customerOrder(key);if(!o)return;for(const[id,q]of o.items){S.cart[id]=(S.cart[id]||0)+q;if(o.itemNotes?.[id])S.cartNotes[id]=o.itemNotes[id]}fillClientContact();closeVisit(false);renderMenu();renderCart();renderFab(true);openDrawer();toast('Itens adicionados ao carrinho. Revise as quantidades e confirme na demo.')}
+function advanceRestaurantOrder(id){const o=S.orders.find(x=>String(x.id)===String(id));if(!o||o.status==='concluido')return{error:'Este pedido já foi concluído.'};if(o.status==='novo'){const missing=canConsume(o);if(missing)return{error:`Estoque de exemplo insuficiente de ${missing}. Ajuste-o no painel para continuar a simulação.`};consumeOrder(o)}if(o.status==='entrega'){if(o.pay==='Dinheiro'&&!D.cash.open)return{error:'Abra o caixa de exemplo no painel para registrar o recebimento em dinheiro.'};collectOrder(o)}o.status={novo:'preparo',preparo:'entrega',entrega:'concluido'}[o.status];if(o.type!=='No local'&&S.auto.waStatus&&!readyForPickup(o))log('WhatsApp',o.customer,statusMsg(o));activity(`Pedido ${orderNo(o.id)}: ${orderLabels(o)[orderIndex(o)]}.`,'pedidos');updateVisitCount();return{status:o.status}}
 $('#demo-scenario').addEventListener('change',e=>{if(e.target.value!=='custom')chooseClientScenario(e.target.value)});
 window.addEventListener('scroll',()=>{if(S.view!=='site'||innerWidth>760)return;const rect=$('#resForm').getBoundingClientRect(),active=rect.top<Math.min(180,innerHeight*.26)&&rect.bottom>130;if(active!==document.body.classList.contains('booking-active'))renderFab();else renderMobileNav()},{passive:true});
 window.addEventListener('resize',()=>{if(innerWidth>760&&!$('#app-sheet').hidden)closeAppSheet(false);renderFab();if(S.view==='painel'&&innerWidth>760&&innerWidth<=900)$(`[data-ptab="${S.ptab}"]`)?.scrollIntoView({behavior:'auto',block:'nearest',inline:'nearest'})});
