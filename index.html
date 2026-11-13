@@ -758,6 +758,169 @@ body.choosing-order-mode[data-view="site"]{padding-bottom:0}
   .catalog-order-mode{justify-content:end}
 }
 
+/* Restaurant workspaces */
+body[data-view="painel"] .demobar{display:none}
+.ops-shell{max-width:none;min-height:100dvh;grid-template-columns:222px minmax(0,1fr)}
+.ops-sidebar{height:100dvh;min-height:0;overflow-y:auto;padding:28px 18px 20px;gap:24px}
+.ops-logo{margin:0 9px;max-width:148px;padding:10px 14px}
+.ops-sidebar .ops-nav-label{margin:8px 10px 0;color:#B9CBD5;font-size:.75rem}
+.ops-sidebar .ops-nav-label:not(:first-child){margin-top:16px}
+.ops-nav button{font-size:.86rem}
+.ops-nav button:focus-visible{outline-color:#E5B898;outline-offset:-2px}
+.ops-work{width:100%;max-width:1550px;margin-inline:auto;padding:30px clamp(22px,3.1vw,52px) 56px}
+.ops-work .panel-head{gap:12px;padding:0 0 20px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.ops-work .panel-head h1{font-size:clamp(1.8rem,3.4vw,2.75rem);margin:0;line-height:1.14}
+.panel-date{color:var(--muted);font-size:.85rem;margin-top:7px}
+.ops-brand-mobile{display:none}
+.ops-head-actions{flex-wrap:wrap;gap:8px}
+.demo-chip{font-size:.73rem;text-transform:none;letter-spacing:0;padding:5px 9px;border-radius:6px}
+.ops-head-actions .btn{min-height:44px}
+.panel-skip{position:absolute}
+.ops-work .pane{min-width:0}
+.ops-work .ops-small{font-size:.85rem}
+.ops-work .ops-card{border-radius:14px}
+.ops-work .ops-card-head h2{font-size:1.17rem}
+.ops-work .ops-card-head p,.ops-work .ops-list small{font-size:.8rem}
+.ops-work .ops-list strong,.ops-work .ops-link{font-size:.9rem}
+.ops-work .ops-actions .btn,.ops-work .ops-list .btn,.ops-work .ops-card-head .btn,
+.ops-work .ops-filters button,.ops-work .eta-adjust,.ops-work .ops-link{min-height:44px}
+.ops-work .ops-link{overflow-wrap:anywhere}
+.ops-work .ops-pill{font-size:.72rem;white-space:normal}
+
+.service-board{background:var(--brand-navy);color:#F8F6F0;border-radius:16px;border-bottom:4px solid var(--brand-oxide);margin-bottom:18px;padding:24px}
+.service-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.service-head h2{font-size:clamp(1.25rem,2.2vw,1.7rem)}
+.service-head button{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#fff;border:0;color:#123044;border-radius:8px;padding:8px 12px;min-height:44px;font-size:.84rem;font-weight:750}
+.service-board button:focus-visible{outline-color:#F5BE98}
+.service-lanes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.service-lane{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 8px;padding:11px 14px;text-align:left;min-width:0;min-height:73px;background:#ffffff0a;color:#F8F6F0;border:1px solid #FFFFFF32;border-radius:9px;transition:background .18s,border-color .18s}
+.service-lane:hover{background:#ffffff20}
+.service-lane b{font:750 clamp(1.4rem,2.4vw,2rem)/1.15 var(--f-display)}
+.service-lane span{grid-column:1/-1;color:#D2DEE4;font-size:.83rem;font-weight:650}
+.service-lane svg{width:17px;height:17px;color:#BCD0DB}
+.service-lane.has-delay{background:#F1BA931F;border-color:#DDA580}
+.service-lane.has-delay svg,.service-lane.has-delay span{color:#FFD8BC}
+.service-shortcuts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.service-shortcuts .btn{min-height:46px;font-size:.83rem}
+.service-metrics{margin-bottom:24px}
+.service-metrics .kpis{margin:0}
+.service-metrics .kpi{border-top:1px solid var(--line);border-radius:10px;border-left:3px solid var(--brand-oxide)}
+.ops-work .kpi span{font-size:.8rem}
+.ops-work .kpi b{font-size:clamp(1.1rem,2.5vw,1.65rem);overflow-wrap:anywhere}
+.ops-overview .ops-list>li{min-width:0}
+.ops-overview .ops-list-main time{font-size:.83rem;font-weight:750;color:var(--ink)}
+.order-filters{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);align-items:end;gap:10px;margin-bottom:10px}
+.order-filters .field{min-width:0}
+.ops-work input,.ops-work select{max-width:100%;min-height:44px}
+.order-filters label{font-size:.82rem}
+.order-filters input,.order-filters select{width:100%;background:var(--surface);font-size:1rem}
+.order-results{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.order-results button{min-height:44px}
+.order-tools{justify-content:flex-end;margin-bottom:14px}
+.kanban{min-width:0;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:start}
+.kanban.single{grid-template-columns:minmax(0,1fr)}
+.kanban.single .col{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,255px),1fr));align-items:start}
+.kanban.single .col h3,.kanban.single .order-column-empty{grid-column:1/-1}
+.kanban .col{background:var(--surface-2);min-height:0;border-radius:12px;padding:10px;gap:10px;min-width:0}
+.kanban .col h3{align-items:center;gap:8px;letter-spacing:0;text-transform:none;color:var(--ink);font-size:.93rem;padding:5px 4px}
+.kanban .col h3 b{color:var(--muted);font-size:.8rem;background:var(--surface);border-radius:6px;padding:2px 7px}
+.order-column-empty{font-size:.85rem;color:var(--muted);padding:10px 4px}
+.ocard,.ocard.new{position:relative;min-width:0;box-shadow:none;border-radius:10px;padding:14px;gap:9px;border-top:3px solid var(--line)}
+.ocard.new{border-top-color:var(--brand-oxide)}
+.ocard.is-late{border-color:var(--crit)}
+.ocard header{flex-wrap:wrap}
+.ocard header>strong{font:750 1.13rem/1.2 var(--f-display)}
+.ocard .order-state{align-self:start;justify-self:start}
+.ocard-who .ops-link{font-size:1rem;min-height:44px}
+.ocard ul{font-size:.87rem}
+.ocard-meta,.ocard ul{overflow-wrap:anywhere}
+.ocard footer{flex-wrap:wrap;gap:10px}
+.ocard footer .btn{min-height:44px;font-size:.83rem}
+.ocard .order-eta{margin:0}
+.ocard .order-eta strong{font-size:.84rem}
+.ocard .order-eta small{font-size:.76rem}
+.ocard .eta-adjust{font-size:.82rem}
+.ocard .pickup-notify{min-height:48px}
+.ops-work .flash:focus,.ops-work .ocard:focus,.ops-work tr.flash:focus{outline:2px solid var(--accent-ink);outline-offset:-2px}
+
+.schedule-agenda{display:none}
+.schedule-agenda .ops-card-head{align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.schedule-agenda select{font-size:1rem}
+.schedule-agenda .ops-list .btn{min-width:106px}
+.schedule-scroll .shift-pill{min-height:44px}
+.schedule-grid .schedule-day.today{box-shadow:inset 0 3px var(--brand-oxide)}
+#op-dialog input,#op-dialog select,#op-dialog textarea{font-size:1rem}
+[data-view="painel"] #op-dialog .modal-actions{position:sticky;bottom:0;background:var(--surface);padding-bottom:max(14px,env(safe-area-inset-bottom,0px))}
+[data-view="painel"] #op-dialog .modal-actions .btn{min-height:44px}
+.panel-app-bar .mbar-count{background:var(--brand-oxide);color:#fff}
+
+@media(max-width:1220px){
+  .schedule-scroll{display:none}
+  .schedule-agenda{display:block}
+}
+@media(max-width:1024px){
+  html:has(body[data-view="painel"]){scroll-padding:12px 0 calc(76px + env(safe-area-inset-bottom,0px))}
+  body[data-view="painel"]{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+  .ops-shell{display:block;min-height:calc(100dvh - 76px)}
+  .ops-sidebar,.ops-head-actions .btn{display:none}
+  .ops-work{padding:16px 22px 30px}
+  .ops-brand-mobile{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:13px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+  .ops-brand-mobile img{display:block;width:84px;background:#fff;border-radius:5px;padding:6px}
+  .ops-head-actions .demo-chip{display:none}
+  .ops-work .panel-head{border:0;padding:0;margin-bottom:18px}
+  .panel-app-bar:not([hidden]){display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;inset:auto 0 0;z-index:35;padding:5px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));background:var(--brand-navy);border-top:1px solid #ffffff30;box-shadow:0 -6px 24px #12304425}
+  #panel-mbar button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:56px;padding:2px 0;border:0;border-radius:9px;background:transparent;color:#D6E4EB;box-shadow:none;font-size:.75rem;font-weight:650}
+  #panel-mbar .app-tab-icon{width:46px;height:27px}
+  #panel-mbar svg{width:21px;height:21px}
+  #panel-mbar button[aria-current="page"]{color:#fff;font-weight:800}
+  #panel-mbar button[aria-current="page"] .app-tab-icon{background:#FFFFFF28}
+  #panel-mbar button:focus-visible{outline-color:#F5BE98;outline-offset:-2px}
+  body[data-view="painel"] .toasts{bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+}
+@media(max-width:860px){
+  .ops-work .tbl-wrap,.ops-work .ops-table-wrap{overflow:visible;border:0;background:none;border-radius:0}
+  .ops-work :is(table.res,.ops-table){display:block;min-width:0}
+  .ops-work :is(table.res,.ops-table) thead{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .ops-work :is(table.res,.ops-table) tbody{display:grid;gap:10px}
+  .ops-work :is(table.res,.ops-table) tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:14px;border:1px solid var(--line);border-radius:11px;background:var(--surface)}
+  .ops-work :is(table.res,.ops-table) td{min-width:0;padding:0;border:0;display:block;overflow-wrap:anywhere;font-size:.9rem}
+  .ops-work :is(table.res,.ops-table) td[data-label]::before{content:attr(data-label);display:block;color:var(--muted);font-size:.75rem}
+  .ops-work :is(table.res,.ops-table) td[data-wide]{grid-column:1/-1}
+  .ops-work table.res tr.day{border:0;background:none;padding:6px 0 0;grid-template-columns:1fr}
+  .ops-work table.res tr.day td{padding:4px 0;background:none}
+  .ops-work .ops-table .btn{min-height:44px;font-size:.83rem}
+  .ops-work table.res .note{font-size:.81rem}
+  .ops-work table.res .t{font-size:1rem}
+}
+@media(max-width:700px){
+  .ops-work{padding-inline:14px}
+  .ops-grid,.ops-grid.equal,.kanban,.kanban.single .col{grid-template-columns:minmax(0,1fr)}
+  .service-board{padding:15px}
+  .service-lanes{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .service-lane{padding:9px 11px;min-height:64px}
+  .service-head{margin-bottom:11px}
+  .service-head button{padding-inline:9px;font-size:.78rem;white-space:nowrap}
+  .service-shortcuts{gap:7px}
+  .service-shortcuts .btn{flex:1 1 auto}
+  .ops-work .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ops-work .ops-card{padding:16px}
+  .ops-work .ops-card-head{flex-wrap:wrap}
+  .ops-work .ops-list>li{flex-wrap:wrap;gap:7px 10px}
+  .ops-work .demo-chart{gap:5px}
+  .order-filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .order-filters .field:first-child{grid-column:1/-1}
+  .ops-work .occ-bars{grid-template-columns:repeat(5,minmax(0,1fr));height:auto;padding-top:0}
+  .ops-work .occ-bar{min-height:106px}
+  #op-dialog{padding:8px}
+  #op-dialog .modal-card{max-height:calc(100dvh - 16px)}
+  #op-dialog .modal-body{padding:16px}
+  #op-dialog .modal-actions{padding-inline:16px}
+}
+@media(max-width:380px){
+  .ops-work .table-map{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ops-work .map-controls .field{flex-basis:100%}
+  .ops-work .occ-bar{font-size:.72rem}
+}
 </style>
 </head>
 <body>
@@ -964,26 +1127,37 @@ body.choosing-order-mode[data-view="site"]{padding-bottom:0}
 <!-- ============ PAINEL ============ -->
 <div id="view-painel" hidden>
  <div class="ops-shell">
+  <a class="skip-link panel-skip" href="#p-title">Pular para o conteúdo do painel</a>
   <aside class="ops-sidebar">
    <span class="ops-logo"><img src="assets/img-91d681e9.png" alt="Matriz Bar"></span>
-   <div><p class="eyebrow">O Matriz por dentro</p><nav class="ops-nav" role="tablist" aria-label="Gestão do restaurante"><button type="button" role="tab" id="pt-hoje" data-ptab="hoje" aria-controls="pane-hoje" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7M5 9v11h5v-6h4v6h5V9"/></svg><span>Visão geral</span></button><button type="button" role="tab" id="pt-pedidos" data-ptab="pedidos" aria-controls="pane-pedidos" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8v3H8zM6 5H4v16h16V5h-2M8 11h8M8 15h6"/></svg><span>Pedidos</span><span class=nav-dot id=nav-orders>3</span></button><button type="button" role="tab" id="pt-reservas" data-ptab="reservas" aria-controls="pane-reservas" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v16H4zM8 3v4M16 3v4M4 10h16M8 14h2M14 14h2"/></svg><span>Reservas e mesas</span></button><button type="button" role="tab" id="pt-clientes" data-ptab="clientes" aria-controls="pane-clientes" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M17 4a4 4 0 0 1 0 8M22 21v-2a4 4 0 0 0-3-3.87"/></svg><span>Clientes</span></button><button type="button" role="tab" id="pt-financas" data-ptab="financas" aria-controls="pane-financas" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v14H3zM3 10h18M7 15h3M16 3H5v3"/></svg><span>Caixa e finanças</span></button><button type="button" role="tab" id="pt-compras" data-ptab="compras" aria-controls="pane-compras" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v12H3zM14 11h4l3 4v4h-7M7 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4M18 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/></svg><span>Compras</span></button><button type="button" role="tab" id="pt-estoque" data-ptab="estoque" aria-controls="pane-estoque" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 7 9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10M7 5l10 4"/></svg><span>Estoque</span></button><button type="button" role="tab" id="pt-equipe" data-ptab="equipe" aria-controls="pane-equipe" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M18 8v6M15 11h6"/></svg><span>Equipe</span></button><button type="button" role="tab" id="pt-canais" data-ptab="canais" aria-controls="pane-canais" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5H7l-5 3 2-6a8.5 8.5 0 1 1 17-5.5M8 11h.01M12 11h.01M16 11h.01"/></svg><span>Canais</span></button></nav></div>
+   <div><nav class="ops-nav" role="tablist" aria-label="Gestão do restaurante" aria-orientation="vertical"><p class="ops-nav-label" aria-hidden="true">Operação</p><button type="button" role="tab" id="pt-hoje" data-ptab="hoje" aria-controls="pane-hoje" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 3l9 7M5 9v11h5v-6h4v6h5V9"/></svg><span>Visão geral</span></button><button type="button" role="tab" id="pt-pedidos" data-ptab="pedidos" aria-controls="pane-pedidos" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8v3H8zM6 5H4v16h16V5h-2M8 11h8M8 15h6"/></svg><span>Pedidos</span><span class=nav-dot id=nav-orders>3</span></button><button type="button" role="tab" id="pt-reservas" data-ptab="reservas" aria-controls="pane-reservas" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v16H4zM8 3v4M16 3v4M4 10h16M8 14h2M14 14h2"/></svg><span>Reservas e mesas</span></button><p class="ops-nav-label" aria-hidden="true">Gestão</p><button type="button" role="tab" id="pt-clientes" data-ptab="clientes" aria-controls="pane-clientes" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M17 4a4 4 0 0 1 0 8M22 21v-2a4 4 0 0 0-3-3.87"/></svg><span>Clientes</span></button><button type="button" role="tab" id="pt-financas" data-ptab="financas" aria-controls="pane-financas" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v14H3zM3 10h18M7 15h3M16 3H5v3"/></svg><span>Caixa e finanças</span></button><button type="button" role="tab" id="pt-compras" data-ptab="compras" aria-controls="pane-compras" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v12H3zM14 11h4l3 4v4h-7M7 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4M18 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/></svg><span>Compras</span></button><button type="button" role="tab" id="pt-estoque" data-ptab="estoque" aria-controls="pane-estoque" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 7 9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10M7 5l10 4"/></svg><span>Estoque</span></button><button type="button" role="tab" id="pt-equipe" data-ptab="equipe" aria-controls="pane-equipe" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M18 8v6M15 11h6"/></svg><span>Equipe</span></button><button type="button" role="tab" id="pt-canais" data-ptab="canais" aria-controls="pane-canais" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5H7l-5 3 2-6a8.5 8.5 0 1 1 17-5.5M8 11h.01M12 11h.01M16 11h.01"/></svg><span>Canais</span></button></nav></div>
    <div class="ops-side-bottom"><span class="ops-avatar">AM</span><div>Ana · Gestora<small>Perfil de demonstração</small></div></div>
   </aside>
   <main class="ops-work">
-   <div class="panel-head"><div><p class="eyebrow" id="p-date">Hoje</p><h1 id="p-title">Visão geral</h1></div><div class="ops-head-actions"><span class="demo-chip">Demonstração</span><button type="button" class="btn sm ghost" data-action="reset">Reiniciar demo</button></div></div>
-   <div class="ops-demo-note"><span><strong>Um dia no Matriz.</strong> Explore com dados fictícios. Nenhum pagamento ou mensagem é enviado.</span><button type="button" data-action="site">Ver site do cliente ↗</button></div>
-   <div class="kpis" id="kpis"></div>
+   <div class="ops-brand-mobile"><img src="assets/img-91d681e9.png" alt="Matriz Bar"><span class="demo-chip">Demonstração</span></div>
+   <header class="panel-head">
+    <div><h1 id="p-title" tabindex="-1">Visão geral</h1><p class="panel-date" id="p-date">Hoje</p></div>
+    <div class="ops-head-actions"><span class="demo-chip">Demonstração</span><button type="button" class="btn sm ghost" data-action="reset">Reiniciar</button><button type="button" class="btn sm ghost" data-action="site">Site do cliente ↗</button></div>
+   </header>
    <section class="pane" id="pane-hoje" role="tabpanel" aria-labelledby="pt-hoje" hidden></section>
    <section class="pane" id="pane-pedidos" role="tabpanel" aria-labelledby="pt-pedidos" hidden>
-    <div class="ops-toolbar"><div><p class="ops-small">Da entrada à entrega, acompanhe cada pedido.</p><p class="ops-small" id="order-timing-summary"></p></div><div class="ops-actions"><button type="button" class="btn sm ghost" data-action="prep-times"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Tempos da carta</button><button type="button" class="btn sm sun" data-action="site-order">Simular pedido no site ↗</button></div></div>
-    <div class="kanban-scroll"><div class="kanban" id="kanban"></div></div>
+    <div class="ops-toolbar order-tools">
+     <div class="ops-actions"><button type="button" class="btn sm ghost" data-action="prep-times">Tempos da carta</button><button type="button" class="btn sm sun" data-action="site-order">Simular pedido no site ↗</button></div>
+    </div>
+    <div class="order-filters">
+     <div class="field"><label for="order-search">Buscar pedido</label><input type="search" id="order-search" placeholder="Número, cliente ou mesa"></div>
+     <div class="field"><label for="order-stage">Situação</label><select id="order-stage"><option value="active">Em andamento</option><option value="novo">Novos</option><option value="preparo">Em preparo</option><option value="entrega">Prontos ou em rota</option><option value="late">Prazo vencido</option><option value="concluido">Concluídos</option><option value="all">Todos</option></select></div>
+     <div class="field"><label for="order-type">Modalidade</label><select id="order-type"><option value="">Todas</option><option>No local</option><option>Retirada</option><option>Entrega</option></select></div>
+    </div>
+    <div class="order-results"><p class="ops-small" id="order-results" role="status" tabindex="-1"></p><button type="button" class="ops-link" id="order-clear" hidden>Limpar filtros</button></div>
+    <div class="kanban" id="kanban"></div>
    </section>
    <section class="pane" id="pane-reservas" role="tabpanel" aria-labelledby="pt-reservas" hidden>
     <div class="ops-toolbar"><p class="ops-small">Reservas, mesas e lista de espera em um só lugar.</p><div class="ops-actions"><button type="button" class="btn sm ghost" data-action="wait-new">Lista de espera +</button><button type="button" class="btn sm sun" data-action="res-new">Nova reserva +</button></div></div>
-    <div class="ops-card"><div class="ops-card-head"><div><h2>O salão, mesa a mesa</h2><p>Ocupação ilustrativa por data e horário · permanência de 90 minutos.</p></div></div><div class="map-controls"><div class="field"><label for="map-date">Data</label><input type="date" id="map-date"></div><div class="field"><label for="map-time">Horário</label><select id="map-time"></select></div><div class="field"><label for="map-area">Área</label><select id="map-area"><option value="Todas">Todas as áreas</option><option value="Salão">Salão</option><option value="Varanda">Área externa</option></select></div></div><div class="table-map" id="tableMap" style="margin-top:20px"></div><div class="map-legend"><span><i></i>Livre</span><span><i class="booked"></i>Reservada</span><span><i class="arrived"></i>Cliente chegou</span></div></div>
-    <div class="ops-card occ" style="margin-top:22px"><div class="ops-card-head"><div><h2>Pessoas reservadas · jantar</h2><p id="occ-day">Distribuição por horário</p></div><span class="ops-small">Capacidade 64</span></div><div class="occ-bars" id="occ"></div></div>
-    <div class="ops-subhead"><h2>Reservas</h2><span class="ops-small" id="resCount"></span></div>
+    <div class="ops-subhead"><h2 id="res-agenda-title">Agenda de reservas</h2><span class="ops-small" id="resCount"></span></div>
     <div class="tbl-wrap"><table class="res"><thead><tr><th>Horário</th><th>Cliente</th><th>Pessoas</th><th>Área / mesa</th><th>Origem</th><th>Status</th><th>Ações</th></tr></thead><tbody id="resRows"></tbody></table></div>
+    <div class="ops-card" style="margin-top:22px"><div class="ops-card-head"><div><h2 id="table-map-title" tabindex="-1">Mapa de mesas</h2><p>Ocupação ilustrativa por data e horário · permanência de 90 minutos.</p></div></div><div class="map-controls"><div class="field"><label for="map-date">Data</label><input type="date" id="map-date"></div><div class="field"><label for="map-time">Horário</label><select id="map-time"></select></div><div class="field"><label for="map-area">Área</label><select id="map-area"><option value="Todas">Todas as áreas</option><option value="Salão">Salão</option><option value="Varanda">Área externa</option></select></div></div><div class="table-map" id="tableMap" style="margin-top:20px"></div><div class="map-legend"><span><i></i>Livre</span><span><i class="booked"></i>Reservada</span><span><i class="arrived"></i>Cliente chegou</span></div></div>
+    <div class="ops-card occ" style="margin-top:22px"><div class="ops-card-head"><div><h2>Pessoas reservadas · jantar</h2><p id="occ-day">Distribuição por horário</p></div><span class="ops-small">Capacidade 64</span></div><div class="occ-bars" id="occ"></div></div>
     <div class="ops-subhead"><h2>Lista de espera</h2><span class="ops-small" id="waitCount"></span></div><div class="ops-card"><ul class="ops-list" id="waitList"></ul></div>
    </section>
    <section class="pane" id="pane-clientes" role="tabpanel" aria-labelledby="pt-clientes" hidden><div class="ops-toolbar"><div class="field"><label for="client-search">Buscar cliente</label><input type="search" id="client-search" placeholder="Nome, WhatsApp ou e-mail"></div><div class="field" style="max-width:210px"><label for="client-filter">Histórico</label><select id="client-filter"><option value="all">Todos os clientes</option><option value="regular">Recorrentes</option><option value="new">Primeira visita</option></select></div><button type="button" class="btn sm sun" data-action="client-new">Novo cliente +</button></div><p class="ops-small" style="margin-bottom:20px">Cada reserva ou pedido identifica o cliente e atualiza sua ficha nesta demonstração.</p><div class="client-grid" id="clientList"></div></section>
@@ -1057,7 +1231,7 @@ body.choosing-order-mode[data-view="site"]{padding-bottom:0}
 <button type="button" data-app-section="cardapio"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-3H4zM20 4h-4a3 3 0 0 0-3 3M20 4v14h-3a4 4 0 0 0-4 3"/></svg></span><span>Cardápio</span></button><button type="button" data-app="search"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg></span><span>Busca</span></button><button type="button" data-app="visit" aria-haspopup="dialog"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg></span><span>Minha visita</span></button><button type="button" id="mbarOrder"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7ZM8 8V6a4 4 0 0 1 8 0v2"/></svg><span class="mbar-count num" id="mbarCount" hidden></span></span><span id="mbarLabel">Pedido</span></button><button type="button" data-app="more" aria-haspopup="dialog" aria-controls="app-sheet"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></span><span>Mais</span></button>
 </nav>
 <nav class="app-bar panel-app-bar" id="panel-mbar" aria-label="Navegação do restaurante" hidden>
-<button type="button" data-app-panel="hoje"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></span><span>Início</span></button><button type="button" data-app-panel="pedidos"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7ZM8 8V6a4 4 0 0 1 8 0v2"/></svg></span><span>Pedidos</span></button><button type="button" data-app-panel="reservas"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15h2M14 15h2"/></svg></span><span>Reservas</span></button><button type="button" data-app-panel="financas"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3M16 3H5v3"/></svg></span><span>Caixa</span></button><button type="button" data-app="more" aria-haspopup="dialog" aria-controls="app-sheet"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></span><span>Mais</span></button>
+<button type="button" data-app-panel="hoje"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></span><span>Início</span></button><button type="button" data-app-panel="pedidos"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7ZM8 8V6a4 4 0 0 1 8 0v2"/></svg><span class="mbar-count num" id="panel-new-orders" aria-hidden="true" hidden></span></span><span>Pedidos</span></button><button type="button" data-app-panel="reservas"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15h2M14 15h2"/></svg></span><span>Reservas</span></button><button type="button" data-app-panel="financas"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3M16 3H5v3"/></svg></span><span>Caixa</span></button><button type="button" data-app="more" aria-haspopup="dialog" aria-controls="app-sheet"><span class="app-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></span><span>Mais</span></button>
 </nav>
 <div class="modal app-sheet" id="app-sheet" role="dialog" aria-modal="true" aria-labelledby="app-sheet-title" hidden>
  <div class="modal-card"><div class="sheet-handle" aria-hidden="true"></div><div class="app-sheet-head"><div><p class="eyebrow">Matriz Bar · demo</p><h2 id="app-sheet-title">Mais do Matriz</h2></div><button type="button" class="x" id="app-sheet-close" aria-label="Fechar menu">×</button></div><div id="app-sheet-body"></div></div>
@@ -1236,7 +1410,8 @@ const S={
 /* All management records are fictional and deliberately kept in memory. */
 const D={
  prepTimes:Object.fromEntries(MENU.map(m=>[m.id,({'tartar':18,'taco-peixe':22,'taco-pernil':20,'trio':12,'lula':25,'ceviche':20,'pantomaca':12,'sand-peixe':18,'sand-pastrami':18,'paes':6,'suco':5,'mamba':1}[m.id]||({'Petiscos':18,'Coquetéis':7,'Chopes e cervejas':2,'Vinhos':3,'Sem álcool':2}[m.cat]||5))])),deliveryMinutes:20,
- clients:[],nextClient:1,clientQuery:'',clientFilter:'all',stockQuery:'',stockFilter:'all',financeFilter:'all',weekOffset:0,
+ clients:[],nextClient:1,clientQuery:'',clientFilter:'all',stockQuery:'',stockFilter:'all',financeFilter:'all',weekOffset:0,shiftDay:null,
+ orderStage:'active',orderType:'',orderQuery:'',
  mapDate:TODAY,mapTime:'20:00',mapArea:'Todas',
  stock:[
   {id:'peixe',name:'Peixe do dia',group:'Cozinha',unit:'kg',qty:1.8,min:2,target:5,cost:62,supplier:'s1',expiry:addDays(TODAY,1)},
@@ -1297,13 +1472,22 @@ function initializeOperations(){
  const contacts={'Fernanda Lima':['(12) 98812-4407','fernanda.lima@email.com'],'Lucas Andrade':['(12) 99731-2205','lucas@example.com']};
  [...S.res.map(r=>r.name),...S.orders.map(o=>o.customer),'Fernanda Lima'].forEach((name,i)=>{const [phone,email]=contacts[name]||[`(12) 99000-${String(4000+i).padStart(4,'0')}`,normText(name).split(' ')[0]+'@example.com'];const c=upsertClient(name,phone,email);if(i%3!==1)c.history=[{date:addDays(TODAY,-7-i),spend:86+i*9,detail:'Visita ao Matriz · consumo ilustrativo'},{date:addDays(TODAY,-20-i),spend:112+i*7,detail:'Jantar · consumo ilustrativo'}];if(name==='Fernanda Lima'){c.history=[{date:addDays(TODAY,-8),spend:136,detail:'Jantar · consumo ilustrativo'},{date:addDays(TODAY,-24),spend:98,detail:'Petiscos e coquetéis · consumo ilustrativo'}];c.preference='Área externa';c.note='Prefere mesa na varanda. Conheceu o Matriz pelo Instagram.';c.tag='Recorrente'}});
  S.res.forEach((r,i)=>{const c=D.clients.find(x=>x.name===r.name);r.clientId=c.id;r.phone=c.phone;r.email=c.email;r.tables=[['S03'],['V01'],['V02'],['V03'],['S05'],['V04']][i]||[]});
- S.orders.forEach(o=>{o.clientId=D.clients.find(c=>c.name===o.customer).id;o.stockApplied=o.status!=='novo';if(o.status!=='concluido')ensureOrderEta(o)});
+ S.orders.forEach(o=>{
+   o.clientId=D.clients.find(c=>c.name===o.customer).id;
+   o.stockApplied=o.status!=='novo';
+   if(o.status==='concluido')return;
+   const eta=ensureOrderEta(o);
+   if(o.id!==427)return;
+   // One sample delivery has already exceeded its estimate when the demo opens.
+   eta.dueAt-=(eta.totalMinutes+4)*60000;
+   eta.createdAt=eta.updatedAt=eta.dueAt-eta.totalMinutes*60000;
+ });
  const weekday=parseISO(TODAY).getDay(),week=addDays(TODAY,-((weekday+6)%7));
  for(let day=0;day<7;day++){if(parseISO(addDays(week,day)).getDay()===1)continue;D.staff.forEach((e,i)=>{if(i===4&&day<4)return;D.shifts.push({id:'T-'+(++D.nextId),staff:e.id,date:addDays(week,day),start:i===2?'11:30':'17:30',end:i===2?'20:00':'00:30',break:60,status:'planned'})})}
  $('#map-date').value=TODAY;$('#map-time').innerHTML=[...LUNCH,...DINNER].map(t=>`<option ${t===D.mapTime?'selected':''}>${t}</option>`).join('');
  BASE_DEMO=JSON.stringify({S,D});
 }
-function resetOperations(opts={}){const initial=JSON.parse(BASE_DEMO);Object.keys(S).forEach(k=>delete S[k]);Object.assign(S,initial.S);Object.keys(D).forEach(k=>delete D[k]);Object.assign(D,initial.D);S.view='painel';S.ptab='hoje';$('#resForm').reset();$('#orderForm').reset();$('#c-bairro').value='Topolândia';$('#r-date').value=firstOpenDate();$('#map-date').value=D.mapDate;$('#map-time').value=D.mapTime;$('#map-area').value='Todas';$('#client-search').value='';$('#client-filter').value='all';$('#stock-search').value='';setPeople(2);renderCats();renderMenu();renderCart();renderSlots();resetClientDemo();go(opts.view==='site'?'site':'painel');toast('Demonstração reiniciada. Todos os dados de exemplo foram restaurados.')}
+function resetOperations(opts={}){const initial=JSON.parse(BASE_DEMO);Object.keys(S).forEach(k=>delete S[k]);Object.assign(S,initial.S);Object.keys(D).forEach(k=>delete D[k]);Object.assign(D,initial.D);S.view='painel';S.ptab='hoje';$('#resForm').reset();$('#orderForm').reset();$('#c-bairro').value='Topolândia';$('#r-date').value=firstOpenDate();$('#map-date').value=D.mapDate;$('#map-time').value=D.mapTime;$('#map-area').value='Todas';$('#client-search').value='';$('#client-filter').value='all';$('#stock-search').value='';setPeople(2);renderCats();renderMenu();renderCart();renderSlots();resetClientDemo();setOrderFilters();go(opts.view==='site'?'site':'painel');toast('Demonstração reiniciada. Todos os dados de exemplo foram restaurados.')}
 
 /* ---------- helpers for messages ---------- */
 function fulfillmentLabel(o){
@@ -1708,8 +1892,27 @@ function orderEtaMarkup(o,staff=false){if(o.status==='concluido')return'';const 
 function savePrepTimes(fd){const next={};for(const m of MENU){const raw=fd.get('prep-'+m.id),minutes=Number(raw);if(raw===null||!String(raw).trim()||!Number.isInteger(minutes)||minutes<1||minutes>180)return{error:`Informe de 1 a 180 minutos para ${m.name}.`};next[m.id]=minutes}const rawTravel=fd.get('prep-delivery'),travel=Number(rawTravel);if(rawTravel===null||!String(rawTravel).trim()||!Number.isInteger(travel)||travel<0||travel>120)return{error:'Informe de 0 a 120 minutos de deslocamento para entrega.'};D.prepTimes=next;D.deliveryMinutes=travel;activity('Tempos fictícios da carta atualizados. Pedidos já recebidos mantêm sua previsão.','pedidos');return{message:'Tempos da carta salvos na demo. Valem para os próximos pedidos.'}}
 function prepTimesForm(){openOp('Tempos da carta',`<p class="client-notice"><strong>Minutos de exemplo, editáveis pela equipe.</strong> Os itens são preparados em paralelo: usamos o maior tempo de preparo do pedido. Entrega soma o deslocamento abaixo. Pedidos já recebidos mantêm sua previsão; ajuste-os individualmente em “Ajustar previsão”.</p><div class="prep-time-fields">${CATS.slice(1).map(cat=>`<fieldset><legend>${esc(cat)}</legend>${MENU.filter(m=>m.cat===cat).map(m=>`<label class="prep-time-row" for="prep-${m.id}"><span>${esc(m.name)}</span><span class="prep-minute-input"><input id="prep-${m.id}" name="prep-${m.id}" type="number" value="${prepMinutes(m.id)}" min="1" max="180" step="1" required><span>min</span></span></label>`).join('')}</fieldset>`).join('')}</div><div class="prep-delivery-field">${field('prep-delivery','Deslocamento adicional para entrega (min)','number',D.deliveryMinutes,'required min="0" max="120" step="1"')}<p class="ops-small">Deslocamento fictício único para esta demo. Retirada não recebe esse acréscimo.</p></div>`,fd=>{const result=savePrepTimes(fd);if(!result.error){renderMenu();renderCart();renderFab()}return result},'Salvar tempos na demo')}
 function adjustOrderEta(id,{minutes,reason,expectedRevision}){const o=S.orders.find(o=>String(o.id)===String(id));if(!o||o.status==='concluido'||readyForPickup(o))return{error:'Ajuste a previsão enquanto o pedido ainda estiver aguardando preparo ou entrega.'};if(!Number.isInteger(minutes)||minutes<1||minutes>240)return{error:'Informe de 1 a 240 minutos a partir de agora.'};if(!Object.prototype.hasOwnProperty.call(ETA_REASONS,reason))return{error:'Escolha o motivo do ajuste.'};const previous=ensureOrderEta(o);if(previous.revision!==expectedRevision)return{error:'Esta previsão já foi atualizada. Feche e revise o prazo antes de ajustar novamente.'};const now=Date.now();o.eta={...previous,totalMinutes:minutes,updatedAt:now,dueAt:now+minutes*60000,revision:previous.revision+1,source:'manual',reason};activity(`Previsão do pedido ${orderNo(o.id)} ajustada para ${minutes} min a partir de agora · ${ETA_REASONS[reason]}.`,'pedidos');return{message:`Previsão ${orderNo(o.id)} atualizada para ${minutes} min a partir de agora.`}}
-function orderEtaForm(id){const o=S.orders.find(o=>String(o.id)===String(id));if(!o||o.status==='concluido'||readyForPickup(o)){toast('O pedido já está pronto ou concluído.');return}const eta=ensureOrderEta(o),expectedRevision=eta.revision;openOp('Ajustar previsão do pedido',`<div class="pickup-notice-intro"><strong>${orderNo(o.id)} · ${esc(o.customer)}</strong><p>${esc(orderEtaLabel(o))}</p></div><div class="form">${field('eta-minutes','Novo prazo a partir de agora (min)','number',Math.max(1,etaRemaining(o)),'required min="1" max="240" step="1"')}<div class="eta-presets" role="group" aria-label="Acrescentar tempo ao novo prazo"><button type="button" data-eta-add="10">+10 min</button><button type="button" data-eta-add="20">+20 min</button><button type="button" data-eta-add="30">+30 min</button></div>${selectField('eta-reason','Motivo visível ao cliente',Object.entries(ETA_REASONS),eta.reason||'alta_demanda')}<div class="demo-result">${o.type==='Entrega'?'Entrega':'Retirada'} prevista às <b id="eta-preview">${etaClock(Date.now()+Math.max(1,etaRemaining(o))*60000)}</b></div><p class="ops-small">Este é o tempo restante total, contado a partir de agora${o.type==='Entrega'?', já incluindo o deslocamento':''}. O novo prazo aparece em “Minha visita” nesta mesma sessão. Não altera cobrança, estoque ou status e não envia mensagens.</p></div>`,fd=>adjustOrderEta(id,{minutes:Number(fd.get('eta-minutes')),reason:fd.get('eta-reason'),expectedRevision}),'Atualizar previsão na demo');const input=$('#eta-minutes');input.addEventListener('input',()=>{const minutes=Number(input.value);$('#eta-preview').textContent=Number.isInteger(minutes)&&minutes>=1&&minutes<=240?etaClock(Date.now()+minutes*60000):'Revise os minutos'});$$('[data-eta-add]',$('#op-body')).forEach(b=>b.addEventListener('click',()=>{input.value=Math.min(240,Math.max(0,Number(input.value)||0)+Number(b.dataset.etaAdd));input.dispatchEvent(new Event('input',{bubbles:true}))}))}
-function refreshOrderEtaLabels(){if(document.hidden)return;$$('[data-order-eta]').forEach(el=>{const o=S.orders.find(o=>String(o.id)===el.dataset.orderEta);if(o)el.textContent=orderEtaLabel(o)})}
+function orderEtaForm(id){const o=S.orders.find(o=>String(o.id)===String(id));if(!o||o.status==='concluido'||readyForPickup(o)){toast('O pedido já está pronto ou concluído.');return}const eta=ensureOrderEta(o),expectedRevision=eta.revision;openOp('Ajustar previsão do pedido',`<div class="pickup-notice-intro"><strong>${orderNo(o.id)} · ${esc(o.customer)}</strong><p>${esc(orderEtaLabel(o))}</p></div><div class="form">${field('eta-minutes','Novo prazo a partir de agora (min)','number',Math.max(1,etaRemaining(o)),'required min="1" max="240" step="1"')}<div class="eta-presets" role="group" aria-label="Acrescentar tempo ao novo prazo"><button type="button" data-eta-add="10">+10 min</button><button type="button" data-eta-add="20">+20 min</button><button type="button" data-eta-add="30">+30 min</button></div>${selectField('eta-reason','Motivo visível ao cliente',Object.entries(ETA_REASONS),eta.reason||'alta_demanda')}<div class="demo-result">Previsão para <b id="eta-preview">${etaClock(Date.now()+Math.max(1,etaRemaining(o))*60000)}</b></div><p class="ops-small">Este é o tempo restante total, contado a partir de agora${o.type==='Entrega'?', já incluindo o deslocamento':''}. O novo prazo aparece em “Minha visita” nesta mesma sessão. Não altera cobrança, estoque ou status e não envia mensagens.</p></div>`,fd=>adjustOrderEta(id,{minutes:Number(fd.get('eta-minutes')),reason:fd.get('eta-reason'),expectedRevision}),'Atualizar previsão na demo');const input=$('#eta-minutes');input.addEventListener('input',()=>{const minutes=Number(input.value);$('#eta-preview').textContent=Number.isInteger(minutes)&&minutes>=1&&minutes<=240?etaClock(Date.now()+minutes*60000):'Revise os minutos'});$$('[data-eta-add]',$('#op-body')).forEach(b=>b.addEventListener('click',()=>{input.value=Math.min(240,Math.max(0,Number(input.value)||0)+Number(b.dataset.etaAdd));input.dispatchEvent(new Event('input',{bubbles:true}))}))}
+function refreshOrderEtaLabels(){
+  if(document.hidden)return;
+  $$('[data-order-eta]').forEach(el=>{
+    const o=S.orders.find(o=>String(o.id)===el.dataset.orderEta);
+    if(o)el.textContent=orderEtaLabel(o);
+  });
+  if(S.view!=='painel')return;
+  if(S.ptab==='hoje')updateServiceDelay();
+  if(S.ptab==='pedidos'){
+    $$('#kanban [data-id]').forEach(card=>{
+      const order=S.orders.find(o=>String(o.id)===card.dataset.id);
+      card.classList.toggle('is-late',orderIsLate(order));
+    });
+    if(D.orderStage==='late'&&matchingOrders().length!==$$('#kanban [data-id]').length){
+      const control=document.activeElement;
+      renderKanban();
+      restorePanelFocus(control);
+    }
+  }
+}
 setInterval(refreshOrderEtaLabels,30000);document.addEventListener('visibilitychange',refreshOrderEtaLabels);
 
 /* ---------- manual pickup notice (demo only) ---------- */
@@ -1755,8 +1958,12 @@ function renderPanel(){
   if(!PANEL_TITLES[S.ptab])S.ptab='hoje';
   $('#p-date').textContent=cap(new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'}));
   $('#p-title').textContent=PANEL_TITLES[S.ptab];renderMobileNav();
-  $('#kpis').hidden=S.ptab!=='hoje';
-  $('#nav-orders').textContent=S.orders.filter(o=>o.status!=='concluido').length;
+  const newOrders=S.orders.filter(o=>o.status==='novo').length;
+  $('#nav-orders').hidden=!newOrders;
+  $('#nav-orders').textContent=newOrders;
+  $('#panel-new-orders').hidden=!newOrders;
+  $('#panel-new-orders').textContent=newOrders;
+  $('#panel-mbar [data-app-panel="pedidos"]').setAttribute('aria-label',newOrders?`Pedidos · ${newOrders} ${newOrders===1?'novo':'novos'}`:'Pedidos');
   $$('[data-ptab]').forEach(b=>{b.setAttribute('aria-selected',b.dataset.ptab===S.ptab);b.tabIndex=b.dataset.ptab===S.ptab?0:-1});
   Object.keys(PANEL_TITLES).forEach(k=>$('#pane-'+k).hidden=k!==S.ptab);
   if(S.ptab==='hoje')renderOverview();
@@ -1768,25 +1975,111 @@ function renderPanel(){
   if(S.ptab==='estoque')renderStock();
   if(S.ptab==='equipe')renderTeam();
   if(S.ptab==='canais')renderChannels();
-  if(S.flash){const f=S.flash;S.flash=null;requestAnimationFrame(()=>{const el=document.querySelector(`[data-id="${f}"]`);if(el){el.classList.add('flash');el.scrollIntoView({behavior:'smooth',block:'center'})}})}
+  if(['reservas','financas','compras'].includes(S.ptab))labelPanelTables($('#pane-'+S.ptab));
+  if(S.flash){
+    const id=S.flash,pane=$('#pane-'+S.ptab);
+    S.flash=null;
+    requestAnimationFrame(()=>{
+      const card=$(`[data-id="${id}"]`,pane);
+      if(!card||pane.hidden)return;
+      card.classList.add('flash');
+      card.setAttribute('tabindex','-1');
+      card.focus({preventScroll:true});
+      card.scrollIntoView({block:'center'});
+    });
+  }
+}
+// Explicit table roles retain header and cell relationships in the narrow layout.
+function labelPanelTables(root){
+  $$('table.res,table.ops-table',root).forEach((table,index)=>{
+    table.setAttribute('role','table');
+    $$('thead,tbody',table).forEach(section=>section.setAttribute('role','rowgroup'));
+    $$('tr',table).forEach(row=>row.setAttribute('role','row'));
+    const labels=$$('thead th',table).map((header,i)=>{
+      header.id=`heading-${root.id}-${index}-${i}`;
+      header.setAttribute('role','columnheader');
+      header.scope='col';
+      return header;
+    });
+    $$('tbody tr',table).forEach(row=>[...row.cells].forEach((cell,i)=>{
+      cell.setAttribute('role','cell');
+      if(cell.colSpan>1){cell.dataset.wide='';return}
+      if(!labels[i])return;
+      cell.headers=labels[i].id;
+      const label=labels[i].textContent.trim();
+      if(cell.querySelector('.ops-actions,.btn')||!label||table.classList.contains('res')&&i===1||table.closest('#purchaseContent')&&i===0){
+        cell.dataset.wide='';
+      }else{
+        cell.dataset.label=label;
+      }
+    }));
+  });
 }
 $$('[data-ptab]').forEach(b=>b.addEventListener('click',()=>goPanel(b.dataset.ptab)));
 $('.ops-nav').addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft','ArrowDown','ArrowUp','Home','End'].includes(e.key))return;e.preventDefault();const tabs=$$('[data-ptab]'),i=tabs.indexOf(document.activeElement);const n=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+(e.key==='ArrowLeft'||e.key==='ArrowUp'?-1:1)+tabs.length)%tabs.length;goPanel(tabs[n].dataset.ptab);tabs[n].focus()});
-const COLS=[['novo','Novos'],['preparo','Na cozinha'],['entrega','Em rota / pronto'],['concluido','Concluídos']];
-function renderKanban(){
-  $('#order-timing-summary').textContent=`Previsão: maior preparo do pedido + ${D.deliveryMinutes} min de deslocamento para entrega. Tempos de exemplo.`;
-  $('#kanban').innerHTML=COLS.map(([k,l])=>{
-    const list=S.orders.filter(o=>o.status===k);
-    return `<div class="col"><h3><span>${l}</span><span class="num">${list.length}</span></h3>${list.map(orderCard).join('')||'<p class="muted" style="font-size:.86rem">Nada por aqui.</p>'}</div>`;
-  }).join('');
+const COLS=[['novo','Novos'],['preparo','Em preparo'],['entrega','Prontos ou em rota'],['concluido','Concluídos']];
+function orderIsLate(o){
+  return !!o&&o.status!=='concluido'&&(o.status!=='entrega'||o.type==='Entrega')&&ensureOrderEta(o).dueAt<=Date.now();
 }
+function matchingOrders(){
+  const query=normText(D.orderQuery.trim().replace(/^#/,''));
+  return S.orders.filter(o=>{
+    const stage=D.orderStage;
+    const matchesStage=stage==='all'||stage===o.status||stage==='active'&&o.status!=='concluido'||stage==='late'&&orderIsLate(o);
+    const matchesQuery=!query||normText(`${orderNo(o.id)} ${o.customer} ${o.table||''}`).includes(query);
+    return matchesStage&&matchesQuery&&(!D.orderType||D.orderType===o.type);
+  }).sort((a,b)=>Number(orderIsLate(b))-Number(orderIsLate(a))||a.id-b.id);
+}
+function setOrderFilters(stage='active',type='',query=''){
+  D.orderStage=$('#order-stage').value=stage;
+  D.orderType=$('#order-type').value=type;
+  D.orderQuery=$('#order-search').value=query;
+}
+function renderKanban(){
+  const target=S.orders.find(o=>o.id===S.flash);
+  if(target)setOrderFilters(target.status);
+  const orders=matchingOrders();
+  const filtersActive=D.orderStage!=='active'||D.orderType||D.orderQuery;
+  const columns=COLS.filter(([stage])=>D.orderStage==='all'||D.orderStage===stage||D.orderStage==='active'&&stage!=='concluido'||D.orderStage==='late'&&orders.some(o=>o.status===stage));
+  $('#order-clear').hidden=!filtersActive;
+  $('#order-results').textContent=orders.length===1?'1 pedido':`${orders.length} pedidos`;
+  $('#kanban').classList.toggle('single',columns.length<2||D.orderStage==='late');
+  $('#kanban').innerHTML=orders.length?columns.map(([stage,title])=>{
+    const list=orders.filter(o=>o.status===stage);
+    return `<section class="col" aria-labelledby="orders-${stage}"><h3 id="orders-${stage}"><span>${title}</span><b class="num">${list.length}</b></h3>${list.map(orderCard).join('')||'<p class="order-column-empty">Nenhum pedido nesta etapa.</p>'}</section>`;
+  }).join(''):empty(filtersActive?'Nenhum pedido para esta combinação de filtros.':'Nenhum pedido em andamento.');
+}
+for(const [id,key] of [['order-search','orderQuery'],['order-stage','orderStage'],['order-type','orderType']]){
+  $('#'+id).addEventListener(id==='order-search'?'input':'change',event=>{D[key]=event.target.value;renderKanban()});
+}
+$('#order-clear').addEventListener('click',()=>{setOrderFilters();renderKanban();$('#order-search').focus()});
 function orderCard(o){
   const t=totals(o);
   const finish={'Entrega':'Concluir entrega','Retirada':'Marcar retirado','No local':'Marcar servido'};
   const next={novo:'Aceitar',preparo:o.type==='Entrega'?'Despachar':'Marcar pronto',entrega:finish[o.type]}[o.status];
-  return `<article class="ocard ${o.status==='novo'?'new':''}" data-id="${o.id}"><header><strong class="num">${orderNo(o.id)}</strong>${badge(o.origin)}<time class="num">${o.time}</time></header><div class="ocard-who"><button type="button" class="ops-link" data-action="client-profile" data-key="${o.clientId}">${esc(o.customer)}</button></div><ul>${o.items.map(([id,q])=>`<li><span>${q}×</span> ${esc(M[id].name)}${o.itemNotes?.[id]?`<small style="display:block;font-size:.72rem">Obs.: ${esc(o.itemNotes[id])}</small>`:''}</li>`).join('')}</ul><div class="ocard-meta">${esc(fulfillmentLabel(o))} · ${esc(o.pay)}${o.notes?`<br>Obs.: ${esc(o.notes)}`:''}</div>${orderEtaMarkup(o,true)}<footer><strong class="num">${money(t.total)}</strong>${next?`<button type="button" class="btn sm" data-adv="${o.id}">${uiIcon(o.status==='entrega'?'check':'arrow')}<span class="btn-label">${next}</span></button>`:'<span class="done">Finalizado</span>'}</footer>${pickupNoticeCard(o)}</article>`;
+  return `<article class="ocard ${o.status==='novo'?'new':''} ${orderIsLate(o)?'is-late':''}" data-id="${o.id}" tabindex="-1" aria-label="Pedido ${orderNo(o.id)}">
+    <header><strong class="num">${orderNo(o.id)}</strong>${badge(o.origin)}<time class="num">${o.time}</time></header>
+    <div class="order-state">${pill(orderLabels(o)[orderIndex(o)],o.status==='concluido'?'ok':o.status==='novo'?'rust':'')}</div>
+    <div class="ocard-who"><button type="button" class="ops-link" data-action="client-profile" data-key="${o.clientId}">${esc(o.customer)}</button></div>
+    <div class="ocard-meta"><strong>${esc(fulfillmentLabel(o))}</strong> · ${esc(o.pay)}${o.notes?`<br>Obs.: ${esc(o.notes)}`:''}</div>
+    <ul>${o.items.map(([id,q])=>`<li><span>${q}×</span> ${esc(M[id].name)}${o.itemNotes?.[id]?`<small style="display:block;font-size:.78rem">Obs.: ${esc(o.itemNotes[id])}</small>`:''}</li>`).join('')}</ul>
+    ${orderEtaMarkup(o,true)}
+    <footer><strong class="num">${money(t.total)}</strong>${next?`<button type="button" class="btn sm" data-adv="${o.id}">${uiIcon(o.status==='entrega'?'check':'arrow')}<span class="btn-label">${next}</span></button>`:'<span class="done">Finalizado</span>'}</footer>
+    ${pickupNoticeCard(o)}
+  </article>`;
 }
-$('#kanban').addEventListener('click',e=>{const b=e.target.closest('[data-adv]');if(!b)return;const result=advanceRestaurantOrder(b.dataset.adv);if(result.error){toast(esc(result.error));return}toast('Pedido atualizado na demonstração.');renderPanel()});
+$('#kanban').addEventListener('click',event=>{
+  const button=event.target.closest('[data-adv]');
+  if(!button)return;
+  const id=Number(button.dataset.adv),result=advanceRestaurantOrder(id);
+  if(result.error){toast(esc(result.error));return}
+  const order=S.orders.find(o=>o.id===id);
+  toast(`Pedido ${orderNo(id)} · ${orderLabels(order)[orderIndex(order)]}.`);
+  renderPanel();
+  const card=$(`#kanban [data-id="${id}"]`),next=card||$('#order-results');
+  next.focus({preventScroll:true});
+  next.scrollIntoView({block:'nearest'});
+});
 function renderChannels(){
   $$('[data-auto]').forEach(i=>i.checked=!!S.auto[i.dataset.auto]);
   const wa=S.log.filter(l=>l.ch==='WhatsApp').slice(-3);
@@ -1801,12 +2094,82 @@ function renderChannels(){
 document.addEventListener('change',e=>{const i=e.target.closest('[data-auto]');if(!i)return;S.auto[i.dataset.auto]=i.checked;renderPanel()});
 $('#igBtns').addEventListener('click',e=>{const b=e.target.closest('[data-ig]');if(!b||!S.auto.igButtons)return;go('site');setTimeout(()=>scrollToId(b.dataset.ig),60)});
 
+function updateServiceDelay(){
+  const late=$('#service-late');
+  if(!late)return;
+  const count=S.orders.filter(orderIsLate).length;
+  $('b',late).textContent=count;
+  late.classList.toggle('has-delay',count>0);
+}
 function renderOverview(){
- const open=S.orders.filter(o=>o.status!=='concluido').length,today=S.res.filter(r=>r.date===TODAY&&!['cancelada','ausente'].includes(r.status)),low=D.stock.filter(s=>s.qty<s.min),due=D.bills.filter(b=>remaining(b)>0&&b.due<=TODAY),incoming=D.ledger.filter(l=>l.date===TODAY&&l.kind==='entrada').reduce((a,l)=>a+l.amount,0);
- $('#kpis').innerHTML=statsHTML([[today.length+' <small>· '+today.reduce((a,r)=>a+r.people,0)+' pessoas</small>','Reservas para hoje','Mesas, salão e área externa'],[money(incoming),'Entradas registradas hoje','Valores de demonstração'],[open,'Pedidos em andamento','Acompanhe a cozinha'],[low.length,'Itens abaixo do mínimo','Estoque atualizado na demo']]).replace(/^<div class="kpis">|<\/div>$/g,'');
- const pending=[...due.map(b=>({icon:'$',title:`${supplierBy(b.supplier).name} · ${money(remaining(b))}`,sub:b.due<TODAY?'Conta vencida · pagamento pendente':'Vence hoje · pagamento pendente',action:'bill-pay',id:b.id,button:'Registrar pagamento'})),...low.map(s=>({icon:'↓',title:s.name,sub:`${nfmt(s.qty)} ${s.unit} em estoque · mínimo ${nfmt(s.min)} ${s.unit}`,action:'purchase-new',id:s.id,button:'Repor'}))];
- const next=[...today].filter(r=>r.status!=='chegou').sort((a,b)=>a.time.localeCompare(b.time)).slice(0,4);
- $('#pane-hoje').innerHTML=`<div class="ops-welcome"><div><p class="eyebrow">O próximo serviço começa aqui</p><h2>Mesa pronta. Equipe a postos.<br>O Matriz em movimento.</h2><p>Veja o que precisa de atenção e experimente como cada ação se reflete no restaurante.</p></div>${opButton('Simular nova reserva ↗','demo-res','','sun')}<span class="welcome-mark" aria-hidden="true">MTZ</span></div><div class="ops-grid"><div class="ops-stack"><section class="ops-card"><div class="ops-card-head"><div><h2>Precisa de atenção</h2><p>Contas e reposições para o serviço.</p></div>${pill(pending.length+' pendências','warn')}</div>${pending.length?`<ul class="ops-list">${pending.map(p=>`<li><div class="ops-list-main"><span class="ops-alert-icon" aria-hidden="true">${p.icon}</span><div><strong>${esc(p.title)}</strong><small>${esc(p.sub)}</small></div></div>${opButton(p.button,p.action,p.id)}</li>`).join('')}</ul>`:empty('Tudo em dia para o próximo serviço.')}</section><section class="ops-card"><div class="ops-card-head"><div><h2>As próximas mesas</h2><p>Clientes que você vai receber hoje.</p></div>${opButton('Ver reservas ↗','nav','reservas')}</div>${next.length?`<ul class="ops-list">${next.map(r=>`<li><div class="ops-list-main"><strong class="num">${r.time}</strong><div><button class="ops-link" data-action="client-profile" data-key="${r.clientId}">${esc(r.name)}</button><small>${r.people} pessoas · ${r.area==='Varanda'?'Área externa':r.area} · ${r.tables.length?r.tables.join(', '):'sem mesa definida'}</small></div></div>${pill(STAT_LABEL[r.status]||r.status,r.status==='aguardando'?'warn':'ok')}</li>`).join('')}</ul>`:empty('Nenhuma reserva aguardando chegada hoje.')}</section></div><div class="ops-stack"><section class="ops-card"><div class="ops-card-head"><div><h2>Entradas da semana</h2><p>Histórico ilustrativo + movimentos de hoje.</p></div></div>${revenueChart()}</section><section class="ops-card"><div class="ops-card-head"><div><h2>Quem faz acontecer hoje</h2><p>Equipe prevista para o serviço.</p></div>${opButton('Ver turnos ↗','nav','equipe')}</div><ul class="ops-list">${D.shifts.filter(t=>t.date===TODAY).slice(0,4).map(t=>{const e=D.staff.find(e=>e.id===t.staff);return `<li><div class="ops-list-main"><span class="ops-avatar">${initials(e.name)}</span><div><strong>${esc(e.name)}</strong><small>${esc(e.job)} · ${t.start}–${t.end}</small></div></div>${pill(t.status==='working'?'Em turno':t.status==='done'?'Encerrado':'Escalado',t.status==='working'?'ok':'')}</li>`}).join('')||'<li>Sem turnos hoje.</li>'}</ul></section></div><section class="ops-card full"><div class="ops-card-head"><div><h2>Aconteceu no Matriz</h2><p>Alterações desta sessão de demonstração.</p></div>${pill('Somente simulação')}</div><ul class="ops-list">${D.events.slice(0,5).map(e=>`<li><div class="ops-list-main"><time class="num">${e.time}</time><div>${esc(e.text)}</div></div><button class="ops-link" data-action="nav" data-key="${e.tab}">Ver ↗</button></li>`).join('')}</ul></section></div>`;
+  const today=S.res.filter(r=>r.date===TODAY&&activeBooking(r));
+  const next=today.filter(r=>r.status!=='chegou').sort((a,b)=>a.time.localeCompare(b.time)).slice(0,4);
+  const low=D.stock.filter(s=>s.qty<s.min);
+  const due=D.bills.filter(b=>remaining(b)>0&&b.due<=TODAY).sort((a,b)=>a.due.localeCompare(b.due));
+  const incoming=D.ledger.filter(l=>l.date===TODAY&&l.kind==='entrada').reduce((a,l)=>a+l.amount,0);
+  const openPurchases=D.purchases.filter(p=>p.status==='pedido').length;
+  const stats=statsHTML([
+    [money(incoming),'Entradas de hoje',D.cash.open?'Caixa aberto':'Caixa fechado'],
+    [today.length,'Reservas de hoje',today.reduce((a,r)=>a+r.people,0)+' pessoas'],
+    [low.length,'Itens abaixo do mínimo'],
+    [openPurchases,'Compras a receber']
+  ]);
+  const pending=[
+    ...due.map(b=>({icon:'wallet',title:`${supplierBy(b.supplier).name} · ${money(remaining(b))}`,sub:b.due<TODAY?'Conta vencida · '+b.desc:'Vence hoje · '+b.desc,action:'bill-pay',id:b.id,button:'Registrar pagamento'})),
+    ...low.map(s=>({icon:'box',title:s.name,sub:`${nfmt(s.qty)} ${s.unit} em estoque · mínimo ${nfmt(s.min)} ${s.unit}`,action:'purchase-new',id:s.id,button:'Repor'}))
+  ];
+  const lanes=[
+    ['novo','Novos','plus'],
+    ['preparo','Em preparo','clock'],
+    ['entrega','Prontos ou em rota','check'],
+    ['late','Prazo vencido','clock']
+  ];
+  $('#pane-hoje').innerHTML=`<div class="ops-overview">
+    <section class="service-board" aria-labelledby="service-title">
+      <div class="service-head"><h2 id="service-title">Serviço em andamento</h2><button type="button" data-action="orders-stage" data-key="active">Abrir pedidos ${uiIcon('arrow')}</button></div>
+      <div class="service-lanes">${lanes.map(([key,label,icon])=>`<button type="button" class="service-lane" ${key==='late'?'id="service-late"':''} data-action="orders-stage" data-key="${key}"><b class="num">${S.orders.filter(o=>o.status===key).length}</b>${uiIcon(icon)}<span>${label}</span></button>`).join('')}</div>
+    </section>
+    <div class="service-shortcuts" aria-label="Atalhos do serviço">
+      ${opButton('Nova reserva','res-new','','sun')}
+      ${opButton('Mapa de mesas','table-map')}
+      ${opButton('Novo lançamento','ledger-new')}
+      ${opButton('Simular reserva','demo-res')}
+    </div>
+    <div class="service-metrics">${stats}</div>
+    <div class="ops-grid equal">
+      <div class="ops-stack">
+        <section class="ops-card">
+          <div class="ops-card-head"><h2>Chegadas de hoje</h2>${opButton('Ver reservas','nav','reservas')}</div>
+          ${next.length?`<ul class="ops-list">${next.map(r=>`<li>
+            <div class="ops-list-main"><time class="num">${r.time}</time><div><strong>${esc(r.name)}</strong><small>${r.people} ${r.people===1?'pessoa':'pessoas'} · ${r.area==='Varanda'?'Área externa':r.area} · ${r.tables.length?r.tables.join(', '):'Mesa a definir'}</small></div></div>
+            ${r.status==='aguardando'?opButton('Confirmar','res-confirm',r.code):opButton('Registrar chegada','res-arrive',r.code)}
+          </li>`).join('')}</ul>`:empty('Nenhuma reserva aguardando chegada hoje.')}
+        </section>
+        <section class="ops-card">
+          <div class="ops-card-head"><h2>Equipe de hoje</h2>${opButton('Ver turnos','nav','equipe')}</div>
+          <ul class="ops-list">${D.shifts.filter(t=>t.date===TODAY).slice(0,4).map(t=>{
+            const e=D.staff.find(e=>e.id===t.staff);
+            return `<li><div class="ops-list-main"><span class="ops-avatar" aria-hidden="true">${initials(e.name)}</span><div><strong>${esc(e.name)}</strong><small>${esc(e.job)} · ${t.start}–${t.end}</small></div></div>${pill(shiftStatus(t),t.status==='working'?'ok':'')}</li>`;
+          }).join('')||'<li>Sem turnos hoje.</li>'}</ul>
+        </section>
+      </div>
+      <div class="ops-stack">
+        <section class="ops-card">
+          <div class="ops-card-head"><h2>Contas e reposição</h2>${pill(pending.length===1?'1 pendência':pending.length+' pendências',pending.length?'warn':'ok')}</div>
+          ${pending.length?`<ul class="ops-list">${pending.map(p=>`<li><div class="ops-list-main"><span class="ops-alert-icon" aria-hidden="true">${uiIcon(p.icon)}</span><div><strong>${esc(p.title)}</strong><small>${esc(p.sub)}</small></div></div>${opButton(p.button,p.action,p.id)}</li>`).join('')}</ul>`:empty('Nenhuma conta vencida ou item abaixo do mínimo.')}
+        </section>
+        <section class="ops-card">
+          <div class="ops-card-head"><div><h2>Entradas dos últimos 7 dias</h2><p>Histórico ilustrativo e movimentos de hoje.</p></div>${opButton('Ver caixa','nav','financas')}</div>
+          ${revenueChart()}
+        </section>
+      </div>
+      <section class="ops-card full">
+        <div class="ops-card-head"><h2>Atividade da sessão</h2></div>
+        <ul class="ops-list">${D.events.slice(0,5).map(e=>`<li><div class="ops-list-main"><time class="num">${e.time}</time><div>${esc(e.text)}</div></div><button type="button" class="ops-link" data-action="nav" data-key="${e.tab}" aria-label="Abrir ${PANEL_TITLES[e.tab]}">Ver ↗</button></li>`).join('')}</ul>
+      </section>
+    </div>
+  </div>`;
+  updateServiceDelay();
 }
 function revenueChart(){const vals=[610,780,540,920,1130,860,D.ledger.filter(l=>l.date===TODAY&&l.kind==='entrada').reduce((a,l)=>a+l.amount,0)],max=Math.max(...vals,1);return `<p class="chart-total num">${money(vals.reduce((a,b)=>a+b,0))}<small> · 7 dias</small></p><div class="demo-chart" role="img" aria-label="Entradas ilustrativas nos últimos sete dias: ${vals.map((v,i)=>shortDate(addDays(TODAY,i-6))+': '+money(v)).join('; ')}">${vals.map((v,i)=>`<div class="demo-bar ${i===6?'current':''}"><b class="num">${Math.round(v)}</b><i style="height:${Math.max(3,Math.round(v/max*100))}px"></i><span>${i===6?'Hoje':shortDate(addDays(TODAY,i-6))}</span></div>`).join('')}</div>`}
 function renderClients(){const q=normText(D.clientQuery);const clients=D.clients.filter(c=>{const f=clientFacts(c);return(!q||normText(c.name+' '+c.phone+' '+c.email).includes(q)||(digits(q).length>=3&&digits(c.phone).includes(digits(q))))&&(D.clientFilter==='all'||(D.clientFilter==='regular'?f.visits>1:f.visits<=1))}).sort((a,b)=>a.name.localeCompare(b.name));$('#clientList').innerHTML=clients.length?clients.map(c=>{const f=clientFacts(c);return `<article class="client-card"><header><span class="ops-avatar">${initials(c.name)}</span><div><h3>${esc(c.name)}</h3><small>${f.visits>1?'Cliente recorrente':f.visits===1?'Uma visita registrada':'A primeira visita vem aí'}</small></div></header><p class="client-contact">${esc(c.phone||'WhatsApp não informado')}<br>${esc(c.email||'E-mail não informado')}</p><div class="client-mini"><div><b>${f.visits}</b><small>visitas</small></div><div><b>${f.reservations.filter(r=>r.status!=='cancelada').length}</b><small>reservas</small></div><div><b class="num">${money(f.spend)}</b><small>consumo registrado</small></div></div><div class="ops-actions">${pill(c.preference==='Sem preferência'?(f.visits>1?'Recorrente':'Novo cliente'):c.preference,'rust')}${opButton('Abrir ficha ↗','client-profile',c.id)}</div></article>`}).join(''):empty('Nenhum cliente encontrado. Tente outro nome ou contato.')}
@@ -1816,11 +2179,27 @@ function renderFinance(){const incoming=D.ledger.filter(l=>l.kind==='entrada'&&l
 function renderPurchases(){const total=D.bills.reduce((a,b)=>a+remaining(b),0),overdue=D.bills.filter(b=>b.due<TODAY&&remaining(b)>0);$('#purchaseContent').innerHTML=statsHTML([[D.purchases.filter(p=>p.status==='pedido').length,'Compras a receber'],[money(total),'Saldo com fornecedores'],[overdue.length,'Contas vencidas'],[D.suppliers.length,'Fornecedores cadastrados']])+`<div class="ops-toolbar"><p class="ops-small">Comprar, receber e pagar: cada etapa atualiza sua parte da demo.</p><div class="ops-actions">${opButton('Cadastrar conta','bill-new')}${opButton('Nova compra +','purchase-new','','sun')}</div></div><div class="purchase-grid">${D.purchases.slice().reverse().sort((a,b)=>a.status.localeCompare(b.status)).map(p=>`<article class="purchase-card"><header><div><h3>${esc(supplierBy(p.supplier).name)}</h3><p>${p.id} · ${shortDate(p.date)}</p></div>${pill(p.status==='pedido'?'A receber':'Recebido',p.status==='pedido'?'warn':'ok')}</header><div class="purchase-items">${p.items.map(i=>`${nfmt(i.qty)} ${stockBy(i.stock).unit} · ${esc(stockBy(i.stock).name)} · ${money(i.cost)}/${stockBy(i.stock).unit}`).join('<br>')}</div><footer><strong class="num">${money(purchaseTotal(p))}</strong>${p.status==='pedido'?opButton('Receber mercadoria','purchase-receive',p.id,'sun'):pill('Estoque atualizado','ok')}</footer></article>`).join('')}</div><div class="ops-subhead"><h2>Contas a pagar</h2><span class="ops-small">Pagamentos apenas simulados</span></div><div class="ops-table-wrap"><table class="ops-table"><thead><tr><th>Fornecedor / conta</th><th>Vencimento</th><th>Total</th><th>Saldo</th><th>Status</th><th></th></tr></thead><tbody>${D.bills.slice().sort((a,b)=>a.due.localeCompare(b.due)).map(b=>`<tr><td><strong>${esc(supplierBy(b.supplier).name)}</strong><small>${esc(b.desc)} · ${b.id}</small></td><td>${shortDate(b.due)}</td><td class="num">${money(b.amount)}</td><td class="num"><strong>${money(remaining(b))}</strong></td><td>${pill(remaining(b)===0?'Pago':b.due<TODAY?'Vencido':b.paid>0?'Parcial':'Em aberto',remaining(b)===0?'ok':b.due<TODAY?'crit':'warn')}</td><td>${remaining(b)>0?opButton('Registrar pagamento','bill-pay',b.id):'—'}</td></tr>`).join('')}</tbody></table></div><div class="ops-subhead"><h2>Fornecedores</h2>${opButton('Novo fornecedor +','supplier-new')}</div><div class="purchase-grid">${D.suppliers.map(s=>`<article class="purchase-card"><header><div><h3>${esc(s.name)}</h3><p>${esc(s.category)}</p></div>${pill(s.terms)}</header><p class="ops-small">${esc(s.contact)}</p><footer><span class="ops-small">Saldo: <strong>${money(D.bills.filter(b=>b.supplier===s.id).reduce((a,b)=>a+remaining(b),0))}</strong></span>${opButton('Ver fornecedor ↗','supplier-view',s.id)}</footer></article>`).join('')}</div>`}
 function recipeCost(id){return(RECIPES[id]||[]).reduce((a,[sid,q])=>a+stockBy(sid).cost*q,0)}
 function recipeYield(id){return Math.min(...(RECIPES[id]||[]).map(([sid,q])=>Math.floor((stockBy(sid).qty+1e-8)/q)))}
-function renderStock(){const q=normText(D.stockQuery),items=D.stock.filter(s=>(!q||normText(s.name+' '+s.group).includes(q))&&(D.stockFilter!=='low'||s.qty<s.min));$('#stockList').innerHTML=items.length?items.map(s=>`<article class="stock-card ${s.qty<s.min?'low':''}"><header><div><p class="ops-label" style="margin-bottom:7px">${s.group}</p><h3>${esc(s.name)}</h3></div>${pill(s.qty<s.min?'Repor':'Em dia',s.qty<s.min?'warn':'ok')}</header><p class="stock-qty num">${nfmt(s.qty)}<small>${s.unit}</small></p><div><div class="stock-meter"><span style="width:${Math.min(100,Math.round(s.qty/s.target*100))}%"></span></div><p class="ops-small" style="margin-top:9px">Mínimo ${nfmt(s.min)} ${s.unit} · custo ${money(s.cost)}/${s.unit}<br>Validade de exemplo: ${shortDate(s.expiry)}</p></div><div class="ops-actions">${opButton('Ajustar','stock-adjust',s.id)}<button type="button" class="ops-link" data-action="purchase-new" data-key="${s.id}">Comprar ↗</button></div></article>`).join(''):empty('Nenhum item encontrado para este filtro.');$$('[data-stock-filter]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.stockFilter===D.stockFilter));$('#recipeList').innerHTML=`<div class="ops-table-wrap"><table class="ops-table"><thead><tr><th>Item do cardápio</th><th>Preço da carta</th><th>Ingredientes</th><th>Margem de ingredientes</th><th>Rendimento atual</th><th></th></tr></thead><tbody>${Object.keys(RECIPES).map(id=>`<tr><td><strong>${esc(M[id].name)}</strong></td><td class="num">${money(M[id].price)}</td><td class="num">${money(recipeCost(id))}</td><td class="num">${Math.round((1-recipeCost(id)/M[id].price)*100)}%</td><td>${recipeYield(id)} ${recipeYield(id)===1?'porção':'porções'}</td><td>${opButton('Ver receita','recipe',id)}</td></tr>`).join('')}</tbody></table></div><p class="ops-small" style="margin-top:14px">Quantidades e custos fictícios. A margem considera apenas os ingredientes listados, sem despesas, taxas ou mão de obra.</p>`}
+function renderStock(){const q=normText(D.stockQuery),items=D.stock.filter(s=>(!q||normText(s.name+' '+s.group).includes(q))&&(D.stockFilter!=='low'||s.qty<s.min));$('#stockList').innerHTML=items.length?items.map(s=>`<article class="stock-card ${s.qty<s.min?'low':''}"><header><div><p class="ops-label" style="margin-bottom:7px">${s.group}</p><h3>${esc(s.name)}</h3></div>${pill(s.qty<s.min?'Repor':'Em dia',s.qty<s.min?'warn':'ok')}</header><p class="stock-qty num">${nfmt(s.qty)}<small>${s.unit}</small></p><div><div class="stock-meter"><span style="width:${Math.min(100,Math.round(s.qty/s.target*100))}%"></span></div><p class="ops-small" style="margin-top:9px">Mínimo ${nfmt(s.min)} ${s.unit} · custo ${money(s.cost)}/${s.unit}<br>Validade de exemplo: ${shortDate(s.expiry)}</p></div><div class="ops-actions">${opButton('Ajustar','stock-adjust',s.id)}<button type="button" class="ops-link" data-action="purchase-new" data-key="${s.id}">Comprar ↗</button></div></article>`).join(''):empty('Nenhum item encontrado para este filtro.');$$('[data-stock-filter]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.stockFilter===D.stockFilter));$('#recipeList').innerHTML=`<div class="ops-table-wrap"><table class="ops-table"><thead><tr><th>Item do cardápio</th><th>Preço da carta</th><th>Ingredientes</th><th>Margem de ingredientes</th><th>Rendimento atual</th><th></th></tr></thead><tbody>${Object.keys(RECIPES).map(id=>`<tr><td><strong>${esc(M[id].name)}</strong></td><td class="num">${money(M[id].price)}</td><td class="num">${money(recipeCost(id))}</td><td class="num">${Math.round((1-recipeCost(id)/M[id].price)*100)}%</td><td>${recipeYield(id)} ${recipeYield(id)===1?'porção':'porções'}</td><td>${opButton('Ver receita','recipe',id)}</td></tr>`).join('')}</tbody></table></div><p class="ops-small" style="margin-top:14px">Quantidades e custos fictícios. A margem considera apenas os ingredientes listados, sem despesas, taxas ou mão de obra.</p>`;labelPanelTables($('#pane-estoque'))}
 function minutes(t){const[h,m]=t.split(':').map(Number);return h*60+m}
 function shiftHours(t){return Math.max(0,(minutes(t.end)+(minutes(t.end)<=minutes(t.start)?1440:0)-minutes(t.start)-Number(t.break))/60)}
 function weekStart(){return addDays(TODAY,-((parseISO(TODAY).getDay()+6)%7)+D.weekOffset*7)}
-function renderTeam(){const from=weekStart(),days=Array.from({length:7},(_,i)=>addDays(from,i)),shifts=D.shifts.filter(t=>days.includes(t.date));$('#teamContent').innerHTML=statsHTML([[D.staff.length,'Pessoas na equipe'],[D.shifts.filter(t=>t.date===TODAY).length,'Turnos de hoje'],[nfmt(shifts.reduce((a,t)=>a+shiftHours(t),0))+' h','Horas previstas na semana'],[D.shifts.filter(t=>t.status==='working').length,'Turnos iniciados na demo']])+`<div class="ops-toolbar"><div class="ops-actions">${opButton('←','week-prev')}<strong style="font-size:.85rem">${shortDate(from)} a ${shortDate(days[6])}</strong>${opButton('→','week-next')}</div><div class="ops-actions">${opButton('Acessos de exemplo','roles')}${opButton('Novo turno +','shift-new','','sun')}</div></div><div class="schedule-scroll"><div class="schedule-grid"><div class="schedule-day">Equipe</div>${days.map(d=>`<div class="schedule-day">${parseISO(d).toLocaleDateString('pt-BR',{weekday:'short'})}<b>${shortDate(d)}${d===TODAY?' · hoje':''}</b></div>`).join('')}${D.staff.map(e=>`<div><span class="schedule-name">${esc(e.name)}<small>${esc(e.job)}</small></span></div>${days.map(d=>`<div>${D.shifts.filter(t=>t.staff===e.id&&t.date===d).map(t=>`<button type="button" class="shift-pill ${t.status==='working'?'working':t.status==='done'?'done':''}" data-action="shift-edit" data-key="${t.id}">${t.start}–${t.end}<small>${nfmt(shiftHours(t))} h · ${t.status==='working'?'Em turno':t.status==='done'?'Encerrado':t.break+' min de pausa'}</small></button>`).join('')||'<span class="muted">—</span>'}</div>`).join('')}`).join('')}</div></div><div class="ops-subhead"><h2>Equipe do Matriz</h2>${opButton('Nova pessoa +','staff-new')}</div><div class="staff-grid">${D.staff.map(e=>{const today=D.shifts.find(t=>t.staff===e.id&&t.date===TODAY),hours=shifts.filter(t=>t.staff===e.id).reduce((a,t)=>a+shiftHours(t),0);return `<article class="staff-card"><header><span class="ops-avatar">${initials(e.name)}</span><div><h3>${esc(e.name)}</h3><small>${esc(e.job)}</small></div></header><p class="ops-small">${esc(e.phone||'Contato não informado')}<br>Acesso ilustrativo: ${esc(e.access)}</p><div class="ops-list-main"><strong class="num">${nfmt(hours)} h</strong><span class="ops-small">previstas nesta semana</span></div><div class="ops-actions">${today?opButton(today.status==='planned'?'Iniciar turno':today.status==='working'?'Encerrar turno':'Turno encerrado',today.status==='done'?'shift-edit':'shift-clock',today.id,today.status==='working'?'sun':'ghost'):opButton('Escalar','shift-new',e.id)}${opButton('Editar ficha','staff-edit',e.id)}</div></article>`}).join('')}</div><p class="ops-small" style="margin-top:18px">Escala, horas e acessos ilustrativos. Nenhum ponto, folha de pagamento ou cadastro externo é conectado.</p>`}
+function shiftStatus(shift){
+  return {working:'Em turno',done:'Encerrado',planned:'Escalado'}[shift.status];
+}
+function renderShiftAgenda(days,shifts){
+  const day=days.includes(D.shiftDay)?D.shiftDay:days.includes(TODAY)?TODAY:days[0];
+  D.shiftDay=day;
+  const list=shifts.filter(t=>t.date===day).sort((a,b)=>a.start.localeCompare(b.start));
+  return `<section class="ops-card schedule-agenda" aria-labelledby="schedule-title">
+    <div class="ops-card-head"><h2 id="schedule-title">Escala do dia</h2>${selectField('shift-day','Dia da semana',days.map(d=>[d,d===TODAY?'Hoje · '+shortDate(d):fmtDay(d)]),day)}</div>
+    ${list.length?`<ul class="ops-list">${list.map(t=>{
+      const person=D.staff.find(e=>e.id===t.staff);
+      const overnight=minutes(t.end)<=minutes(t.start);
+      return `<li><div class="ops-list-main"><span class="ops-avatar" aria-hidden="true">${initials(person.name)}</span><div><strong>${esc(person.name)}</strong><small>${esc(person.job)} · ${t.start}–${t.end}${overnight?' (dia seguinte)':''}</small><small>${shiftStatus(t)} · ${nfmt(shiftHours(t))} h</small></div></div>${opButton('Ver turno','shift-edit',t.id)}</li>`;
+    }).join('')}</ul>`:empty('Nenhum turno escalado para este dia.')}
+  </section>`;
+}
+function renderTeam(){const from=weekStart(),days=Array.from({length:7},(_,i)=>addDays(from,i)),shifts=D.shifts.filter(t=>days.includes(t.date));$('#teamContent').innerHTML=statsHTML([[D.staff.length,'Pessoas na equipe'],[D.shifts.filter(t=>t.date===TODAY).length,'Turnos de hoje'],[nfmt(shifts.reduce((a,t)=>a+shiftHours(t),0))+' h','Horas previstas na semana'],[D.shifts.filter(t=>t.status==='working').length,'Turnos iniciados na demo']])+`<div class="ops-toolbar"><div class="ops-actions">${opButton('Semana anterior','week-prev')}<strong style="font-size:.85rem">${shortDate(from)} a ${shortDate(days[6])}</strong>${opButton('Próxima semana','week-next')}</div><div class="ops-actions">${opButton('Acessos de exemplo','roles')}${opButton('Novo turno +','shift-new','','sun')}</div></div><div class="schedule-scroll"><div class="schedule-grid"><div class="schedule-day">Equipe</div>${days.map(d=>`<div class="schedule-day ${d===TODAY?'today':''}">${parseISO(d).toLocaleDateString('pt-BR',{weekday:'short'})}<b>${shortDate(d)}${d===TODAY?' · hoje':''}</b></div>`).join('')}${D.staff.map(e=>`<div><span class="schedule-name">${esc(e.name)}<small>${esc(e.job)}</small></span></div>${days.map(d=>`<div>${D.shifts.filter(t=>t.staff===e.id&&t.date===d).map(t=>`<button type="button" class="shift-pill ${t.status==='working'?'working':t.status==='done'?'done':''}" data-action="shift-edit" data-key="${t.id}">${t.start}–${t.end}<small>${nfmt(shiftHours(t))} h · ${t.status==='working'?'Em turno':t.status==='done'?'Encerrado':t.break+' min de pausa'}</small></button>`).join('')||'<span class="muted">—</span>'}</div>`).join('')}`).join('')}</div></div>${renderShiftAgenda(days,shifts)}<div class="ops-subhead"><h2>Equipe do Matriz</h2>${opButton('Nova pessoa +','staff-new')}</div><div class="staff-grid">${D.staff.map(e=>{const today=D.shifts.find(t=>t.staff===e.id&&t.date===TODAY),hours=shifts.filter(t=>t.staff===e.id).reduce((a,t)=>a+shiftHours(t),0);return `<article class="staff-card"><header><span class="ops-avatar">${initials(e.name)}</span><div><h3>${esc(e.name)}</h3><small>${esc(e.job)}</small></div></header><p class="ops-small">${esc(e.phone||'Contato não informado')}<br>Acesso ilustrativo: ${esc(e.access)}</p><div class="ops-list-main"><strong class="num">${nfmt(hours)} h</strong><span class="ops-small">previstas nesta semana</span></div><div class="ops-actions">${today?opButton(today.status==='planned'?'Iniciar turno':today.status==='working'?'Encerrar turno':'Turno encerrado',today.status==='done'?'shift-edit':'shift-clock',today.id,today.status==='working'?'sun':'ghost'):opButton('Escalar','shift-new',e.id)}${opButton('Editar ficha','staff-edit',e.id)}</div></article>`}).join('')}</div><p class="ops-small" style="margin-top:18px">Escala, horas e acessos ilustrativos. Nenhum ponto, folha de pagamento ou cadastro externo é conectado.</p>`}
 
 const field=(id,label,type='text',value='',extra='')=>`<div class="field"><label for="${id}">${label}</label><input id="${id}" name="${id}" type="${type}" value="${esc(value)}" ${extra}></div>`;
 const selectField=(id,label,options,value='')=>`<div class="field"><label for="${id}">${label}</label><select id="${id}" name="${id}" ${id==='manual-time'?'required':''}>${options.map(o=>{const[v,t]=Array.isArray(o)?o:[o,o];return `<option value="${esc(v)}" ${v===value?'selected':''}>${esc(t)}</option>`}).join('')}</select></div>`;
@@ -1830,7 +2209,7 @@ function openOp(title,html,save=null,label='Salvar na demo',sub='Demonstração 
 }
 function closeOp(){const last=OP?.focus;$('#op-dialog').hidden=true;OP=null;renderFab();if(last?.isConnected)last.focus({preventScroll:true})}
 $('#op-close').addEventListener('click',closeOp);$('#op-cancel').addEventListener('click',closeOp);$('#op-dialog').addEventListener('click',e=>{if(e.target.id==='op-dialog')closeOp()});
-$('#op-form').addEventListener('submit',e=>{e.preventDefault();if(!OP?.save)return;if(!e.currentTarget.reportValidity())return;const blank=$$('input[required],textarea[required]',e.currentTarget).find(el=>!el.value.trim());if(blank){$('#op-error').textContent='Preencha os campos obrigatórios.';blank.focus();return}const result=OP.save(new FormData(e.currentTarget))||{};if(result.error){$('#op-error').textContent=result.error;return}closeOp();renderPanel();$(`[data-ptab="${S.ptab}"]`).focus({preventScroll:true});toast(esc(result.message||'Alteração salva na demonstração.'))});
+$('#op-form').addEventListener('submit',e=>{e.preventDefault();if(!OP?.save)return;if(!e.currentTarget.reportValidity())return;const blank=$$('input[required],textarea[required]',e.currentTarget).find(el=>!el.value.trim());if(blank){$('#op-error').textContent='Preencha os campos obrigatórios.';blank.focus();return}const result=OP.save(new FormData(e.currentTarget))||{};if(result.error){$('#op-error').textContent=result.error;return}const previous=OP.focus;closeOp();renderPanel();restorePanelFocus(previous);toast(esc(result.message||'Alteração salva na demonstração.'))});
 $('#op-form').addEventListener('input',e=>{if(e.target.id==='cash-count'){const diff=Number(e.target.value)-expectedCash();$('#cash-diff').innerHTML=`Diferença da contagem: <b class="num">${money(diff)}</b>`}if(['buy-qty','buy-cost'].includes(e.target.id)){$('#buy-total').textContent=money(Number($('#buy-qty').value)*Number($('#buy-cost').value))}});
 $('#op-form').addEventListener('change',e=>{if(e.target.id==='buy-stock'){const s=stockBy(e.target.value);$('#buy-supplier').value=s.supplier;$('#buy-cost').value=s.cost;$('#buy-unit').textContent=s.unit;$('#buy-total').textContent=money(Number($('#buy-qty').value)*s.cost)}if(['manual-date','manual-area'].includes(e.target.id)){const times=validTimeOptions($('#manual-date').value,$('#manual-area').value);$('#manual-time').innerHTML=times.length?times.map(t=>`<option>${t}</option>`).join(''):'<option value="">Sem horários nesta data</option>'}});
 function clientProfile(id){const c=clientBy(id);if(!c)return;const f=clientFacts(c);openOp('Ficha do cliente',`<div><div class="profile-top"><span class="ops-avatar">${initials(c.name)}</span><div><h3>${esc(c.name)}</h3><p>${esc(c.phone||'Sem WhatsApp')} · ${esc(c.email||'Sem e-mail')}</p></div></div><div class="profile-stats"><div><b>${f.visits}</b><span>visitas registradas</span></div><div><b>${f.reservations.length}</b><span>reservas</span></div><div><b class="num">${money(f.spend)}</b><span>consumo registrado</span></div></div><div class="ops-actions" style="margin-bottom:22px">${opButton('Nova reserva +','res-new',id,'sun')}${opButton('Editar contato','client-edit',id)}</div><p class="ops-label">Reservas neste período</p>${f.reservations.length?`<ul class="ops-list" style="margin-bottom:22px">${f.reservations.map(r=>`<li><div><strong>${fmtDay(r.date)} · ${r.time}</strong><small>${r.people} pessoas · ${r.area} · ${r.code}</small></div>${pill(STAT_LABEL[r.status]||r.status,r.status==='cancelada'?'crit':r.status==='chegou'?'ok':'')}</li>`).join('')}</ul>`:empty('Ainda não há reservas nesta sessão.')}<p class="ops-label" style="margin-top:22px">Visitas anteriores · exemplos</p>${f.visits||f.orders.length?`<ul class="ops-list">${c.history.map(h=>`<li><div><strong>${shortDate(h.date)}</strong><small>${esc(h.detail)}</small></div><strong class="num">${money(h.spend)}</strong></li>`).join('')}${f.orders.map(o=>`<li><div><strong>${orderNo(o.id)} · ${o.time}</strong><small>${o.items.map(([id,q])=>q+'× '+esc(M[id].name)).join(', ')}</small></div>${pill(o.status==='concluido'?money(totals(o).total):'Em andamento',o.status==='concluido'?'ok':'warn')}</li>`).join('')}</ul>`:empty('O histórico será preenchido conforme o cliente voltar.')}</div><div class="form">${selectField('client-pref','Preferência de mesa',['Sem preferência','Área externa','Salão'],c.preference)}${textareaField('client-note','Anotações para receber bem',c.note,'maxlength="500"')}</div>`,fd=>{c.preference=fd.get('client-pref');c.note=fd.get('client-note').trim();activity(`Preferências de ${c.name} atualizadas.`,'clientes');return{message:'Ficha atualizada na demo.'}},'Salvar preferências')}
@@ -1862,16 +2241,49 @@ function shiftForm(id='',staffId=''){const t=D.shifts.find(t=>t.id===id)||{staff
 function renderTableMap(){const vals=DINNER.map(t=>S.res.filter(r=>activeBooking(r)&&r.date===D.mapDate&&r.time===t).reduce((a,r)=>a+r.people,0)),max=Math.max(...vals,1);$('#occ-day').textContent=fmtDay(D.mapDate)+' · reservas ativas';$('#occ').innerHTML=DINNER.map((t,i)=>`<div class="occ-bar"><b>${vals[i]}</b><i style="height:${Math.round(vals[i]/max*80)}px"></i><span>${t}</span></div>`).join('');const sample={date:D.mapDate,time:D.mapTime};$('#tableMap').innerHTML=D.tables.filter(t=>D.mapArea==='Todas'||t.area===D.mapArea).map(t=>{const bookings=S.res.filter(r=>activeBooking(r)&&r.tables.includes(t.id)&&resTimeOverlap(r,sample)),r=bookings[0];return `<button type="button" class="table-tile ${r?r.status==='chegou'?'arrived':'booked':''}" data-action="${r?'res-table':'table-free'}" data-key="${r?r.code:t.id}"><b>${t.id}</b><small>${t.area==='Varanda'?'Área externa':'Salão'} · ${t.seats} lugares</small><span>${r?esc(r.name):'Livre neste horário'}</span>${r?pill(r.status==='chegou'?'Cliente chegou':r.time):''}</button>`}).join('')}
 function renderReservations(){renderTableMap();const sorted=[...S.res].sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));let html='',cur='';for(const r of sorted){if(r.date!==cur){cur=r.date;html+=`<tr class="day"><td colspan="7">${fmtDay(r.date)}</td></tr>`}const active=activeBooking(r);html+=`<tr data-id="${r.code}"><td class="t">${r.time}</td><td><button type="button" class="ops-link" data-action="client-profile" data-key="${r.clientId}">${esc(r.name)}</button>${r.notes?`<span class="note">${esc(r.notes)}</span>`:''}</td><td class="num">${r.people}</td><td>${r.area==='Varanda'?'Externa':'Salão'}<span class="note">${r.tables.length?r.tables.join(' + '):'Mesa a definir'}</span></td><td>${badge(r.origin)}</td><td>${pill(STAT_LABEL[r.status]||r.status,r.status==='chegou'?'ok':r.status==='aguardando'?'warn':active?'':'crit')}</td><td><div class="ops-actions">${r.status==='aguardando'?opButton('Confirmar','res-confirm',r.code):r.status==='confirmada'?opButton('Chegou','res-arrive',r.code):''}${active?opButton('Mesa','res-table',r.code):''}${active&&r.status!=='chegou'?opButton('Mais','res-options',r.code):''}</div></td></tr>`}$('#resRows').innerHTML=html;$('#resCount').textContent=S.res.filter(activeBooking).length+' reservas ativas';$('#waitCount').textContent=D.waitlist.length+' aguardando';$('#waitList').innerHTML=D.waitlist.length?D.waitlist.map(w=>`<li><div><strong>${esc(w.name)}</strong><small>${w.people} pessoas · ${w.area==='Varanda'?'Área externa':'Salão'}</small></div><div class="ops-actions">${opButton('Reservar','wait-book',w.id,'sun')}${opButton('Retirar','wait-remove',w.id)}</div></li>`).join(''):'<li class="ops-small">Ninguém aguardando por enquanto.</li>'}
 function simulateReservation(){let date=firstOpenDate(),time;const existingClient=D.clients.find(c=>c.name==='Fernanda Lima');for(let i=0;i<14;i++){time=validTimeOptions(date).find(t=>!S.res.some(r=>r.clientId===existingClient.id&&r.date===date&&r.time===t&&activeBooking(r)));if(time)break;date=addDays(date,1)}if(!time){toast('Escolha uma reserva manual para outro dia.');return}const c=D.clients.find(c=>c.name==='Fernanda Lima'),r={code:'RES-'+S.nextRes++,date,time,people:2,area:'Varanda',name:c.name,phone:c.phone,email:c.email,origin:'Site',status:'confirmada',notes:'Reserva criada pelo cenário de demonstração',tables:[]};S.res.push(r);linkReservation(r);if(S.auto.waRes)log('WhatsApp',r.name,resMsg(r));renderPanel();toast(`${r.code} criada. A ficha de Fernanda foi atualizada.`)}
-function goPanel(tab){if(!PANEL_TITLES[tab])return;S.ptab=tab;if(S.view!=='painel')go('painel');else renderPanel();if(innerWidth>760&&innerWidth<=900)$(`[data-ptab="${tab}"]`).scrollIntoView({behavior:'auto',block:'nearest',inline:'nearest'});$('#p-title').scrollIntoView({behavior:'auto',block:'start'})}
+function goPanel(tab){
+  if(!PANEL_TITLES[tab])return;
+  S.ptab=tab;
+  if(S.view!=='painel')go('painel');else renderPanel();
+  window.scrollTo({top:0,behavior:'auto'});
+  $('#p-title').focus({preventScroll:true});
+}
+$('.panel-skip').addEventListener('click',event=>{
+  event.preventDefault();
+  const title=$('#p-title');
+  title.focus({preventScroll:true});
+  title.scrollIntoView({block:'nearest'});
+});
+function confirmDemoReset(){
+ openOp('Reiniciar a demonstração',`<p class="ops-small">Restaurar os exemplos de clientes, reservas, caixa, compras, estoque e equipe? As alterações feitas nesta sessão serão substituídas pelos dados iniciais.</p>`,()=>{setTimeout(resetOperations,0);return{message:'Restaurando os exemplos…'}},'Reiniciar demo');
+}
+function restorePanelFocus(previous){
+  if(!previous)return;
+  if(previous.isConnected&&previous.getClientRects().length){previous.focus({preventScroll:true});return}
+  const {action,key}=previous.dataset;
+  const pane=$('#pane-'+S.ptab);
+  const controls=action?$$('[data-action]',pane).filter(b=>b.getClientRects().length):[];
+  const replacement=controls.find(b=>b.dataset.action===action&&b.dataset.key===key)
+    ||controls.find(b=>key&&b.dataset.key===key);
+  (replacement||$('#p-title')).focus({preventScroll:true});
+}
 $('#client-search').addEventListener('input',e=>{D.clientQuery=e.target.value;renderClients()});$('#client-filter').addEventListener('change',e=>{D.clientFilter=e.target.value;renderClients()});$('#stock-search').addEventListener('input',e=>{D.stockQuery=e.target.value;renderStock()});
+$('#teamContent').addEventListener('change',event=>{
+ if(event.target.id!=='shift-day')return;
+ D.shiftDay=event.target.value;
+ renderTeam();
+ $('#shift-day').focus({preventScroll:true});
+});
 ['map-date','map-time','map-area'].forEach(id=>$('#'+id).addEventListener('change',e=>{D[id==='map-date'?'mapDate':id==='map-time'?'mapTime':'mapArea']=e.target.value;if(D.mapDate)renderTableMap()}));
 document.addEventListener('click',e=>{
  const stockFilter=e.target.closest('[data-stock-filter]');if(stockFilter){D.stockFilter=stockFilter.dataset.stockFilter;renderStock();return}
- const finFilter=e.target.closest('[data-finance-filter]');if(finFilter){D.financeFilter=finFilter.dataset.financeFilter;renderFinance();return}
+ const finFilter=e.target.closest('[data-finance-filter]');if(finFilter){D.financeFilter=finFilter.dataset.financeFilter;renderFinance();labelPanelTables($('#pane-financas'));$(`[data-finance-filter="${D.financeFilter}"]`).focus({preventScroll:true});return}
  const b=e.target.closest('[data-action]');if(!b)return;const action=b.dataset.action,id=b.dataset.key||'';
  if(action==='nav'){closeOp();goPanel(id)}
+ else if(action==='orders-stage'){setOrderFilters(id);goPanel('pedidos')}
+ else if(action==='table-map'){goPanel('reservas');const map=$('#table-map-title');map.focus({preventScroll:true});map.scrollIntoView({block:'start'})}
  else if(action==='site'||action==='site-order'){closeOp();go('site');if(action==='site-order')setTimeout(()=>scrollToId('cardapio'),60)}
- else if(action==='reset')openOp('Reiniciar a demonstração',`<p class="ops-small">Restaurar os exemplos de clientes, reservas, caixa, compras, estoque e equipe? As alterações feitas nesta sessão serão substituídas pelos dados iniciais.</p>`,()=>{setTimeout(resetOperations,0);return{message:'Restaurando os exemplos…'}},'Reiniciar demo');
+ else if(action==='reset')confirmDemoReset();
  else if(action==='demo-res')simulateReservation();
  else if(action==='pickup-notify')pickupNoticeForm(id);
  else if(action==='prep-times')prepTimesForm();
@@ -1885,7 +2297,7 @@ document.addEventListener('click',e=>{
  else if(action==='wait-remove'){D.waitlist=D.waitlist.filter(w=>w.id!==id);activity('Cliente retirado da lista de espera.','reservas');renderPanel();toast('Lista de espera atualizada.')}
  else if(action==='res-table')tableAssignment(id);
  else if(action==='table-free'){const t=D.tables.find(t=>t.id===id);openOp('Mesa '+t.id,`<p class="ops-small">${t.area==='Varanda'?'Área externa':'Salão'} · ${t.seats} lugares. Livre em ${shortDate(D.mapDate)} às ${D.mapTime}.</p><p class="notice">Crie uma reserva e use “Mesa” para atribuir esta mesa ao cliente.</p><div class="ops-actions">${opButton('Nova reserva +','res-new','','sun')}</div>`)}
- else if(action==='res-confirm'||action==='res-arrive'){const r=S.res.find(r=>r.code===id);r.status=action==='res-confirm'?'confirmada':'chegou';if(action==='res-confirm'&&S.auto.waRes)log('WhatsApp',r.name,resMsg(r));activity(`${r.name}: ${action==='res-confirm'?'reserva confirmada':'chegada registrada'}.`,'reservas');renderPanel();toast(action==='res-confirm'?'Reserva confirmada na demo.':'Chegada registrada. Perfil do cliente atualizado.')}
+ else if(action==='res-confirm'||action==='res-arrive'){const r=S.res.find(r=>r.code===id);r.status=action==='res-confirm'?'confirmada':'chegou';if(action==='res-confirm'&&S.auto.waRes)log('WhatsApp',r.name,resMsg(r));activity(`${r.name}: ${action==='res-confirm'?'reserva confirmada':'chegada registrada'}.`,'reservas');renderPanel();restorePanelFocus(b);toast(action==='res-confirm'?'Reserva confirmada na demo.':'Chegada registrada. Perfil do cliente atualizado.')}
  else if(action==='res-options'){const r=S.res.find(r=>r.code===id);openOp('Atualizar reserva',`<p class="ops-small">${esc(r.name)} · ${r.code} · ${fmtDay(r.date)} às ${r.time}</p>${selectField('res-next-status','Situação',[['cancelada','Cancelada pelo cliente'],['ausente','Cliente não compareceu']],'cancelada')}<p class="notice">As mesas serão liberadas no mapa. O histórico permanece na ficha do cliente.</p>`,fd=>{r.status=fd.get('res-next-status');activity(`${r.code}: ${r.status==='cancelada'?'cancelamento':'ausência'} registrado.`,'reservas');return{message:'Reserva atualizada na demo.'}},'Atualizar reserva')}
  else if(action==='ledger-new')ledgerForm();
  else if(action==='cash-toggle')cashForm();
@@ -1904,7 +2316,7 @@ document.addEventListener('click',e=>{
  else if(action==='shift-edit')shiftForm(id);
  else if(action==='shift-clock'){const t=D.shifts.find(t=>t.id===id);if(t.status==='done'){toast('Este turno já foi encerrado na demo.');return}t.status=t.status==='working'?'done':'working';activity(`${D.staff.find(e=>e.id===t.staff).name}: turno ${t.status==='working'?'iniciado':'encerrado'} na simulação.`,'equipe');closeOp();renderPanel();toast('Registro de turno simulado.')}
  else if(action==='shift-delete'){D.shifts=D.shifts.filter(t=>t.id!==id);closeOp();activity('Turno removido da escala de exemplo.','equipe');renderPanel();toast('Turno removido da demo.')}
- else if(action==='week-prev'||action==='week-next'){D.weekOffset+=action==='week-prev'?-1:1;renderTeam()}
+ else if(action==='week-prev'||action==='week-next'){D.weekOffset+=action==='week-prev'?-1:1;renderTeam();restorePanelFocus(b)}
  else if(action==='roles')openOp('Acessos de exemplo',`<p class="notice">Todos os módulos estão visíveis para a apresentação. Estes perfis são ilustrativos e não criam contas ou permissões reais.</p><ul class="ops-list"><li><div><strong>Gestão</strong><small>Visão geral, finanças, compras, equipe e operação completa.</small></div></li><li><div><strong>Reservas e salão</strong><small>Mesas, lista de espera, clientes e pedidos.</small></div></li><li><div><strong>Bar e estoque</strong><small>Pedidos do bar, receitas e movimentações de ingredientes.</small></div></li><li><div><strong>Cozinha</strong><small>Fila de preparo e informações dos pratos.</small></div></li></ul>`);
 });
 
@@ -2044,7 +2456,7 @@ function repeatClientOrder(key){const o=customerOrder(key);if(!o)return;for(cons
 function advanceRestaurantOrder(id){const o=S.orders.find(x=>String(x.id)===String(id));if(!o||o.status==='concluido')return{error:'Este pedido já foi concluído.'};if(o.status==='novo'){const missing=canConsume(o);if(missing)return{error:`Estoque de exemplo insuficiente de ${missing}. Ajuste-o no painel para continuar a simulação.`};consumeOrder(o)}if(o.status==='entrega'){if(o.pay==='Dinheiro'&&!D.cash.open)return{error:'Abra o caixa de exemplo no painel para registrar o recebimento em dinheiro.'};collectOrder(o)}o.status={novo:'preparo',preparo:'entrega',entrega:'concluido'}[o.status];if(o.type!=='No local'&&S.auto.waStatus&&!readyForPickup(o))log('WhatsApp',o.customer,statusMsg(o));activity(`Pedido ${orderNo(o.id)}: ${orderLabels(o)[orderIndex(o)]}.`,'pedidos');updateVisitCount();return{status:o.status}}
 $('#demo-scenario').addEventListener('change',e=>{if(e.target.value!=='custom')chooseClientScenario(e.target.value)});
 window.addEventListener('scroll',()=>{if(S.view!=='site'||innerWidth>760)return;const rect=$('#resForm').getBoundingClientRect(),active=rect.top<Math.min(180,innerHeight*.26)&&rect.bottom>130;if(active!==document.body.classList.contains('booking-active'))renderFab();else renderMobileNav()},{passive:true});
-window.addEventListener('resize',()=>{if(innerWidth>760&&!$('#app-sheet').hidden)closeAppSheet(false);renderFab();if(S.view==='painel'&&innerWidth>760&&innerWidth<=900)$(`[data-ptab="${S.ptab}"]`)?.scrollIntoView({behavior:'auto',block:'nearest',inline:'nearest'})});
+window.addEventListener('resize',()=>{if(innerWidth>(S.view==='painel'?1024:760)&&!$('#app-sheet').hidden)closeAppSheet(false);renderFab()});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-client]');if(!b)return;const a=b.dataset.client,key=b.dataset.key||'',kind=b.dataset.kind||'';
  if(a==='portal'){C.portalTab=C.portalTab||'reservas';openVisit('portal')}
  else if(a==='portal-tab'){C.portalTab=key;renderClientVisit();$(`#visit-body [data-client="portal-tab"][data-key="${key}"]`)?.focus({preventScroll:true})}
@@ -2084,7 +2496,7 @@ function appIcon(name){if(name==='home')return '<svg viewBox="0 0 24 24" fill="n
 function openAppSheet(){
  appSheetFocus=document.activeElement;const panel=S.view==='painel';$('#app-sheet-title').textContent=panel?'Mais do restaurante':'Mais do Matriz';
  const routes=panel?[['clientes','Clientes'],['compras','Compras'],['estoque','Estoque'],['equipe','Equipe'],['canais','Canais']]:[['home','Início'],['reservas','Reservar mesa'],['contato','Contato e horários'],['guide','Como testar a demo']];
- $('#app-sheet-body').innerHTML=`<div class="app-sheet-grid">${routes.map(([key,label])=>`<button type="button" ${panel?`data-app-panel="${key}" ${S.ptab===key?'aria-current="page"':''}`:`data-app="${key}"`}>${appIcon(panel?key:key==='home'?'home':'canais')}<span>${label}</span></button>`).join('')}</div><div class="app-sheet-switch"><p>Explore os dois lados desta demonstração. Todos os dados são fictícios e recomeçam ao recarregar.</p><button type="button" class="btn ${panel?'ghost':'sun'}" data-app-view="${panel?'site':'painel'}">${panel?'Ver site do cliente':'Conhecer o painel do restaurante'} ↗</button></div>`;
+ $('#app-sheet-body').innerHTML=`<div class="app-sheet-grid">${routes.map(([key,label])=>`<button type="button" ${panel?`data-app-panel="${key}" ${S.ptab===key?'aria-current="page"':''}`:`data-app="${key}"`}>${appIcon(panel?key:key==='home'?'home':'canais')}<span>${label}</span></button>`).join('')}</div><div class="app-sheet-switch"><p>Explore os dois lados desta demonstração. Todos os dados são fictícios e recomeçam ao recarregar.</p><button type="button" class="btn ${panel?'ghost':'sun'}" data-app-view="${panel?'site':'painel'}">${panel?'Ver site do cliente':'Conhecer o painel do restaurante'} ↗</button>${panel?'<button type="button" class="btn ghost" data-app="reset-panel">Reiniciar demo</button>':''}</div>`;
  $('#app-sheet').hidden=false;renderFab();$('#app-sheet-close').focus();
 }
 function closeAppSheet(restore=true){const previous=appSheetFocus;$('#app-sheet').hidden=true;renderFab();if(restore&&previous?.isConnected&&previous.getClientRects().length)previous.focus({preventScroll:true})}
@@ -2097,6 +2509,11 @@ document.addEventListener('click',e=>{
  if(b.dataset.appView){go(b.dataset.appView);return}
  if(b.dataset.appPanel){goPanel(b.dataset.appPanel);return}
  const action=b.dataset.app||b.dataset.appSection;
+ if(action==='reset-panel'){
+  $('#panel-mbar [data-app="more"]').focus({preventScroll:true});
+  confirmDemoReset();
+  return;
+ }
  if(action==='search'){openCatalogSearch();return}
  if(action==='visit'){openVisit('portal');return}
  if(action==='guide'){openVisit('guide');return}
